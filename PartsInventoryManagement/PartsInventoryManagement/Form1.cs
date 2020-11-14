@@ -26,5 +26,35 @@ namespace PartsInventoryManagement
         {
 
         }
+
+        private void ModifyPartButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DeletePartButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddProductButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ModifyProductButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DeleteProductButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

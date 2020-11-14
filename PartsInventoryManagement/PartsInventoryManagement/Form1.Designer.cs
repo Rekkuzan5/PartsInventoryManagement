@@ -79,7 +79,7 @@
             this.ModifyPartButton.TabIndex = 1;
             this.ModifyPartButton.Text = "Modify";
             this.ModifyPartButton.UseVisualStyleBackColor = true;
-            this.ModifyPartButton.Click += new System.EventHandler(this.AddPartButton_Click);
+            this.ModifyPartButton.Click += new System.EventHandler(this.ModifyPartButton_Click);
             // 
             // DeletePartButton
             // 
@@ -90,7 +90,7 @@
             this.DeletePartButton.TabIndex = 1;
             this.DeletePartButton.Text = "Delete";
             this.DeletePartButton.UseVisualStyleBackColor = true;
-            this.DeletePartButton.Click += new System.EventHandler(this.AddPartButton_Click);
+            this.DeletePartButton.Click += new System.EventHandler(this.DeletePartButton_Click);
             // 
             // AddProductButton
             // 
@@ -101,7 +101,7 @@
             this.AddProductButton.TabIndex = 1;
             this.AddProductButton.Text = "Add";
             this.AddProductButton.UseVisualStyleBackColor = true;
-            this.AddProductButton.Click += new System.EventHandler(this.AddPartButton_Click);
+            this.AddProductButton.Click += new System.EventHandler(this.AddProductButton_Click);
             // 
             // ModifyProductButton
             // 
@@ -112,7 +112,7 @@
             this.ModifyProductButton.TabIndex = 1;
             this.ModifyProductButton.Text = "Modify";
             this.ModifyProductButton.UseVisualStyleBackColor = true;
-            this.ModifyProductButton.Click += new System.EventHandler(this.AddPartButton_Click);
+            this.ModifyProductButton.Click += new System.EventHandler(this.ModifyProductButton_Click);
             // 
             // DeleteProductButton
             // 
@@ -123,7 +123,7 @@
             this.DeleteProductButton.TabIndex = 1;
             this.DeleteProductButton.Text = "Delete";
             this.DeleteProductButton.UseVisualStyleBackColor = true;
-            this.DeleteProductButton.Click += new System.EventHandler(this.AddPartButton_Click);
+            this.DeleteProductButton.Click += new System.EventHandler(this.DeleteProductButton_Click);
             // 
             // ExitButton
             // 
@@ -134,6 +134,7 @@
             this.ExitButton.TabIndex = 2;
             this.ExitButton.Text = "Exit";
             this.ExitButton.UseVisualStyleBackColor = true;
+            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
             // PartsDataGridView
             // 
@@ -153,18 +154,20 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(403, 108);
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(403, 109);
             this.textBox1.MinimumSize = new System.Drawing.Size(170, 30);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(252, 30);
+            this.textBox1.Size = new System.Drawing.Size(252, 29);
             this.textBox1.TabIndex = 4;
             // 
             // textBox2
             // 
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.Location = new System.Drawing.Point(1086, 108);
             this.textBox2.MinimumSize = new System.Drawing.Size(170, 30);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(252, 30);
+            this.textBox2.Size = new System.Drawing.Size(252, 29);
             this.textBox2.TabIndex = 4;
             // 
             // PartSearchButton
@@ -229,7 +232,7 @@
             this.Controls.Add(this.AddPartButton);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Main";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PartsDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductPataGridView)).EndInit();

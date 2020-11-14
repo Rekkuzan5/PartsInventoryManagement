@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\PartsInventoryManagement",
+    "\\PartsInventoryManagement\\PartsInventoryManagement"
   ],
+  "SelectedNode": "\\PartsInventoryManagement\\PartsInventoryManagement.sln",
   "PreviewInSolutionExplorer": false
 }

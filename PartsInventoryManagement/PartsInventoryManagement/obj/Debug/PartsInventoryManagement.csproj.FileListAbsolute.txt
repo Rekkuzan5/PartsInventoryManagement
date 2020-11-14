@@ -8,3 +8,4 @@ C:\Users\Cameron\Desktop\WGU Studies\C968 Software 1\PartsInventoryManagement\Pa
 C:\Users\Cameron\Desktop\WGU Studies\C968 Software 1\PartsInventoryManagement\PartsInventoryManagement\bin\Debug\PartsInventoryManagement.exe
 C:\Users\Cameron\Desktop\WGU Studies\C968 Software 1\PartsInventoryManagement\PartsInventoryManagement\bin\Debug\PartsInventoryManagement.pdb
 C:\Users\Cameron\Desktop\WGU Studies\C968 Software 1\PartsInventoryManagement\PartsInventoryManagement\obj\Debug\PartsInventoryManagement.pdb
+C:\Users\Cameron\Desktop\WGU Studies\C968 Software 1\PartsInventoryManagement\PartsInventoryManagement\obj\Debug\PartsInventoryManagement.Form2.resources
