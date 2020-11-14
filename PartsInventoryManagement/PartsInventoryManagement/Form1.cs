@@ -21,5 +21,10 @@ namespace PartsInventoryManagement
         {
 
         }
+
+        private void AddPartButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
