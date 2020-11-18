@@ -8,5 +8,14 @@ namespace PartsInventoryManagement
 {
     class Outsourced : Part
     {
+        // field for Inhouse class
+        public string companyName;
+
+        // property for Inhouse class
+        public string CompanyName
+        {
+            get;
+        }
     }
 }
+

@@ -8,5 +8,13 @@ namespace PartsInventoryManagement
 {
     class Inhouse : Part
     {
+        // field for Inhouse class
+        public int machineID;
+
+        // property for Inhouse class
+        public int MachineID
+        {
+            get;
+        }
     }
 }

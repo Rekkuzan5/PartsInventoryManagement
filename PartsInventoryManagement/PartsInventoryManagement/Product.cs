@@ -42,5 +42,21 @@ namespace PartsInventoryManagement
         {
             get;
         }
+
+        // methods for Products class
+        public static void addAssociatepart(Part)
+        {
+
+        }
+
+        public static bool removeAssociatedPart(int)
+        {
+
+        }
+
+        public static Part lookupAssociatedpart(int)
+        {
+
+        }
     }
 }
