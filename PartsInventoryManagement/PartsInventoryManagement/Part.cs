@@ -8,6 +8,8 @@ namespace PartsInventoryManagement
 {
     abstract class Part
     {
+
+        // fields for abstract Part class
         public int partID;
         public string name;
         public decimal price;
@@ -15,6 +17,7 @@ namespace PartsInventoryManagement
         public int min;
         public int max;
 
+        // properties for abstract Part class
         public int PartID
         {
             get;
