@@ -12,7 +12,7 @@ namespace PartsInventoryManagement
         private int machineID;
 
         // 7-parameter constructor
-        public Inhouse(string partID, string name, decimal price, int inStock, int min, int max, int machineID) 
+        public Inhouse(int partID, string name, decimal price, int inStock, int min, int max, int machineID) 
             : base(partID, name, price, inStock, min, max)
         {
             MachineID = machineID;

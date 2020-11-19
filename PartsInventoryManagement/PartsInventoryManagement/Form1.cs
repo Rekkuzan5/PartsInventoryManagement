@@ -24,12 +24,12 @@ namespace PartsInventoryManagement
 
         private void AddPartButton_Click(object sender, EventArgs e)
         {
-
+            Form3 f3 = new Form3();
+            f3.Show();
         }
 
         private void ModifyPartButton_Click(object sender, EventArgs e)
         {
-            this.Hide();
             Form2 f2 = new Form2();
             f2.Show();
         }
