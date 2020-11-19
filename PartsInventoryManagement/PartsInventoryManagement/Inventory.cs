@@ -11,45 +11,45 @@ namespace PartsInventoryManagement
         // binding list for products and parts
         // go here
 
-        // methods for Inventory class
-        public static void addProduct(Product)
-        {
+        //// methods for Inventory class
+        //public static void addProduct(Product)
+        //{
 
-        }
+        //}
 
-        public static bool removeProduct(int)
-        {
+        //public static bool removeProduct(int)
+        //{
 
-        }
+        //}
 
-        public static Product lookupProduct(int)
-        {
+        //public static Product lookupProduct(int)
+        //{
 
-        }
+        //}
 
-        public static void updateProduct(int, Product)
-        {
+        //public static void updateProduct(int, Product)
+        //{
 
-        }
+        //}
 
-        public static void addPart(Part)
-        {
+        //public static void addPart(Part)
+        //{
 
-        }
+        //}
 
-        public static bool deletePart(Part)
-        {
+        //public static bool deletePart(Part)
+        //{
 
-        }
+        //}
 
-        public static Part lookupPart(int)
-        {
+        //public static Part lookupPart(int)
+        //{
 
-        }
+        //}
 
-        public static void updatePart(int, Part)
-        {
+        //public static void updatePart(int, Part)
+        //{
 
-        }
+        //}
     }
 }

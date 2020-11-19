@@ -9,44 +9,31 @@ namespace PartsInventoryManagement
     abstract class Part
     {
 
-        // fields for abstract Part class
-        public int partID;
-        public string name;
-        public decimal price;
-        public int inStock;
-        public int min;
-        public int max;
-
         // properties for abstract Part class
-        public int PartID
+        public int PartID { get; }
+
+        public string Name { get; }
+
+        public decimal Price { get; }
+
+        public int InStock { get; }
+ 
+        public int Min { get; }
+
+        public int Max { get; }
+  
+        // 6-parameter constructor
+        public Part(int partID, string name, decimal price, int inStock, int min, int max)
         {
-            get;
+            PartID = partID;
+            Name = name;
+            Price = price;
+            InStock = inStock;
+            Min = min;
+            Max = max;
         }
 
-        public string Name
-        {
-            get;
-        }
-
-        public decimal Price
-        {
-            get;
-        }
-
-        public int InStock
-        {
-            get;
-        }
-
-        public int Min
-        {
-            get;
-        }
-
-        public int Max
-        {
-            get;
-        }
-
+        // return string for Part object using properties
+        public override string ToString() => $"{PartID} {Name} {Price} {InStock} {Min} {Max}";
     }
 }
