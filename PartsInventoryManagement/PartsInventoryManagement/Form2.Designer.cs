@@ -254,6 +254,8 @@
             this.Controls.Add(this.OutRadButton);
             this.Controls.Add(this.InHouseRadButton);
             this.Controls.Add(this.ModifyPartLabel);
+            this.MaximumSize = new System.Drawing.Size(650, 650);
+            this.MinimumSize = new System.Drawing.Size(650, 650);
             this.Name = "Form2";
             this.Text = "Modify Part";
             this.Load += new System.EventHandler(this.Form2_Load);

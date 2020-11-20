@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace PartsInventoryManagement
 {
-    class Inhouse : Part
+    class InHouse : Part
     {
         // field for Inhouse class
         private int machineID;
 
         // 7-parameter constructor
-        public Inhouse(int partID, string name, decimal price, int inStock, int min, int max, int machineID) 
+        public InHouse(int partID, string name, decimal price, int inStock, int min, int max, int machineID) 
             : base(partID, name, price, inStock, min, max)
         {
             MachineID = machineID;
@@ -21,7 +21,14 @@ namespace PartsInventoryManagement
         // property for Inhouse class
         public int MachineID
         {
-            get;
+            get
+            {
+                return machineID;
+            }
+            set
+            {
+                machineID = value;
+            }
         }
     }
 }

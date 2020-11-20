@@ -21,7 +21,14 @@ namespace PartsInventoryManagement
         // property for Inhouse class
         public string CompanyName
         {
-            get;
+            get
+            {
+                return companyName;
+            }
+            set
+            {
+                companyName = value;
+            }
         }
     }
 }

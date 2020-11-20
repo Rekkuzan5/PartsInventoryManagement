@@ -32,10 +32,10 @@ namespace PartsInventoryManagement
 
         //}
 
-        //public static void addPart(Part)
-        //{
+        public static void addPart(Part part)
+        {
 
-        //}
+        }
 
         //public static bool deletePart(Part)
         //{

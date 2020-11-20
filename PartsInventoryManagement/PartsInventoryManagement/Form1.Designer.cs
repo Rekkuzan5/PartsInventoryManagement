@@ -127,8 +127,9 @@
             // 
             // ExitButton
             // 
+            this.ExitButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.ExitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExitButton.Location = new System.Drawing.Point(1258, 610);
+            this.ExitButton.Location = new System.Drawing.Point(1253, 610);
             this.ExitButton.Name = "ExitButton";
             this.ExitButton.Size = new System.Drawing.Size(80, 30);
             this.ExitButton.TabIndex = 2;
@@ -214,7 +215,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1429, 678);
+            this.ClientSize = new System.Drawing.Size(1424, 678);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.ProductSearchButton);
@@ -231,6 +232,8 @@
             this.Controls.Add(this.ModifyPartButton);
             this.Controls.Add(this.AddPartButton);
             this.Controls.Add(this.label1);
+            this.MaximumSize = new System.Drawing.Size(1440, 717);
+            this.MinimumSize = new System.Drawing.Size(1440, 717);
             this.Name = "Form1";
             this.Text = "Main";
             this.Load += new System.EventHandler(this.Form1_Load);
