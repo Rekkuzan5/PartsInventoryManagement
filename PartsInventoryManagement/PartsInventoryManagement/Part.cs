@@ -8,9 +8,8 @@ namespace PartsInventoryManagement
 {
     abstract class Part
     {
-
         // properties for abstract Part class
-        public int PartID { get; }
+        public int PartID { get; set; }
 
         public string Name { get; }
 
@@ -34,6 +33,6 @@ namespace PartsInventoryManagement
         }
 
         // return string for Part object using properties
-        public override string ToString() => $"{PartID} {Name} {Price} {InStock} {Min} {Max}";
+        //public override abstract string ToString();
     }
 }

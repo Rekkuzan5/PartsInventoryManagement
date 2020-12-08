@@ -44,7 +44,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.addPartIDorNameLabel = new System.Windows.Forms.Label();
             this.addPartSavebutton = new System.Windows.Forms.Button();
             this.addPartCancelButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -70,6 +70,7 @@
             // addPartInHouseRadio
             // 
             this.addPartInHouseRadio.AutoSize = true;
+            this.addPartInHouseRadio.Checked = true;
             this.addPartInHouseRadio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addPartInHouseRadio.Location = new System.Drawing.Point(206, 17);
             this.addPartInHouseRadio.Name = "addPartInHouseRadio";
@@ -87,15 +88,17 @@
             this.addPartOutsourceRadio.Name = "addPartOutsourceRadio";
             this.addPartOutsourceRadio.Size = new System.Drawing.Size(110, 24);
             this.addPartOutsourceRadio.TabIndex = 1;
-            this.addPartOutsourceRadio.TabStop = true;
             this.addPartOutsourceRadio.Text = "Outsourced";
             this.addPartOutsourceRadio.UseVisualStyleBackColor = true;
+            this.addPartOutsourceRadio.CheckedChanged += new System.EventHandler(this.AddPartOutsourceRadio_CheckedChanged);
             // 
             // addPartIDTextBox
             // 
+            this.addPartIDTextBox.Enabled = false;
             this.addPartIDTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addPartIDTextBox.Location = new System.Drawing.Point(272, 103);
             this.addPartIDTextBox.Name = "addPartIDTextBox";
+            this.addPartIDTextBox.ReadOnly = true;
             this.addPartIDTextBox.Size = new System.Drawing.Size(194, 26);
             this.addPartIDTextBox.TabIndex = 2;
             // 
@@ -143,7 +146,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(202, 109);
+            this.label2.Location = new System.Drawing.Point(202, 106);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(26, 20);
             this.label2.TabIndex = 9;
@@ -199,15 +202,15 @@
             this.label7.TabIndex = 14;
             this.label7.Text = "Min";
             // 
-            // label8
+            // addPartIDorNameLabel
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(138, 493);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(90, 20);
-            this.label8.TabIndex = 15;
-            this.label8.Text = "Machine ID";
+            this.addPartIDorNameLabel.AutoSize = true;
+            this.addPartIDorNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addPartIDorNameLabel.Location = new System.Drawing.Point(138, 493);
+            this.addPartIDorNameLabel.Name = "addPartIDorNameLabel";
+            this.addPartIDorNameLabel.Size = new System.Drawing.Size(90, 20);
+            this.addPartIDorNameLabel.TabIndex = 15;
+            this.addPartIDorNameLabel.Text = "Machine ID";
             // 
             // addPartSavebutton
             // 
@@ -218,7 +221,7 @@
             this.addPartSavebutton.TabIndex = 16;
             this.addPartSavebutton.Text = "Save";
             this.addPartSavebutton.UseVisualStyleBackColor = true;
-            this.addPartSavebutton.Click += new System.EventHandler(this.addPartSavebutton_Click);
+            this.addPartSavebutton.Click += new System.EventHandler(this.AddPartSavebutton_Click);
             // 
             // addPartCancelButton
             // 
@@ -229,7 +232,7 @@
             this.addPartCancelButton.TabIndex = 17;
             this.addPartCancelButton.Text = "Cancel";
             this.addPartCancelButton.UseVisualStyleBackColor = true;
-            this.addPartCancelButton.Click += new System.EventHandler(this.addPartCancelButton_Click);
+            this.addPartCancelButton.Click += new System.EventHandler(this.AddPartCancelButton_Click);
             // 
             // Form3
             // 
@@ -240,7 +243,7 @@
             this.Controls.Add(this.addPriceTextBox);
             this.Controls.Add(this.addPartSavebutton);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.addPartIDorNameLabel);
             this.Controls.Add(this.addPartInHouseRadio);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.addPartOutsourceRadio);
@@ -258,6 +261,7 @@
             this.MaximumSize = new System.Drawing.Size(650, 650);
             this.MinimumSize = new System.Drawing.Size(650, 650);
             this.Name = "Form3";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Part";
             this.Load += new System.EventHandler(this.Form3_Load);
             this.ResumeLayout(false);
@@ -283,7 +287,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label addPartIDorNameLabel;
         private System.Windows.Forms.Button addPartSavebutton;
         private System.Windows.Forms.Button addPartCancelButton;
     }

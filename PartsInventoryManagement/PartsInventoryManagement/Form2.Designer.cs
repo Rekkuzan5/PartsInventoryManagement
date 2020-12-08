@@ -257,6 +257,7 @@
             this.MaximumSize = new System.Drawing.Size(650, 650);
             this.MinimumSize = new System.Drawing.Size(650, 650);
             this.Name = "Form2";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modify Part";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);

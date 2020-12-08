@@ -22,32 +22,49 @@ namespace PartsInventoryManagement
 
         }
 
-        private void addPartSavebutton_Click(object sender, EventArgs e)
+        // Save button calls verify method
+        private void AddPartSavebutton_Click(object sender, EventArgs e) => VerifyPartSave();
+
+        // verifies if entered information is correct and creates either inhouse or outsourced part
+        private void VerifyPartSave()
         {
-            //if (addPartMinTextBox > addPartMaxTextBox)
-            //{
-            //    MessageBox.Show)"The minimum price cannot exceed the maximum price");
-            //    return;
-            //}
+            if (int.Parse(addPartMinTextBox.Text) > int.Parse(addPartMaxTextBox.Text))
+            {
+                MessageBox.Show("The minimum amount cannot exceed the maximum");
+                return;
+            }
 
             if (addPartInHouseRadio.Checked)
             {
-                InHouse inHouse = new InHouse(int.Parse(addPartIDTextBox.Text), addPartNameTextBox.Text, decimal.Parse(addPriceTextBox.Text),
+                InHouse inHouse = new InHouse(1, addPartNameTextBox.Text, decimal.Parse(addPriceTextBox.Text),
                 int.Parse(addInvTextBox.Text), int.Parse(addPartMaxTextBox.Text), int.Parse(addPartMaxTextBox.Text), int.Parse(IDNameTextBox.Text));
                 Inventory.addPart(inHouse);
             }
             else
             {
-                Outsourced outsourcedPart = new Outsourced(int.Parse(addPartIDTextBox.Text), addPartNameTextBox.Text, decimal.Parse(addPriceTextBox.Text),
+                Outsourced outsourcedPart = new Outsourced(1, addPartNameTextBox.Text, decimal.Parse(addPriceTextBox.Text),
                 int.Parse(addInvTextBox.Text), int.Parse(addPartMaxTextBox.Text), int.Parse(addPartMaxTextBox.Text), IDNameTextBox.Text);
                 Inventory.addPart(outsourcedPart);
             }
         }
-
-        private void addPartCancelButton_Click(object sender, EventArgs e)
+      
+        private void AddPartOutsourceRadio_CheckedChanged(object sender, EventArgs e)
         {
-            this.Close();
+            if (addPartOutsourceRadio.Checked)
+            {
+                addPartIDorNameLabel.Text = "Company Name";
+            }
+            else
+            {
+                addPartIDorNameLabel.Text = "Machine ID";
+            }
         }
+
+         private void AddPartCancelButton_Click(object sender, EventArgs e)
+         {
+            this.Close();
+         }
+
     }
 }
   
