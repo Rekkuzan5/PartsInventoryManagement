@@ -19,7 +19,17 @@ namespace PartsInventoryManagement
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            var sourcePart = new BindingSource();
+            sourcePart.DataSource = Inventory.AllParts;
+            PartsDataGridView.DataSource = sourcePart;
 
+            PartsDataGridView.Columns["PartID"].HeaderText = "Part ID";
+            PartsDataGridView.Columns["Name"].HeaderText = "Part Name";
+            PartsDataGridView.Columns["InStock"].HeaderText = "Inventory";
+            PartsDataGridView.Columns["Price"].HeaderText = "Price";
+            PartsDataGridView.Columns["Min"].Visible = false;
+            PartsDataGridView.Columns["Max"].Visible = false;
+            
         }
 
         private void AddPartButton_Click(object sender, EventArgs e)

@@ -23,7 +23,11 @@ namespace PartsInventoryManagement
         }
 
         // Save button calls verify method
-        private void AddPartSavebutton_Click(object sender, EventArgs e) => VerifyPartSave();
+        private void AddPartSavebutton_Click(object sender, EventArgs e)
+        {
+            VerifyPartSave();
+
+        }
 
         // verifies if entered information is correct and creates either inhouse or outsourced part
         private void VerifyPartSave()
@@ -36,16 +40,18 @@ namespace PartsInventoryManagement
 
             if (addPartInHouseRadio.Checked)
             {
-                InHouse inHouse = new InHouse(1, addPartNameTextBox.Text, decimal.Parse(addPriceTextBox.Text),
+                InHouse inHouse = new InHouse(Inventory.AllParts.Count + 1, addPartNameTextBox.Text, decimal.Parse(addPriceTextBox.Text),
                 int.Parse(addInvTextBox.Text), int.Parse(addPartMaxTextBox.Text), int.Parse(addPartMaxTextBox.Text), int.Parse(IDNameTextBox.Text));
                 Inventory.addPart(inHouse);
             }
             else
             {
-                Outsourced outsourcedPart = new Outsourced(1, addPartNameTextBox.Text, decimal.Parse(addPriceTextBox.Text),
+                Outsourced outsourcedPart = new Outsourced(Inventory.AllParts.Count + 1, addPartNameTextBox.Text, decimal.Parse(addPriceTextBox.Text),
                 int.Parse(addInvTextBox.Text), int.Parse(addPartMaxTextBox.Text), int.Parse(addPartMaxTextBox.Text), IDNameTextBox.Text);
                 Inventory.addPart(outsourcedPart);
             }
+
+            this.Close();
         }
       
         private void AddPartOutsourceRadio_CheckedChanged(object sender, EventArgs e)

@@ -139,6 +139,7 @@
             // 
             // PartsDataGridView
             // 
+            this.PartsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.PartsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.PartsDataGridView.Location = new System.Drawing.Point(85, 170);
             this.PartsDataGridView.Name = "PartsDataGridView";
