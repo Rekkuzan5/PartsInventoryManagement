@@ -36,7 +36,7 @@
             this.ModifyProductButton = new System.Windows.Forms.Button();
             this.DeleteProductButton = new System.Windows.Forms.Button();
             this.ExitButton = new System.Windows.Forms.Button();
-            this.PartsDataGridView = new System.Windows.Forms.DataGridView();
+            this.partsDataGridView = new System.Windows.Forms.DataGridView();
             this.ProductPataGridView = new System.Windows.Forms.DataGridView();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -44,7 +44,7 @@
             this.ProductSearchButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.PartsDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.partsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductPataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -137,20 +137,23 @@
             this.ExitButton.UseVisualStyleBackColor = true;
             this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
-            // PartsDataGridView
+            // partsDataGridView
             // 
-            this.PartsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.PartsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.PartsDataGridView.Location = new System.Drawing.Point(85, 170);
-            this.PartsDataGridView.Name = "PartsDataGridView";
-            this.PartsDataGridView.Size = new System.Drawing.Size(570, 300);
-            this.PartsDataGridView.TabIndex = 3;
+            this.partsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.partsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.partsDataGridView.Location = new System.Drawing.Point(85, 170);
+            this.partsDataGridView.Name = "partsDataGridView";
+            this.partsDataGridView.RowHeadersVisible = false;
+            this.partsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.partsDataGridView.Size = new System.Drawing.Size(570, 300);
+            this.partsDataGridView.TabIndex = 3;
             // 
             // ProductPataGridView
             // 
             this.ProductPataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ProductPataGridView.Location = new System.Drawing.Point(768, 170);
             this.ProductPataGridView.Name = "ProductPataGridView";
+            this.ProductPataGridView.RowHeadersVisible = false;
             this.ProductPataGridView.Size = new System.Drawing.Size(570, 300);
             this.ProductPataGridView.TabIndex = 3;
             // 
@@ -224,7 +227,7 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.ProductPataGridView);
-            this.Controls.Add(this.PartsDataGridView);
+            this.Controls.Add(this.partsDataGridView);
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.DeleteProductButton);
             this.Controls.Add(this.ModifyProductButton);
@@ -239,7 +242,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.PartsDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.partsDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductPataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -256,7 +259,7 @@
         private System.Windows.Forms.Button ModifyProductButton;
         private System.Windows.Forms.Button DeleteProductButton;
         private System.Windows.Forms.Button ExitButton;
-        private System.Windows.Forms.DataGridView PartsDataGridView;
+        private System.Windows.Forms.DataGridView partsDataGridView;
         private System.Windows.Forms.DataGridView ProductPataGridView;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;

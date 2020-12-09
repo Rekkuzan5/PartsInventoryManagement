@@ -21,32 +21,40 @@ namespace PartsInventoryManagement
         {
             var sourcePart = new BindingSource();
             sourcePart.DataSource = Inventory.AllParts;
-            PartsDataGridView.DataSource = sourcePart;
+            partsDataGridView.DataSource = sourcePart;
 
-            PartsDataGridView.Columns["PartID"].HeaderText = "Part ID";
-            PartsDataGridView.Columns["Name"].HeaderText = "Part Name";
-            PartsDataGridView.Columns["InStock"].HeaderText = "Inventory";
-            PartsDataGridView.Columns["Price"].HeaderText = "Price";
-            PartsDataGridView.Columns["Min"].Visible = false;
-            PartsDataGridView.Columns["Max"].Visible = false;
+            partsDataGridView.Columns["PartID"].HeaderText = "Part ID";
+            partsDataGridView.Columns["Name"].HeaderText = "Part Name";
+            partsDataGridView.Columns["InStock"].HeaderText = "Inventory";
+            partsDataGridView.Columns["Price"].HeaderText = "Price";
+            partsDataGridView.Columns["Min"].Visible = false;
+            partsDataGridView.Columns["Max"].Visible = false;
+
+            Inventory.PopulateList();
             
         }
 
+        // Opens new form to add a new part
         private void AddPartButton_Click(object sender, EventArgs e)
         {
             Form3 f3 = new Form3();
             f3.Show();
         }
 
+        // Opens a new form to modify an existing part
         private void ModifyPartButton_Click(object sender, EventArgs e)
         {
             Form2 f2 = new Form2();
             f2.Show();
         }
 
+        // Delete datagridviewrow on main page
         private void DeletePartButton_Click(object sender, EventArgs e)
         {
-
+            foreach (DataGridViewRow row in partsDataGridView.SelectedRows)
+            {
+                partsDataGridView.Rows.RemoveAt(row.Index);
+            }
         }
 
         private void AddProductButton_Click(object sender, EventArgs e)
