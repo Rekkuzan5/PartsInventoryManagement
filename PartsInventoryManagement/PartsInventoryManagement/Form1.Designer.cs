@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.AddPartButton = new System.Windows.Forms.Button();
             this.ModifyPartButton = new System.Windows.Forms.Button();
@@ -139,8 +141,19 @@
             // 
             // partsDataGridView
             // 
+            this.partsDataGridView.AllowUserToResizeColumns = false;
+            this.partsDataGridView.AllowUserToResizeRows = false;
             this.partsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.partsDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.partsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.partsDataGridView.EnableHeadersVisualStyles = false;
             this.partsDataGridView.Location = new System.Drawing.Point(85, 170);
             this.partsDataGridView.Name = "partsDataGridView";
             this.partsDataGridView.RowHeadersVisible = false;
@@ -150,10 +163,24 @@
             // 
             // ProductPataGridView
             // 
+            this.ProductPataGridView.AllowUserToResizeColumns = false;
+            this.ProductPataGridView.AllowUserToResizeRows = false;
+            this.ProductPataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ProductPataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.ProductPataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ProductPataGridView.Location = new System.Drawing.Point(768, 170);
+            this.ProductPataGridView.EnableHeadersVisualStyles = false;
+            this.ProductPataGridView.Location = new System.Drawing.Point(763, 170);
             this.ProductPataGridView.Name = "ProductPataGridView";
+            this.ProductPataGridView.ReadOnly = true;
             this.ProductPataGridView.RowHeadersVisible = false;
+            this.ProductPataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ProductPataGridView.Size = new System.Drawing.Size(570, 300);
             this.ProductPataGridView.TabIndex = 3;
             // 

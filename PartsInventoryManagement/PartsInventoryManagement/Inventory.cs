@@ -10,7 +10,7 @@ namespace PartsInventoryManagement
     class Inventory
     {
         // binding list for products and parts
-        BindingList<Product> Products = new BindingList<Product>();
+        public static BindingList<Product> Products = new BindingList<Product>();
         public static BindingList<Part> AllParts = new BindingList<Part>();
 
 
@@ -34,6 +34,19 @@ namespace PartsInventoryManagement
             AllParts.Add(dummyPart3B);
             AllParts.Add(dummyPart4A);
             AllParts.Add(dummyPart4B);
+
+            //
+
+            Product dummyProd1 = new Product(1, "Product 1", 10m, 12, 20, 5);
+            Product dummyProd2 = new Product(2, "Product 2", 10m, 8, 25, 5);
+            Product dummyProd3 = new Product(3, "Product 3", 10m, 5, 25, 5);
+            Product dummyProd4 = new Product(4, "Product 4", 10m, 3, 25, 5);
+
+            Products.Add(dummyProd1);
+            Products.Add(dummyProd2);
+            Products.Add(dummyProd3);
+            Products.Add(dummyProd4);
+
         }
         //// methods for Inventory class
         //public static void addProduct(Product)
@@ -56,18 +69,23 @@ namespace PartsInventoryManagement
 
         //}
 
-        public static void addPart(Part part)
+        public static void AddPart(Part part)
         {
-
-            //AllParts = new BindingList<Part>();
-            AllParts.Add(part);
-            
+            AllParts.Add(part);   
         }
 
-        //public static bool deletePart(Part)
-        //{
-
-        //}
+        public bool DeletePart(Part part)
+        {
+            try
+            {
+                AllParts.Remove(part);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
 
         //public static Part lookupPart(int)
         //{

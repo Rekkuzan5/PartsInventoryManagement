@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,50 +10,54 @@ namespace PartsInventoryManagement
     class Product
     {
         // fields for Product class
-        // Associated parts binding list 
-        public int productID;
-        public string name;
-        public decimal price;
-        public int inStock;
-        public int min;
-        public int max;
+        public static BindingList<Part> AssociatedParts = new BindingList<Part>();
+
+        //public int productID;
+        //public string name;
+        //public decimal price;
+        //public int inStock;
+        //public int min;
+        //public int max;
 
         // properties for Product class
-        public int ProductID
+        public int ProductID { get; set; }
+        public string Name { get; set; }
+        public decimal Price { get; set; }
+        public int InStock { get; set; }
+        public int Min { get; set; }
+        public int Max { get; set; }
+
+        // constructor for product object
+        public Product(int productID, string name, decimal price, int inStock, int min, int max)
         {
-            get;
+            ProductID = productID;
+            Name = name;
+            Price = price;
+            InStock = inStock;
+            Min = min;
+            Max = max;
         }
-        public string Name
+      
+
+        // methods for Products class
+        public static void AddAssociatepart(Part part)
         {
-            get;
-        }
-        public decimal Price
-        {
-            get;
-        }
-        public int InStock
-        {
-            get;
-        }
-        public int Min
-        {
-            get;
-        }
-        public int Max
-        {
-            get;
+            AssociatedParts.Add(part);
         }
 
-        //// methods for Products class
-        //public static void addAssociatepart(Part)
-        //{
-
-        //}
-
-        //public static bool removeAssociatedPart(int)
-        //{
-
-        //}
+        public static bool RemoveAssociatedPart(int partID)
+        {
+            bool checkSuccess = false;
+            foreach (Part part in AssociatedParts)
+            {
+                if (part.PartID == partID)
+                {
+                    AssociatedParts.Remove(part);
+                    checkSuccess = true;
+                }
+            }
+            return checkSuccess;
+        }
 
         //public static Part lookupAssociatedpart(int)
         //{

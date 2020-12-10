@@ -42,13 +42,13 @@ namespace PartsInventoryManagement
             {
                 InHouse inHouse = new InHouse(Inventory.AllParts.Count + 1, addPartNameTextBox.Text, decimal.Parse(addPriceTextBox.Text),
                 int.Parse(addInvTextBox.Text), int.Parse(addPartMaxTextBox.Text), int.Parse(addPartMaxTextBox.Text), int.Parse(IDNameTextBox.Text));
-                Inventory.addPart(inHouse);
+                Inventory.AddPart(inHouse);
             }
             else
             {
                 Outsourced outsourcedPart = new Outsourced(Inventory.AllParts.Count + 1, addPartNameTextBox.Text, decimal.Parse(addPriceTextBox.Text),
                 int.Parse(addInvTextBox.Text), int.Parse(addPartMaxTextBox.Text), int.Parse(addPartMaxTextBox.Text), IDNameTextBox.Text);
-                Inventory.addPart(outsourcedPart);
+                Inventory.AddPart(outsourcedPart);
             }
 
             this.Close();

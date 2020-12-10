@@ -26,5 +26,22 @@ namespace PartsInventoryManagement
         {
             this.Close();
         }
+
+        private void OutsourcedRadButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (OutsourcedRadButton.Checked)
+            {
+                partMachineIDLabel.Text = "Company Name";
+            }
+            else
+            {
+                partMachineIDLabel.Text = "Machine ID";
+            }
+        }
+
+        //private void PartSaveButton_Click(object sender, EventArgs e)
+        //{
+
+        //}
     }
 }

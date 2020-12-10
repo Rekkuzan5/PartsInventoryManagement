@@ -42,8 +42,8 @@
             this.partMaxTextBox = new System.Windows.Forms.TextBox();
             this.partNameTextBox = new System.Windows.Forms.TextBox();
             this.partMinTextBox = new System.Windows.Forms.TextBox();
-            this.partIDTextBox = new System.Windows.Forms.TextBox();
-            this.OutRadButton = new System.Windows.Forms.RadioButton();
+            this.modPartIDTextBox = new System.Windows.Forms.TextBox();
+            this.OutsourcedRadButton = new System.Windows.Forms.RadioButton();
             this.InHouseRadButton = new System.Windows.Forms.RadioButton();
             this.ModifyPartLabel = new System.Windows.Forms.Label();
             this.partPriceTextBox = new System.Windows.Forms.TextBox();
@@ -69,6 +69,7 @@
             this.partSaveButton.TabIndex = 16;
             this.partSaveButton.Text = "Save";
             this.partSaveButton.UseVisualStyleBackColor = true;
+
             // 
             // partMachineIDLabel
             // 
@@ -180,25 +181,26 @@
             this.partMinTextBox.Size = new System.Drawing.Size(100, 26);
             this.partMinTextBox.TabIndex = 3;
             // 
-            // partIDTextBox
+            // modPartIDTextBox
             // 
-            this.partIDTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.partIDTextBox.Location = new System.Drawing.Point(272, 103);
-            this.partIDTextBox.Name = "partIDTextBox";
-            this.partIDTextBox.Size = new System.Drawing.Size(194, 26);
-            this.partIDTextBox.TabIndex = 2;
+            this.modPartIDTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.modPartIDTextBox.Location = new System.Drawing.Point(272, 103);
+            this.modPartIDTextBox.Name = "modPartIDTextBox";
+            this.modPartIDTextBox.Size = new System.Drawing.Size(194, 26);
+            this.modPartIDTextBox.TabIndex = 2;
             // 
-            // OutRadButton
+            // OutsourcedRadButton
             // 
-            this.OutRadButton.AutoSize = true;
-            this.OutRadButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OutRadButton.Location = new System.Drawing.Point(356, 17);
-            this.OutRadButton.Name = "OutRadButton";
-            this.OutRadButton.Size = new System.Drawing.Size(110, 24);
-            this.OutRadButton.TabIndex = 1;
-            this.OutRadButton.TabStop = true;
-            this.OutRadButton.Text = "Outsourced";
-            this.OutRadButton.UseVisualStyleBackColor = true;
+            this.OutsourcedRadButton.AutoSize = true;
+            this.OutsourcedRadButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OutsourcedRadButton.Location = new System.Drawing.Point(356, 17);
+            this.OutsourcedRadButton.Name = "OutsourcedRadButton";
+            this.OutsourcedRadButton.Size = new System.Drawing.Size(110, 24);
+            this.OutsourcedRadButton.TabIndex = 1;
+            this.OutsourcedRadButton.TabStop = true;
+            this.OutsourcedRadButton.Text = "Outsourced";
+            this.OutsourcedRadButton.UseVisualStyleBackColor = true;
+            this.OutsourcedRadButton.CheckedChanged += new System.EventHandler(this.OutsourcedRadButton_CheckedChanged);
             // 
             // InHouseRadButton
             // 
@@ -250,8 +252,8 @@
             this.Controls.Add(this.partPriceTextBox);
             this.Controls.Add(this.partNameTextBox);
             this.Controls.Add(this.partMinTextBox);
-            this.Controls.Add(this.partIDTextBox);
-            this.Controls.Add(this.OutRadButton);
+            this.Controls.Add(this.modPartIDTextBox);
+            this.Controls.Add(this.OutsourcedRadButton);
             this.Controls.Add(this.InHouseRadButton);
             this.Controls.Add(this.ModifyPartLabel);
             this.MaximumSize = new System.Drawing.Size(650, 650);
@@ -281,8 +283,8 @@
         private System.Windows.Forms.TextBox partMaxTextBox;
         private System.Windows.Forms.TextBox partNameTextBox;
         private System.Windows.Forms.TextBox partMinTextBox;
-        private System.Windows.Forms.TextBox partIDTextBox;
-        private System.Windows.Forms.RadioButton OutRadButton;
+        private System.Windows.Forms.TextBox modPartIDTextBox;
+        private System.Windows.Forms.RadioButton OutsourcedRadButton;
         private System.Windows.Forms.RadioButton InHouseRadButton;
         private System.Windows.Forms.Label ModifyPartLabel;
         private System.Windows.Forms.TextBox partPriceTextBox;
