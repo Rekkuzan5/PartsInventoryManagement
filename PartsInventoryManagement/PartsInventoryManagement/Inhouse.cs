@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PartsInventoryManagement
 {
-    class InHouse : Part
+    public class InHouse : Part
     {
         // field for Inhouse class
         private int machineID;

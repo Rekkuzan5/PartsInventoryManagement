@@ -52,15 +52,23 @@ namespace PartsInventoryManagement
         // Opens new form to add a new part
         private void AddPartButton_Click(object sender, EventArgs e)
         {
-            Form3 f3 = new Form3();
+            AddPart f3 = new AddPart();
             f3.Show();
         }
 
         // Opens a new form to modify an existing part
         private void ModifyPartButton_Click(object sender, EventArgs e)
         {
-            Form2 f2 = new Form2();
-            f2.Show();
+            if (partsDataGridView.CurrentRow.DataBoundItem.GetType() == typeof(InHouse))
+            {
+                InHouse housePart = (InHouse)partsDataGridView.CurrentRow.DataBoundItem;
+                new ModifyPart(housePart).Show();
+            }
+            else if (partsDataGridView.CurrentRow.DataBoundItem.GetType() == typeof(Outsourced))
+            {
+                Outsourced outsidePart = (Outsourced)partsDataGridView.CurrentRow.DataBoundItem;
+                new ModifyPart(outsidePart).Show();
+            }
         }
 
         // Delete datagridviewrow on main page

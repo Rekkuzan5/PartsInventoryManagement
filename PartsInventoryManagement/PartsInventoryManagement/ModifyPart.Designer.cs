@@ -1,6 +1,6 @@
 ﻿namespace PartsInventoryManagement
 {
-    partial class Form2
+    partial class ModifyPart
     {
         /// <summary>
         /// Required designer variable.
@@ -37,16 +37,16 @@
             this.partInventoryLabel = new System.Windows.Forms.Label();
             this.partNameLabel = new System.Windows.Forms.Label();
             this.partIDLabel = new System.Windows.Forms.Label();
-            this.partMachineIDTextBox = new System.Windows.Forms.TextBox();
-            this.partInventoryTextBox = new System.Windows.Forms.TextBox();
-            this.partMaxTextBox = new System.Windows.Forms.TextBox();
-            this.partNameTextBox = new System.Windows.Forms.TextBox();
-            this.partMinTextBox = new System.Windows.Forms.TextBox();
+            this.modMachineIDTextBox = new System.Windows.Forms.TextBox();
+            this.modInventoryTextBox = new System.Windows.Forms.TextBox();
+            this.modMaxTextBox = new System.Windows.Forms.TextBox();
+            this.modNameTextBox = new System.Windows.Forms.TextBox();
+            this.modMinTextBox = new System.Windows.Forms.TextBox();
             this.modPartIDTextBox = new System.Windows.Forms.TextBox();
             this.OutsourcedRadButton = new System.Windows.Forms.RadioButton();
             this.InHouseRadButton = new System.Windows.Forms.RadioButton();
             this.ModifyPartLabel = new System.Windows.Forms.Label();
-            this.partPriceTextBox = new System.Windows.Forms.TextBox();
+            this.modPriceTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // modifyPartCancelButton
@@ -69,7 +69,6 @@
             this.partSaveButton.TabIndex = 16;
             this.partSaveButton.Text = "Save";
             this.partSaveButton.UseVisualStyleBackColor = true;
-
             // 
             // partMachineIDLabel
             // 
@@ -141,45 +140,45 @@
             this.partIDLabel.TabIndex = 9;
             this.partIDLabel.Text = "ID";
             // 
-            // partMachineIDTextBox
+            // modMachineIDTextBox
             // 
-            this.partMachineIDTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.partMachineIDTextBox.Location = new System.Drawing.Point(272, 493);
-            this.partMachineIDTextBox.Name = "partMachineIDTextBox";
-            this.partMachineIDTextBox.Size = new System.Drawing.Size(194, 26);
-            this.partMachineIDTextBox.TabIndex = 8;
+            this.modMachineIDTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.modMachineIDTextBox.Location = new System.Drawing.Point(272, 493);
+            this.modMachineIDTextBox.Name = "modMachineIDTextBox";
+            this.modMachineIDTextBox.Size = new System.Drawing.Size(194, 26);
+            this.modMachineIDTextBox.TabIndex = 8;
             // 
-            // partInventoryTextBox
+            // modInventoryTextBox
             // 
-            this.partInventoryTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.partInventoryTextBox.Location = new System.Drawing.Point(272, 269);
-            this.partInventoryTextBox.Name = "partInventoryTextBox";
-            this.partInventoryTextBox.Size = new System.Drawing.Size(194, 26);
-            this.partInventoryTextBox.TabIndex = 7;
+            this.modInventoryTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.modInventoryTextBox.Location = new System.Drawing.Point(272, 269);
+            this.modInventoryTextBox.Name = "modInventoryTextBox";
+            this.modInventoryTextBox.Size = new System.Drawing.Size(194, 26);
+            this.modInventoryTextBox.TabIndex = 7;
             // 
-            // partMaxTextBox
+            // modMaxTextBox
             // 
-            this.partMaxTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.partMaxTextBox.Location = new System.Drawing.Point(272, 422);
-            this.partMaxTextBox.Name = "partMaxTextBox";
-            this.partMaxTextBox.Size = new System.Drawing.Size(93, 26);
-            this.partMaxTextBox.TabIndex = 6;
+            this.modMaxTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.modMaxTextBox.Location = new System.Drawing.Point(272, 422);
+            this.modMaxTextBox.Name = "modMaxTextBox";
+            this.modMaxTextBox.Size = new System.Drawing.Size(93, 26);
+            this.modMaxTextBox.TabIndex = 6;
             // 
-            // partNameTextBox
+            // modNameTextBox
             // 
-            this.partNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.partNameTextBox.Location = new System.Drawing.Point(272, 189);
-            this.partNameTextBox.Name = "partNameTextBox";
-            this.partNameTextBox.Size = new System.Drawing.Size(194, 26);
-            this.partNameTextBox.TabIndex = 4;
+            this.modNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.modNameTextBox.Location = new System.Drawing.Point(272, 189);
+            this.modNameTextBox.Name = "modNameTextBox";
+            this.modNameTextBox.Size = new System.Drawing.Size(194, 26);
+            this.modNameTextBox.TabIndex = 4;
             // 
-            // partMinTextBox
+            // modMinTextBox
             // 
-            this.partMinTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.partMinTextBox.Location = new System.Drawing.Point(469, 422);
-            this.partMinTextBox.Name = "partMinTextBox";
-            this.partMinTextBox.Size = new System.Drawing.Size(100, 26);
-            this.partMinTextBox.TabIndex = 3;
+            this.modMinTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.modMinTextBox.Location = new System.Drawing.Point(469, 422);
+            this.modMinTextBox.Name = "modMinTextBox";
+            this.modMinTextBox.Size = new System.Drawing.Size(100, 26);
+            this.modMinTextBox.TabIndex = 3;
             // 
             // modPartIDTextBox
             // 
@@ -224,15 +223,15 @@
             this.ModifyPartLabel.TabIndex = 0;
             this.ModifyPartLabel.Text = "Modify Part";
             // 
-            // partPriceTextBox
+            // modPriceTextBox
             // 
-            this.partPriceTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.partPriceTextBox.Location = new System.Drawing.Point(272, 346);
-            this.partPriceTextBox.Name = "partPriceTextBox";
-            this.partPriceTextBox.Size = new System.Drawing.Size(194, 26);
-            this.partPriceTextBox.TabIndex = 5;
+            this.modPriceTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.modPriceTextBox.Location = new System.Drawing.Point(272, 346);
+            this.modPriceTextBox.Name = "modPriceTextBox";
+            this.modPriceTextBox.Size = new System.Drawing.Size(194, 26);
+            this.modPriceTextBox.TabIndex = 5;
             // 
-            // Form2
+            // ModifyPart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -246,19 +245,19 @@
             this.Controls.Add(this.partInventoryLabel);
             this.Controls.Add(this.partNameLabel);
             this.Controls.Add(this.partIDLabel);
-            this.Controls.Add(this.partMachineIDTextBox);
-            this.Controls.Add(this.partInventoryTextBox);
-            this.Controls.Add(this.partMaxTextBox);
-            this.Controls.Add(this.partPriceTextBox);
-            this.Controls.Add(this.partNameTextBox);
-            this.Controls.Add(this.partMinTextBox);
+            this.Controls.Add(this.modMachineIDTextBox);
+            this.Controls.Add(this.modInventoryTextBox);
+            this.Controls.Add(this.modMaxTextBox);
+            this.Controls.Add(this.modPriceTextBox);
+            this.Controls.Add(this.modNameTextBox);
+            this.Controls.Add(this.modMinTextBox);
             this.Controls.Add(this.modPartIDTextBox);
             this.Controls.Add(this.OutsourcedRadButton);
             this.Controls.Add(this.InHouseRadButton);
             this.Controls.Add(this.ModifyPartLabel);
             this.MaximumSize = new System.Drawing.Size(650, 650);
             this.MinimumSize = new System.Drawing.Size(650, 650);
-            this.Name = "Form2";
+            this.Name = "ModifyPart";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modify Part";
             this.Load += new System.EventHandler(this.Form2_Load);
@@ -278,15 +277,15 @@
         private System.Windows.Forms.Label partInventoryLabel;
         private System.Windows.Forms.Label partNameLabel;
         private System.Windows.Forms.Label partIDLabel;
-        private System.Windows.Forms.TextBox partMachineIDTextBox;
-        private System.Windows.Forms.TextBox partInventoryTextBox;
-        private System.Windows.Forms.TextBox partMaxTextBox;
-        private System.Windows.Forms.TextBox partNameTextBox;
-        private System.Windows.Forms.TextBox partMinTextBox;
+        private System.Windows.Forms.TextBox modMachineIDTextBox;
+        private System.Windows.Forms.TextBox modInventoryTextBox;
+        private System.Windows.Forms.TextBox modMaxTextBox;
+        private System.Windows.Forms.TextBox modNameTextBox;
+        private System.Windows.Forms.TextBox modMinTextBox;
         private System.Windows.Forms.TextBox modPartIDTextBox;
-        private System.Windows.Forms.RadioButton OutsourcedRadButton;
         private System.Windows.Forms.RadioButton InHouseRadButton;
         private System.Windows.Forms.Label ModifyPartLabel;
-        private System.Windows.Forms.TextBox partPriceTextBox;
+        private System.Windows.Forms.TextBox modPriceTextBox;
+        private System.Windows.Forms.RadioButton OutsourcedRadButton;
     }
 }

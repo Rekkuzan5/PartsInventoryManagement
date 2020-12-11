@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PartsInventoryManagement
 {
-    class Outsourced : Part
+    public class Outsourced : Part
     {
         // field for Inhouse class
         public string companyName;

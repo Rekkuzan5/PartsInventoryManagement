@@ -1,6 +1,6 @@
 ﻿namespace PartsInventoryManagement
 {
-    partial class Form3
+    partial class AddPart
     {
         /// <summary>
         /// Required designer variable.

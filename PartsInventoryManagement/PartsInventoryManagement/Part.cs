@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PartsInventoryManagement
 {
-    abstract class Part
+    public abstract class Part
     {
         // properties for abstract Part class
         public int PartID { get; set; }

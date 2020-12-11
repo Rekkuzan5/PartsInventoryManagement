@@ -74,23 +74,23 @@ namespace PartsInventoryManagement
             AllParts.Add(part);   
         }
 
-        public bool DeletePart(Part part)
+        public static bool DeletePart(Part part)
         {
-            try
-            {
                 AllParts.Remove(part);
                 return true;
-            }
-            catch
-            {
-                return false;
-            }
         }
 
-        //public static Part lookupPart(int)
-        //{
-
-        //}
+        public static Part lookupPart(int id)
+        {
+            for (int i = 0; i < AllParts.Count; i++)
+            {
+                if (AllParts[i].PartID.Equals(i))
+                {
+                    return AllParts[i];
+                }
+            }
+            return null;
+        }
 
         //public static void updatePart(int, Part)
         //{
