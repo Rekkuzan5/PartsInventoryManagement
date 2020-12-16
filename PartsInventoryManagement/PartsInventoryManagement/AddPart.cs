@@ -17,7 +17,7 @@ namespace PartsInventoryManagement
             InitializeComponent();
         }
 
-        private void Form3_Load(object sender, EventArgs e)
+        private void AddPart_Load(object sender, EventArgs e)
         {
 
         }

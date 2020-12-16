@@ -105,10 +105,6 @@ namespace PartsInventoryManagement
             }
 
             Close();
-            //mainForm.Form1Load();
-            Form1 mainForm = (Form1)Application.OpenForms["Form1"];
-            mainForm.Refresh();
-            
         }
     }
 }

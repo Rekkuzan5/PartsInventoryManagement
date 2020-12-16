@@ -183,6 +183,7 @@
             // 
             // modPartIDTextBox
             // 
+            this.modPartIDTextBox.Enabled = false;
             this.modPartIDTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.modPartIDTextBox.Location = new System.Drawing.Point(272, 103);
             this.modPartIDTextBox.Name = "modPartIDTextBox";

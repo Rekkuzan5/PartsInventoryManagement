@@ -10,15 +10,15 @@ using System.Windows.Forms;
 
 namespace PartsInventoryManagement
 {
-    public partial class Form1 : Form
+    public partial class MainScreen : Form
     {
-        public Form1()
+        public MainScreen()
         {
             InitializeComponent();
-            Form1Load();
+            MainScreenLoad();
         }
 
-        public void Form1Load()
+        public void MainScreenLoad()
         {
             // bind to datagridview for parts
             var sourcePart = new BindingSource();
@@ -47,38 +47,71 @@ namespace PartsInventoryManagement
             ProductPataGridView.Columns["Max"].Visible = false;
 
             Inventory.PopulateList();
-            
+
         }
 
         // Opens new form to add a new part
         private void AddPartButton_Click(object sender, EventArgs e)
         {
-            AddPart f3 = new AddPart();
-            f3.Show();
+            AddPart addNewPart = new AddPart();
+            addNewPart.ShowDialog();
         }
 
-        // Opens a new form to modify an existing part
+        // Opens a new form to modify an existing part based on the type of object and update main screen.
         private void ModifyPartButton_Click(object sender, EventArgs e)
         {
             if (partsDataGridView.CurrentRow.DataBoundItem.GetType() == typeof(InHouse))
             {
                 InHouse housePart = (InHouse)partsDataGridView.CurrentRow.DataBoundItem;
-                new ModifyPart(housePart).Show();
+                new ModifyPart(housePart).ShowDialog();
             }
             else if (partsDataGridView.CurrentRow.DataBoundItem.GetType() == typeof(Outsourced))
             {
                 Outsourced outsidePart = (Outsourced)partsDataGridView.CurrentRow.DataBoundItem;
-                new ModifyPart(outsidePart).Show();
+                new ModifyPart(outsidePart).ShowDialog();
             }
-
+            this.Refresh();
         }
 
-        // Delete datagridviewrow on main page
+        // Delete part in grid on main page
         private void DeletePartButton_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow row in partsDataGridView.SelectedRows)
+            var result = MessageBox.Show("Are you sure you want to delete this part?", "Delete Part", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
             {
-                partsDataGridView.Rows.RemoveAt(row.Index);
+                DataGridViewRow selectedPart = partsDataGridView.SelectedRows[0];
+                int partID = Convert.ToInt32(selectedPart.Cells["partID"].Value);
+                Part partToDelete = Inventory.LookupPart(partID);
+                Inventory.DeletePart(partToDelete);
+            }
+        }
+
+        // search for a part based on part name.
+        private void PartSearchButton_Click(object sender, EventArgs e)
+        {
+            if (searchPartTextBox1.Text != "")
+            {
+                for (int i = 0; i < Inventory.AllParts.Count; i++)
+                {
+                    if (Inventory.AllParts[i].Name.ToUpper().Contains(searchPartTextBox1.Text.ToUpper()))
+                    {
+                        int searchpart = Inventory.AllParts[i].PartID;
+                        Part partFound = Inventory.LookupPart(searchpart);
+
+                        foreach (DataGridViewRow row in partsDataGridView.Rows)
+                        {
+                            Part part = (Part)row.DataBoundItem;
+                            if (part.PartID == partFound.PartID)
+                            {
+                                row.Selected = true;
+                            }
+                            else
+                            {
+                                row.Selected = false;
+                            }
+                        }
+                    }
+                }             
             }
         }
 
@@ -104,5 +137,6 @@ namespace PartsInventoryManagement
         {
             this.Close();
         }
+
     }
 }

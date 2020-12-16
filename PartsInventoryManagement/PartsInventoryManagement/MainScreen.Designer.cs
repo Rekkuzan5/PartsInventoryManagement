@@ -1,6 +1,6 @@
 ﻿namespace PartsInventoryManagement
 {
-    partial class Form1
+    partial class MainScreen
     {
         /// <summary>
         /// Required designer variable.
@@ -40,7 +40,7 @@
             this.ExitButton = new System.Windows.Forms.Button();
             this.partsDataGridView = new System.Windows.Forms.DataGridView();
             this.ProductPataGridView = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.searchPartTextBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.PartSearchButton = new System.Windows.Forms.Button();
             this.ProductSearchButton = new System.Windows.Forms.Button();
@@ -184,14 +184,14 @@
             this.ProductPataGridView.Size = new System.Drawing.Size(570, 300);
             this.ProductPataGridView.TabIndex = 3;
             // 
-            // textBox1
+            // searchPartTextBox1
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(403, 109);
-            this.textBox1.MinimumSize = new System.Drawing.Size(170, 30);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(252, 29);
-            this.textBox1.TabIndex = 4;
+            this.searchPartTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchPartTextBox1.Location = new System.Drawing.Point(403, 109);
+            this.searchPartTextBox1.MinimumSize = new System.Drawing.Size(170, 30);
+            this.searchPartTextBox1.Name = "searchPartTextBox1";
+            this.searchPartTextBox1.Size = new System.Drawing.Size(252, 29);
+            this.searchPartTextBox1.TabIndex = 4;
             // 
             // textBox2
             // 
@@ -211,6 +211,7 @@
             this.PartSearchButton.TabIndex = 5;
             this.PartSearchButton.Text = "Search";
             this.PartSearchButton.UseVisualStyleBackColor = true;
+            this.PartSearchButton.Click += new System.EventHandler(this.PartSearchButton_Click);
             // 
             // ProductSearchButton
             // 
@@ -242,7 +243,7 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Products";
             // 
-            // Form1
+            // MainScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -252,7 +253,7 @@
             this.Controls.Add(this.ProductSearchButton);
             this.Controls.Add(this.PartSearchButton);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.searchPartTextBox1);
             this.Controls.Add(this.ProductPataGridView);
             this.Controls.Add(this.partsDataGridView);
             this.Controls.Add(this.ExitButton);
@@ -265,10 +266,9 @@
             this.Controls.Add(this.label1);
             this.MaximumSize = new System.Drawing.Size(1440, 717);
             this.MinimumSize = new System.Drawing.Size(1440, 717);
-            this.Name = "Form1";
+            this.Name = "MainScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";
-            //this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.partsDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductPataGridView)).EndInit();
             this.ResumeLayout(false);
@@ -288,7 +288,7 @@
         private System.Windows.Forms.Button ExitButton;
         private System.Windows.Forms.DataGridView partsDataGridView;
         private System.Windows.Forms.DataGridView ProductPataGridView;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox searchPartTextBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button PartSearchButton;
         private System.Windows.Forms.Button ProductSearchButton;
