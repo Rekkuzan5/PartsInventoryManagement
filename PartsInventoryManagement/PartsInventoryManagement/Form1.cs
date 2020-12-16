@@ -15,9 +15,10 @@ namespace PartsInventoryManagement
         public Form1()
         {
             InitializeComponent();
+            Form1Load();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        public void Form1Load()
         {
             // bind to datagridview for parts
             var sourcePart = new BindingSource();
@@ -69,6 +70,7 @@ namespace PartsInventoryManagement
                 Outsourced outsidePart = (Outsourced)partsDataGridView.CurrentRow.DataBoundItem;
                 new ModifyPart(outsidePart).Show();
             }
+
         }
 
         // Delete datagridviewrow on main page

@@ -69,6 +69,7 @@
             this.partSaveButton.TabIndex = 16;
             this.partSaveButton.Text = "Save";
             this.partSaveButton.UseVisualStyleBackColor = true;
+            this.partSaveButton.Click += new System.EventHandler(this.Partsavebutton_click);
             // 
             // partMachineIDLabel
             // 

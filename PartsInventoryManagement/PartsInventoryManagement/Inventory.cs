@@ -59,7 +59,7 @@ namespace PartsInventoryManagement
 
         //}
 
-        //public static Product lookupProduct(int)
+        //public static Product lookupProduct(int )
         //{
 
         //}
@@ -80,21 +80,70 @@ namespace PartsInventoryManagement
                 return true;
         }
 
-        public static Part lookupPart(int id)
+        public static Part LookupPart(int partID)
         {
-            for (int i = 0; i < AllParts.Count; i++)
+            //for (int i = 0; i < AllParts.Count; i++)
+            //{
+            //    if (AllParts[i].PartID.Equals(i))
+            //    {
+            //        return AllParts[i];
+            //    }
+            //}
+            //return null;
+
+            foreach (Part part in AllParts)
             {
-                if (AllParts[i].PartID.Equals(i))
+                if (part.PartID == partID)
                 {
-                    return AllParts[i];
+                    return part;
                 }
             }
             return null;
+
+            // Like this better
+
+            //foreach (Part part in AllParts)
+            //{
+            //    if (part.PartID == partID)
+            //    {
+            //        return part;
+            //    }
+            //}
+            //Part noPart = null;
+            //return noPart;
         }
 
-        //public static void updatePart(int, Part)
-        //{
-
-        //}
+        public static void UpdatePart(int partID, Part part)
+        {
+            for (int i = 0; i < AllParts.Count; i++)
+            {
+                if (AllParts[i].GetType() == typeof(InHouse))
+                {
+                    InHouse newInhouse = (InHouse)AllParts[i];
+                    if (newInhouse.PartID == partID)
+                    {
+                        newInhouse.PartID = part.PartID;
+                        newInhouse.Name = part.Name;
+                        newInhouse.Price = part.Price;
+                        newInhouse.InStock = part.InStock;
+                        newInhouse.Min = part.Min;
+                        newInhouse.Max = part.Max;
+                    }
+                }
+                else if (AllParts[i].GetType() == typeof(Outsourced))
+                {
+                    Outsourced newOutsource = (Outsourced)AllParts[i];
+                    if (newOutsource.PartID == partID)
+                    {
+                        newOutsource.PartID = part.PartID;
+                        newOutsource.Name = part.Name;
+                        newOutsource.Price = part.Price;
+                        newOutsource.InStock = part.InStock;
+                        newOutsource.Min = part.Min;
+                        newOutsource.Max = part.Max;
+                    }
+                }
+            }
+        }
     }
 }
