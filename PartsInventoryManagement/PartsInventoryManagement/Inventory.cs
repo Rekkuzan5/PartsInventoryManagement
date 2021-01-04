@@ -48,36 +48,59 @@ namespace PartsInventoryManagement
             Products.Add(dummyProd4);
 
         }
-        //// methods for Inventory class
+
+        // ** Products Methods ** //
+
         //public static void addProduct(Product)
         //{
 
         //}
 
-        //public static bool removeProduct(int)
+        //public static bool removeProduct(int productID)
         //{
 
         //}
 
-        //public static Product lookupProduct(int )
-        //{
-
-        //}
+        // Look for product within Product Binding List
+        public static Product LookupProduct(int productID)
+        {
+            foreach (Product product in Products)
+            {
+                if (product.ProductID == productID)
+                {
+                    return product;
+                }
+            }
+            return null;
+        }
 
         //public static void updateProduct(int, Product)
         //{
 
         //}
 
+        // ** End of Products Methods ** //
+
+        // ** Parts Methods ** //
+
         public static void AddPart(Part part)
         {
             AllParts.Add(part);   
         }
 
-        public static bool DeletePart(Part part)
+        public static bool DeletePart(int partID)
         {
-                AllParts.Remove(part);
-                return true;
+            bool found = false;
+            foreach (Part part in AllParts)
+            {
+                if (partID == part.PartID)
+                {
+                    AllParts.Remove(part);
+                    found = true;
+                    return found;
+                }   
+            }
+                return found;
         }
 
         public static Part LookupPart(int partID)
@@ -145,5 +168,7 @@ namespace PartsInventoryManagement
                 }
             }
         }
+
+        //  ** End of Parts Methods ** //
     }
 }

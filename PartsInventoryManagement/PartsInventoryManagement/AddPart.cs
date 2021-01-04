@@ -15,7 +15,14 @@ namespace PartsInventoryManagement
         public AddPart()
         {
             InitializeComponent();
+            if (addPartNameTextBox.Text != "")
+            {
+                //addPartNameTextBox.BackColor = Color.White; ;
+            }
+
         }
+
+
 
         private void AddPart_Load(object sender, EventArgs e)
         {
@@ -40,17 +47,18 @@ namespace PartsInventoryManagement
 
             if (addPartInHouseRadio.Checked)
             {
-                InHouse inHouse = new InHouse(Inventory.AllParts.Count + 1, addPartNameTextBox.Text, decimal.Parse(addPriceTextBox.Text),
+                int partID = Inventory.AllParts[Inventory.AllParts.Count - 1].PartID + 1;
+                InHouse inHouse = new InHouse(partID, addPartNameTextBox.Text, decimal.Parse(addPriceTextBox.Text),
                 int.Parse(addInvTextBox.Text), int.Parse(addPartMaxTextBox.Text), int.Parse(addPartMaxTextBox.Text), int.Parse(IDNameTextBox.Text));
                 Inventory.AddPart(inHouse);
             }
             else
             {
-                Outsourced outsourcedPart = new Outsourced(Inventory.AllParts.Count + 1, addPartNameTextBox.Text, decimal.Parse(addPriceTextBox.Text),
+                int partID = (Inventory.AllParts[Inventory.AllParts.Count - 1].PartID + 1);
+                Outsourced outsourcedPart = new Outsourced(partID, addPartNameTextBox.Text, decimal.Parse(addPriceTextBox.Text),
                 int.Parse(addInvTextBox.Text), int.Parse(addPartMaxTextBox.Text), int.Parse(addPartMaxTextBox.Text), IDNameTextBox.Text);
                 Inventory.AddPart(outsourcedPart);
             }
-
             this.Close();
         }
       
@@ -71,6 +79,35 @@ namespace PartsInventoryManagement
             this.Close();
          }
 
+        private void addPartNameTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            addPartNameTextBox.BackColor = Color.White;
+        }
+
+        private void addInvTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            addInvTextBox.BackColor = Color.White;
+        }
+
+        private void addPriceTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            addPriceTextBox.BackColor = Color.White;
+        }
+
+        private void addPartMaxTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            addPartMaxTextBox.BackColor = Color.White;
+        }
+
+        private void addPartMinTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            addPartMinTextBox.BackColor = Color.White;
+        }
+
+        private void IDNameTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            IDNameTextBox.BackColor = Color.White;
+        }
     }
 }
   

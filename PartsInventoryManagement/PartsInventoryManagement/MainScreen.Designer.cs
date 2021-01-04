@@ -30,6 +30,8 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.AddPartButton = new System.Windows.Forms.Button();
             this.ModifyPartButton = new System.Windows.Forms.Button();
@@ -39,15 +41,15 @@
             this.DeleteProductButton = new System.Windows.Forms.Button();
             this.ExitButton = new System.Windows.Forms.Button();
             this.partsDataGridView = new System.Windows.Forms.DataGridView();
-            this.ProductPataGridView = new System.Windows.Forms.DataGridView();
+            this.ProductDataGridView = new System.Windows.Forms.DataGridView();
             this.searchPartTextBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.searchProductTextBox = new System.Windows.Forms.TextBox();
             this.PartSearchButton = new System.Windows.Forms.Button();
             this.ProductSearchButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.partsDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ProductPataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProductDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -153,6 +155,14 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.partsDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.partsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.partsDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.partsDataGridView.EnableHeadersVisualStyles = false;
             this.partsDataGridView.Location = new System.Drawing.Point(85, 170);
             this.partsDataGridView.Name = "partsDataGridView";
@@ -161,28 +171,36 @@
             this.partsDataGridView.Size = new System.Drawing.Size(570, 300);
             this.partsDataGridView.TabIndex = 3;
             // 
-            // ProductPataGridView
+            // ProductDataGridView
             // 
-            this.ProductPataGridView.AllowUserToResizeColumns = false;
-            this.ProductPataGridView.AllowUserToResizeRows = false;
-            this.ProductPataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ProductPataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.ProductPataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ProductPataGridView.EnableHeadersVisualStyles = false;
-            this.ProductPataGridView.Location = new System.Drawing.Point(763, 170);
-            this.ProductPataGridView.Name = "ProductPataGridView";
-            this.ProductPataGridView.ReadOnly = true;
-            this.ProductPataGridView.RowHeadersVisible = false;
-            this.ProductPataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ProductPataGridView.Size = new System.Drawing.Size(570, 300);
-            this.ProductPataGridView.TabIndex = 3;
+            this.ProductDataGridView.AllowUserToResizeColumns = false;
+            this.ProductDataGridView.AllowUserToResizeRows = false;
+            this.ProductDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ProductDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.ProductDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.ProductDataGridView.DefaultCellStyle = dataGridViewCellStyle4;
+            this.ProductDataGridView.EnableHeadersVisualStyles = false;
+            this.ProductDataGridView.Location = new System.Drawing.Point(763, 170);
+            this.ProductDataGridView.Name = "ProductDataGridView";
+            this.ProductDataGridView.ReadOnly = true;
+            this.ProductDataGridView.RowHeadersVisible = false;
+            this.ProductDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.ProductDataGridView.Size = new System.Drawing.Size(570, 300);
+            this.ProductDataGridView.TabIndex = 3;
             // 
             // searchPartTextBox1
             // 
@@ -193,14 +211,14 @@
             this.searchPartTextBox1.Size = new System.Drawing.Size(252, 29);
             this.searchPartTextBox1.TabIndex = 4;
             // 
-            // textBox2
+            // searchProductTextBox
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(1086, 108);
-            this.textBox2.MinimumSize = new System.Drawing.Size(170, 30);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(252, 29);
-            this.textBox2.TabIndex = 4;
+            this.searchProductTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchProductTextBox.Location = new System.Drawing.Point(1086, 108);
+            this.searchProductTextBox.MinimumSize = new System.Drawing.Size(170, 30);
+            this.searchProductTextBox.Name = "searchProductTextBox";
+            this.searchProductTextBox.Size = new System.Drawing.Size(252, 29);
+            this.searchProductTextBox.TabIndex = 4;
             // 
             // PartSearchButton
             // 
@@ -222,6 +240,7 @@
             this.ProductSearchButton.TabIndex = 5;
             this.ProductSearchButton.Text = "Search";
             this.ProductSearchButton.UseVisualStyleBackColor = true;
+            this.ProductSearchButton.Click += new System.EventHandler(this.ProductSearchButton_Click);
             // 
             // label2
             // 
@@ -252,9 +271,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.ProductSearchButton);
             this.Controls.Add(this.PartSearchButton);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.searchProductTextBox);
             this.Controls.Add(this.searchPartTextBox1);
-            this.Controls.Add(this.ProductPataGridView);
+            this.Controls.Add(this.ProductDataGridView);
             this.Controls.Add(this.partsDataGridView);
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.DeleteProductButton);
@@ -268,9 +287,9 @@
             this.MinimumSize = new System.Drawing.Size(1440, 717);
             this.Name = "MainScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Main";
+            this.Text = "Inventory Management System - Main";
             ((System.ComponentModel.ISupportInitialize)(this.partsDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ProductPataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProductDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -287,9 +306,9 @@
         private System.Windows.Forms.Button DeleteProductButton;
         private System.Windows.Forms.Button ExitButton;
         private System.Windows.Forms.DataGridView partsDataGridView;
-        private System.Windows.Forms.DataGridView ProductPataGridView;
+        private System.Windows.Forms.DataGridView ProductDataGridView;
         private System.Windows.Forms.TextBox searchPartTextBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox searchProductTextBox;
         private System.Windows.Forms.Button PartSearchButton;
         private System.Windows.Forms.Button ProductSearchButton;
         private System.Windows.Forms.Label label2;

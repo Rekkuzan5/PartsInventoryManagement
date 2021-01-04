@@ -51,11 +51,13 @@
             // 
             // addPriceTextBox
             // 
+            this.addPriceTextBox.BackColor = System.Drawing.Color.LightCoral;
             this.addPriceTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addPriceTextBox.Location = new System.Drawing.Point(272, 346);
             this.addPriceTextBox.Name = "addPriceTextBox";
             this.addPriceTextBox.Size = new System.Drawing.Size(194, 26);
             this.addPriceTextBox.TabIndex = 5;
+            this.addPriceTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.addPriceTextBox_KeyPress);
             // 
             // label1
             // 
@@ -104,43 +106,53 @@
             // 
             // addPartMinTextBox
             // 
+            this.addPartMinTextBox.BackColor = System.Drawing.Color.LightCoral;
             this.addPartMinTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addPartMinTextBox.Location = new System.Drawing.Point(469, 422);
             this.addPartMinTextBox.Name = "addPartMinTextBox";
             this.addPartMinTextBox.Size = new System.Drawing.Size(100, 26);
             this.addPartMinTextBox.TabIndex = 3;
+            this.addPartMinTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.addPartMinTextBox_KeyPress);
             // 
             // addPartNameTextBox
             // 
+            this.addPartNameTextBox.BackColor = System.Drawing.Color.LightCoral;
             this.addPartNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addPartNameTextBox.Location = new System.Drawing.Point(272, 189);
             this.addPartNameTextBox.Name = "addPartNameTextBox";
             this.addPartNameTextBox.Size = new System.Drawing.Size(194, 26);
             this.addPartNameTextBox.TabIndex = 4;
+            this.addPartNameTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.addPartNameTextBox_KeyPress);
             // 
             // addPartMaxTextBox
             // 
+            this.addPartMaxTextBox.BackColor = System.Drawing.Color.LightCoral;
             this.addPartMaxTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addPartMaxTextBox.Location = new System.Drawing.Point(272, 422);
             this.addPartMaxTextBox.Name = "addPartMaxTextBox";
             this.addPartMaxTextBox.Size = new System.Drawing.Size(93, 26);
             this.addPartMaxTextBox.TabIndex = 6;
+            this.addPartMaxTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.addPartMaxTextBox_KeyPress);
             // 
             // addInvTextBox
             // 
+            this.addInvTextBox.BackColor = System.Drawing.Color.LightCoral;
             this.addInvTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addInvTextBox.Location = new System.Drawing.Point(272, 269);
             this.addInvTextBox.Name = "addInvTextBox";
             this.addInvTextBox.Size = new System.Drawing.Size(194, 26);
             this.addInvTextBox.TabIndex = 7;
+            this.addInvTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.addInvTextBox_KeyPress);
             // 
             // IDNameTextBox
             // 
+            this.IDNameTextBox.BackColor = System.Drawing.Color.LightCoral;
             this.IDNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IDNameTextBox.Location = new System.Drawing.Point(272, 493);
             this.IDNameTextBox.Name = "IDNameTextBox";
             this.IDNameTextBox.Size = new System.Drawing.Size(194, 26);
             this.IDNameTextBox.TabIndex = 8;
+            this.IDNameTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.IDNameTextBox_KeyPress);
             // 
             // label2
             // 
@@ -234,7 +246,7 @@
             this.addPartCancelButton.UseVisualStyleBackColor = true;
             this.addPartCancelButton.Click += new System.EventHandler(this.AddPartCancelButton_Click);
             // 
-            // Form3
+            // AddPart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -260,9 +272,9 @@
             this.Controls.Add(this.IDNameTextBox);
             this.MaximumSize = new System.Drawing.Size(650, 650);
             this.MinimumSize = new System.Drawing.Size(650, 650);
-            this.Name = "Form3";
+            this.Name = "AddPart";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Add Part";
+            this.Text = "Inventory Management System - Add Part";
             this.Load += new System.EventHandler(this.AddPart_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

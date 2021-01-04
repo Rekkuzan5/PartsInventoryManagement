@@ -59,9 +59,16 @@ namespace PartsInventoryManagement
             return checkSuccess;
         }
 
-        //public static Part lookupAssociatedpart(int)
-        //{
-
-        //}
+        public static Part LookupAssociatedPart(int partID)
+        {
+            foreach (Part part in AssociatedParts)
+            {
+                if (part.PartID == partID)
+                {
+                    return part;
+                }
+            }
+            return null;
+        }
     }
 }

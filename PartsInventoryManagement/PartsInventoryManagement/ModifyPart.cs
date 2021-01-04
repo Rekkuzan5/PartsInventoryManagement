@@ -41,34 +41,34 @@ namespace PartsInventoryManagement
 
 
         public ModifyPart(InHouse housePart)
-            {
-                InitializeComponent();
+        {
+            InitializeComponent();
 
-                modPartIDTextBox.Text = housePart.PartID.ToString();
-                modNameTextBox.Text = housePart.Name.ToString();
-                modInventoryTextBox.Text = housePart.InStock.ToString();
-                modPriceTextBox.Text = housePart.Price.ToString();
-                modMaxTextBox.Text = housePart.Max.ToString();
-                modMinTextBox.Text = housePart.Min.ToString();
-                modMachineIDTextBox.Text = housePart.MachineID.ToString();
-                partMachineIDLabel.Text = "Machine ID";
-                InHouseRadButton.Checked = true;
-            }
+            modPartIDTextBox.Text = housePart.PartID.ToString();
+            modNameTextBox.Text = housePart.Name.ToString();
+            modInventoryTextBox.Text = housePart.InStock.ToString();
+            modPriceTextBox.Text = housePart.Price.ToString();
+            modMaxTextBox.Text = housePart.Max.ToString();
+            modMinTextBox.Text = housePart.Min.ToString();
+            modMachineIDTextBox.Text = housePart.MachineID.ToString();
+            partMachineIDLabel.Text = "Machine ID";
+            InHouseRadButton.Checked = true;
+        }
 
-            public ModifyPart(Outsourced outsidePart)
-            {
-                InitializeComponent();
+        public ModifyPart(Outsourced outsidePart)
+        {
+            InitializeComponent();
 
-                modPartIDTextBox.Text = outsidePart.PartID.ToString();
-                modNameTextBox.Text = outsidePart.Name.ToString();
-                modInventoryTextBox.Text = outsidePart.InStock.ToString();
-                modPriceTextBox.Text = outsidePart.Price.ToString();
-                modMaxTextBox.Text = outsidePart.Max.ToString();
-                modMinTextBox.Text = outsidePart.Min.ToString();
-                modMachineIDTextBox.Text = outsidePart.CompanyName.ToString();
-                partMachineIDLabel.Text = "Company Name";
-                OutsourcedRadButton.Checked = true;
-            }
+            modPartIDTextBox.Text = outsidePart.PartID.ToString();
+            modNameTextBox.Text = outsidePart.Name.ToString();
+            modInventoryTextBox.Text = outsidePart.InStock.ToString();
+            modPriceTextBox.Text = outsidePart.Price.ToString();
+            modMaxTextBox.Text = outsidePart.Max.ToString();
+            modMinTextBox.Text = outsidePart.Min.ToString();
+            modMachineIDTextBox.Text = outsidePart.CompanyName.ToString();
+            partMachineIDLabel.Text = "Company Name";
+            OutsourcedRadButton.Checked = true;
+        }
 
         private void modifyPartCancelButton_Click(object sender, EventArgs e)
         {

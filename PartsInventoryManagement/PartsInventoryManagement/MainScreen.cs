@@ -28,7 +28,7 @@ namespace PartsInventoryManagement
             // bind datagridview for products
             var sourceProduct = new BindingSource();
             sourceProduct.DataSource = Inventory.Products;
-            ProductPataGridView.DataSource = sourceProduct;
+            ProductDataGridView.DataSource = sourceProduct;
 
             // Create column headers for parts datagridview
             partsDataGridView.Columns["PartID"].HeaderText = "Part ID";
@@ -39,16 +39,18 @@ namespace PartsInventoryManagement
             partsDataGridView.Columns["Max"].Visible = false;
 
             // Create column headers for parts datagridview
-            ProductPataGridView.Columns["ProductID"].HeaderText = "Product ID";
-            ProductPataGridView.Columns["Name"].HeaderText = "Name";
-            ProductPataGridView.Columns["InStock"].HeaderText = "Inventory";
-            ProductPataGridView.Columns["Price"].HeaderText = "Price";
-            ProductPataGridView.Columns["Min"].Visible = false;
-            ProductPataGridView.Columns["Max"].Visible = false;
+            ProductDataGridView.Columns["ProductID"].HeaderText = "Product ID";
+            ProductDataGridView.Columns["Name"].HeaderText = "Name";
+            ProductDataGridView.Columns["InStock"].HeaderText = "Inventory";
+            ProductDataGridView.Columns["Price"].HeaderText = "Price";
+            ProductDataGridView.Columns["Min"].Visible = false;
+            ProductDataGridView.Columns["Max"].Visible = false;
 
             Inventory.PopulateList();
 
         }
+
+        // Parts functions for main page
 
         // Opens new form to add a new part
         private void AddPartButton_Click(object sender, EventArgs e)
@@ -79,10 +81,18 @@ namespace PartsInventoryManagement
             var result = MessageBox.Show("Are you sure you want to delete this part?", "Delete Part", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
-                DataGridViewRow selectedPart = partsDataGridView.SelectedRows[0];
-                int partID = Convert.ToInt32(selectedPart.Cells["partID"].Value);
-                Part partToDelete = Inventory.LookupPart(partID);
-                Inventory.DeletePart(partToDelete);
+                //for (int i = 0; i < Inventory.AllParts.Count; i++)
+                //{
+                //    if (Inventory.AllParts[i].PartID == partsDataGridView.SelectedRows.Contains)
+                //    { }
+                //}
+                //int delete_index = partsDataGridView.CurrentCell.RowIndex;
+                //foreach (DataGridViewRow row in partsDataGridView.SelectedRows)
+                //{
+                    int partID = int.Parse(partsDataGridView.Rows[partsDataGridView.CurrentCell.RowIndex].Cells[0].Value.ToString());
+                //}
+                Inventory.DeletePart(partID);
+                this.Refresh();
             }
         }
 
@@ -115,21 +125,60 @@ namespace PartsInventoryManagement
             }
         }
 
+        // Products functions for main page
+
+        //  Opens new form to add a new product
         private void AddProductButton_Click(object sender, EventArgs e)
         {
 
         }
 
+        // Opens new form to modify products
         private void ModifyProductButton_Click(object sender, EventArgs e)
         {
-
+            ModifyProduct modProduct = new ModifyProduct();
+            modProduct.ShowDialog();
         }
 
+        // Delete product in grid on main page
         private void DeleteProductButton_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow row in ProductPataGridView.SelectedRows)
+            var result = MessageBox.Show("Are you sure you want to delete this product?", "Delete Product", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
             {
-                ProductPataGridView.Rows.RemoveAt(row.Index);
+                foreach (DataGridViewRow row in ProductDataGridView.SelectedRows)
+                {
+                    ProductDataGridView.Rows.RemoveAt(row.Index);
+                }
+            }
+        }
+
+        // search for a product based on product name.
+        private void ProductSearchButton_Click(object sender, EventArgs e)
+        {
+            if (searchProductTextBox.Text != "")
+            {
+                for (int i = 0; i < Inventory.Products.Count; i++)
+                {
+                    if (Inventory.Products[i].Name.ToUpper().Contains(searchProductTextBox.Text.ToUpper()))
+                    {
+                        int searchProduct = Inventory.Products[i].ProductID;
+                        Product productFound = Inventory.LookupProduct(searchProduct);
+
+                        foreach (DataGridViewRow row in ProductDataGridView.Rows)
+                        {
+                            Product prod = (Product)row.DataBoundItem;
+                            if (prod.ProductID == productFound.ProductID)
+                            {
+                                row.Selected = true;
+                            }
+                            else
+                            {
+                                row.Selected = false;
+                            }
+                        }
+                    }
+                }
             }
         }
 
