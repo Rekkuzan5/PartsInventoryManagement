@@ -11,3 +11,16 @@ C:\Users\Cameron\Desktop\WGU Studies\C968 Software 1\PartsInventoryManagement\Pa
 C:\Users\Cameron\Desktop\WGU Studies\C968 Software 1\PartsInventoryManagement\PartsInventoryManagement\obj\Debug\PartsInventoryManagement.AddPart.resources
 C:\Users\Cameron\Desktop\WGU Studies\C968 Software 1\PartsInventoryManagement\PartsInventoryManagement\obj\Debug\PartsInventoryManagement.MainScreen.resources
 C:\Users\Cameron\Desktop\WGU Studies\C968 Software 1\PartsInventoryManagement\PartsInventoryManagement\obj\Debug\PartsInventoryManagement.ModifyProduct.resources
+C:\Users\Cameron\Desktop\WGU\Software1\PartsInventoryManagement\PartsInventoryManagement\bin\Debug\PartsInventoryManagement.exe.config
+C:\Users\Cameron\Desktop\WGU\Software1\PartsInventoryManagement\PartsInventoryManagement\bin\Debug\PartsInventoryManagement.exe
+C:\Users\Cameron\Desktop\WGU\Software1\PartsInventoryManagement\PartsInventoryManagement\bin\Debug\PartsInventoryManagement.pdb
+C:\Users\Cameron\Desktop\WGU\Software1\PartsInventoryManagement\PartsInventoryManagement\obj\Debug\PartsInventoryManagement.csprojAssemblyReference.cache
+C:\Users\Cameron\Desktop\WGU\Software1\PartsInventoryManagement\PartsInventoryManagement\obj\Debug\PartsInventoryManagement.MainScreen.resources
+C:\Users\Cameron\Desktop\WGU\Software1\PartsInventoryManagement\PartsInventoryManagement\obj\Debug\PartsInventoryManagement.ModifyPart.resources
+C:\Users\Cameron\Desktop\WGU\Software1\PartsInventoryManagement\PartsInventoryManagement\obj\Debug\PartsInventoryManagement.AddPart.resources
+C:\Users\Cameron\Desktop\WGU\Software1\PartsInventoryManagement\PartsInventoryManagement\obj\Debug\PartsInventoryManagement.ModifyProduct.resources
+C:\Users\Cameron\Desktop\WGU\Software1\PartsInventoryManagement\PartsInventoryManagement\obj\Debug\PartsInventoryManagement.Properties.Resources.resources
+C:\Users\Cameron\Desktop\WGU\Software1\PartsInventoryManagement\PartsInventoryManagement\obj\Debug\PartsInventoryManagement.csproj.GenerateResource.cache
+C:\Users\Cameron\Desktop\WGU\Software1\PartsInventoryManagement\PartsInventoryManagement\obj\Debug\PartsInventoryManagement.csproj.CoreCompileInputs.cache
+C:\Users\Cameron\Desktop\WGU\Software1\PartsInventoryManagement\PartsInventoryManagement\obj\Debug\PartsInventoryManagement.exe
+C:\Users\Cameron\Desktop\WGU\Software1\PartsInventoryManagement\PartsInventoryManagement\obj\Debug\PartsInventoryManagement.pdb

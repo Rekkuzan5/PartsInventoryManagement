@@ -15,14 +15,7 @@ namespace PartsInventoryManagement
         public AddPart()
         {
             InitializeComponent();
-            if (addPartNameTextBox.Text != "")
-            {
-                //addPartNameTextBox.BackColor = Color.White; ;
-            }
-
         }
-
-
 
         private void AddPart_Load(object sender, EventArgs e)
         {
@@ -79,34 +72,69 @@ namespace PartsInventoryManagement
             this.Close();
          }
 
-        private void addPartNameTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        // test method for validation
+        private void addPartNameTextBox_Validating(object sender, CancelEventArgs e)
         {
-            addPartNameTextBox.BackColor = Color.White;
+            if (!ValidName(addPartNameTextBox.Text, out string errorMessage))
+            {
+                e.Cancel = true;
+                addPartNameTextBox.Select(0, addPartNameTextBox.TextLength);
+
+                this.errorProvider1.SetError(addPartNameTextBox, errorMessage);
+            }
         }
 
-        private void addInvTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        //private void addPartNameTextBox_Validated(object sender, System.EventArgs e)
+        //{
+        //    errorProvider1.SetError(addPartNameTextBox, "");
+        //}
+
+        public bool ValidName(string partName, out string errorMessage) 
         {
-            addInvTextBox.BackColor = Color.White;
+            if (addPartNameTextBox.TextLength == 0)
+            {
+                errorMessage = "A name is required!";
+                return false;
+            }
+            else if (addPartNameTextBox.TextLength > 0)
+            {
+                errorMessage = "";
+                errorProvider1.Clear();
+                return true;
+            }
+
+            errorMessage = "Name must be letters!";
+            return false;
         }
 
-        private void addPriceTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        // Inventory validation //
+        private void AddInvTextBox_Validating(object sender, CancelEventArgs e)
         {
-            addPriceTextBox.BackColor = Color.White;
+            if (!ValidInventory(addInvTextBox.Text, out string errorMessage))
+            {
+                e.Cancel = true;
+                addInvTextBox.Select(0, addInvTextBox.TextLength);
+
+                this.errorProvider1.SetError(addInvTextBox, errorMessage);
+            }
         }
 
-        private void addPartMaxTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        public bool ValidInventory(string inventory, out string errorMessage)
         {
-            addPartMaxTextBox.BackColor = Color.White;
-        }
+            if (addInvTextBox.TextLength == 0)
+            {
+                errorMessage = "Inventory amount is required!";
+                return false;
+            }
+            else if (addInvTextBox.TextLength > 0)
+            {
+                errorMessage = "";
+                errorProvider1.Clear();
+                return true;
+            }
 
-        private void addPartMinTextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            addPartMinTextBox.BackColor = Color.White;
-        }
-
-        private void IDNameTextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            IDNameTextBox.BackColor = Color.White;
+            errorMessage = "Name must be numbers!";
+            return false;
         }
     }
 }
