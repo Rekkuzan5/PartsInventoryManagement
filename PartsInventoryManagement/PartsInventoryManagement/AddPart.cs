@@ -72,7 +72,7 @@ namespace PartsInventoryManagement
             this.Close();
          }
 
-        // test method for validation
+        // test methods for part name validation
         private void addPartNameTextBox_Validating(object sender, CancelEventArgs e)
         {
             if (!ValidName(addPartNameTextBox.Text, out string errorMessage))

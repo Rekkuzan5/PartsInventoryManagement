@@ -86,6 +86,7 @@ namespace PartsInventoryManagement
             this.partToProductDataGrid.Location = new System.Drawing.Point(466, 91);
             this.partToProductDataGrid.Name = "partToProductDataGrid";
             this.partToProductDataGrid.RowHeadersVisible = false;
+            this.partToProductDataGrid.RowTemplate.Height = 30;
             this.partToProductDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.partToProductDataGrid.Size = new System.Drawing.Size(606, 227);
             this.partToProductDataGrid.TabIndex = 1;
@@ -103,6 +104,7 @@ namespace PartsInventoryManagement
             this.associtatedPartsDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.associtatedPartsDGV.Location = new System.Drawing.Point(466, 397);
             this.associtatedPartsDGV.Name = "associtatedPartsDGV";
+            this.associtatedPartsDGV.RowTemplate.Height = 30;
             this.associtatedPartsDGV.Size = new System.Drawing.Size(606, 246);
             this.associtatedPartsDGV.TabIndex = 2;
             // 
