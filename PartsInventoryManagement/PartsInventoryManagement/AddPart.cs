@@ -72,39 +72,33 @@ namespace PartsInventoryManagement
             this.Close();
          }
 
-        // test methods for part name validation
+        //-- Validation --//
+
+        // methods for part name validation
         private void addPartNameTextBox_Validating(object sender, CancelEventArgs e)
         {
             if (!ValidName(addPartNameTextBox.Text, out string errorMessage))
             {
-                e.Cancel = true;
-                addPartNameTextBox.Select(0, addPartNameTextBox.TextLength);
-
+                //e.Cancel = true;
+                addPartNameTextBox.Focus();
+                //addPartNameTextBox.Select(0, addPartNameTextBox.TextLength);
                 this.errorProvider1.SetError(addPartNameTextBox, errorMessage);
             }
         }
 
-        //private void addPartNameTextBox_Validated(object sender, System.EventArgs e)
-        //{
-        //    errorProvider1.SetError(addPartNameTextBox, "");
-        //}
-
         public bool ValidName(string partName, out string errorMessage) 
         {
-            if (addPartNameTextBox.TextLength == 0)
+            if (string.IsNullOrWhiteSpace(addPartNameTextBox.Text))
             {
                 errorMessage = "A name is required!";
                 return false;
             }
-            else if (addPartNameTextBox.TextLength > 0)
+            else
             {
                 errorMessage = "";
                 errorProvider1.Clear();
                 return true;
             }
-
-            errorMessage = "Name must be letters!";
-            return false;
         }
 
         // Inventory validation //
@@ -112,7 +106,8 @@ namespace PartsInventoryManagement
         {
             if (!ValidInventory(addInvTextBox.Text, out string errorMessage))
             {
-                e.Cancel = true;
+                //e.Cancel = true;
+                addInvTextBox.Focus();
                 addInvTextBox.Select(0, addInvTextBox.TextLength);
 
                 this.errorProvider1.SetError(addInvTextBox, errorMessage);

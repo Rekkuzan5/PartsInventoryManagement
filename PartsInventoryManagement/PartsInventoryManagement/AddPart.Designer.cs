@@ -56,20 +56,18 @@
             // 
             this.addPriceTextBox.BackColor = System.Drawing.SystemColors.Control;
             this.addPriceTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addPriceTextBox.Location = new System.Drawing.Point(363, 426);
-            this.addPriceTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.addPriceTextBox.Location = new System.Drawing.Point(272, 346);
             this.addPriceTextBox.Name = "addPriceTextBox";
-            this.addPriceTextBox.Size = new System.Drawing.Size(257, 30);
+            this.addPriceTextBox.Size = new System.Drawing.Size(194, 26);
             this.addPriceTextBox.TabIndex = 5;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(16, 11);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(149, 39);
+            this.label1.Size = new System.Drawing.Size(119, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "Add Part";
             // 
@@ -78,10 +76,9 @@
             this.addPartInHouseRadio.AutoSize = true;
             this.addPartInHouseRadio.Checked = true;
             this.addPartInHouseRadio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addPartInHouseRadio.Location = new System.Drawing.Point(275, 21);
-            this.addPartInHouseRadio.Margin = new System.Windows.Forms.Padding(4);
+            this.addPartInHouseRadio.Location = new System.Drawing.Point(206, 17);
             this.addPartInHouseRadio.Name = "addPartInHouseRadio";
-            this.addPartInHouseRadio.Size = new System.Drawing.Size(113, 29);
+            this.addPartInHouseRadio.Size = new System.Drawing.Size(93, 24);
             this.addPartInHouseRadio.TabIndex = 1;
             this.addPartInHouseRadio.TabStop = true;
             this.addPartInHouseRadio.Text = "In-House";
@@ -91,10 +88,9 @@
             // 
             this.addPartOutsourceRadio.AutoSize = true;
             this.addPartOutsourceRadio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addPartOutsourceRadio.Location = new System.Drawing.Point(475, 21);
-            this.addPartOutsourceRadio.Margin = new System.Windows.Forms.Padding(4);
+            this.addPartOutsourceRadio.Location = new System.Drawing.Point(356, 17);
             this.addPartOutsourceRadio.Name = "addPartOutsourceRadio";
-            this.addPartOutsourceRadio.Size = new System.Drawing.Size(135, 29);
+            this.addPartOutsourceRadio.Size = new System.Drawing.Size(110, 24);
             this.addPartOutsourceRadio.TabIndex = 1;
             this.addPartOutsourceRadio.Text = "Outsourced";
             this.addPartOutsourceRadio.UseVisualStyleBackColor = true;
@@ -104,52 +100,47 @@
             // 
             this.addPartIDTextBox.Enabled = false;
             this.addPartIDTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addPartIDTextBox.Location = new System.Drawing.Point(363, 127);
-            this.addPartIDTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.addPartIDTextBox.Location = new System.Drawing.Point(272, 103);
             this.addPartIDTextBox.Name = "addPartIDTextBox";
             this.addPartIDTextBox.ReadOnly = true;
-            this.addPartIDTextBox.Size = new System.Drawing.Size(257, 30);
+            this.addPartIDTextBox.Size = new System.Drawing.Size(194, 26);
             this.addPartIDTextBox.TabIndex = 2;
             // 
             // addPartMinTextBox
             // 
             this.addPartMinTextBox.BackColor = System.Drawing.SystemColors.Control;
             this.addPartMinTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addPartMinTextBox.Location = new System.Drawing.Point(625, 519);
-            this.addPartMinTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.addPartMinTextBox.Location = new System.Drawing.Point(469, 422);
             this.addPartMinTextBox.Name = "addPartMinTextBox";
-            this.addPartMinTextBox.Size = new System.Drawing.Size(132, 30);
+            this.addPartMinTextBox.Size = new System.Drawing.Size(100, 26);
             this.addPartMinTextBox.TabIndex = 3;
             // 
             // addPartNameTextBox
             // 
             this.addPartNameTextBox.BackColor = System.Drawing.SystemColors.Control;
             this.addPartNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addPartNameTextBox.Location = new System.Drawing.Point(363, 233);
-            this.addPartNameTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.addPartNameTextBox.Location = new System.Drawing.Point(272, 189);
             this.addPartNameTextBox.Name = "addPartNameTextBox";
-            this.addPartNameTextBox.Size = new System.Drawing.Size(257, 30);
-            this.addPartNameTextBox.TabIndex = 4;
+            this.addPartNameTextBox.Size = new System.Drawing.Size(194, 26);
+            this.addPartNameTextBox.TabIndex = 0;
             this.addPartNameTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.addPartNameTextBox_Validating);
             // 
             // addPartMaxTextBox
             // 
             this.addPartMaxTextBox.BackColor = System.Drawing.SystemColors.Control;
             this.addPartMaxTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addPartMaxTextBox.Location = new System.Drawing.Point(363, 519);
-            this.addPartMaxTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.addPartMaxTextBox.Location = new System.Drawing.Point(272, 422);
             this.addPartMaxTextBox.Name = "addPartMaxTextBox";
-            this.addPartMaxTextBox.Size = new System.Drawing.Size(123, 30);
+            this.addPartMaxTextBox.Size = new System.Drawing.Size(93, 26);
             this.addPartMaxTextBox.TabIndex = 6;
             // 
             // addInvTextBox
             // 
             this.addInvTextBox.BackColor = System.Drawing.SystemColors.Control;
             this.addInvTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addInvTextBox.Location = new System.Drawing.Point(363, 331);
-            this.addInvTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.addInvTextBox.Location = new System.Drawing.Point(272, 269);
             this.addInvTextBox.Name = "addInvTextBox";
-            this.addInvTextBox.Size = new System.Drawing.Size(257, 30);
+            this.addInvTextBox.Size = new System.Drawing.Size(194, 26);
             this.addInvTextBox.TabIndex = 7;
             this.addInvTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.AddInvTextBox_Validating);
             // 
@@ -157,20 +148,18 @@
             // 
             this.IDNameTextBox.BackColor = System.Drawing.SystemColors.Control;
             this.IDNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IDNameTextBox.Location = new System.Drawing.Point(363, 607);
-            this.IDNameTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.IDNameTextBox.Location = new System.Drawing.Point(272, 493);
             this.IDNameTextBox.Name = "IDNameTextBox";
-            this.IDNameTextBox.Size = new System.Drawing.Size(257, 30);
+            this.IDNameTextBox.Size = new System.Drawing.Size(194, 26);
             this.IDNameTextBox.TabIndex = 8;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(269, 130);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(202, 106);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(31, 25);
+            this.label2.Size = new System.Drawing.Size(26, 20);
             this.label2.TabIndex = 9;
             this.label2.Text = "ID";
             // 
@@ -178,10 +167,9 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(236, 233);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(177, 189);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 25);
+            this.label3.Size = new System.Drawing.Size(51, 20);
             this.label3.TabIndex = 10;
             this.label3.Text = "Name";
             // 
@@ -189,10 +177,9 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(205, 331);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(154, 269);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(92, 25);
+            this.label4.Size = new System.Drawing.Size(74, 20);
             this.label4.TabIndex = 11;
             this.label4.Text = "Inventory";
             // 
@@ -200,10 +187,9 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(185, 426);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(139, 346);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(113, 25);
+            this.label5.Size = new System.Drawing.Size(89, 20);
             this.label5.TabIndex = 12;
             this.label5.Text = "Price / Cost";
             // 
@@ -211,10 +197,9 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(253, 519);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(190, 422);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(50, 25);
+            this.label6.Size = new System.Drawing.Size(38, 20);
             this.label6.TabIndex = 13;
             this.label6.Text = "Max";
             // 
@@ -222,10 +207,9 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(539, 519);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(404, 422);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(44, 25);
+            this.label7.Size = new System.Drawing.Size(34, 20);
             this.label7.TabIndex = 14;
             this.label7.Text = "Min";
             // 
@@ -233,20 +217,18 @@
             // 
             this.addPartIDorNameLabel.AutoSize = true;
             this.addPartIDorNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addPartIDorNameLabel.Location = new System.Drawing.Point(184, 607);
-            this.addPartIDorNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.addPartIDorNameLabel.Location = new System.Drawing.Point(138, 493);
             this.addPartIDorNameLabel.Name = "addPartIDorNameLabel";
-            this.addPartIDorNameLabel.Size = new System.Drawing.Size(111, 25);
+            this.addPartIDorNameLabel.Size = new System.Drawing.Size(90, 20);
             this.addPartIDorNameLabel.TabIndex = 15;
             this.addPartIDorNameLabel.Text = "Machine ID";
             // 
             // addPartSavebutton
             // 
             this.addPartSavebutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addPartSavebutton.Location = new System.Drawing.Point(477, 686);
-            this.addPartSavebutton.Margin = new System.Windows.Forms.Padding(4);
+            this.addPartSavebutton.Location = new System.Drawing.Point(358, 557);
             this.addPartSavebutton.Name = "addPartSavebutton";
-            this.addPartSavebutton.Size = new System.Drawing.Size(107, 37);
+            this.addPartSavebutton.Size = new System.Drawing.Size(80, 30);
             this.addPartSavebutton.TabIndex = 16;
             this.addPartSavebutton.Text = "Save";
             this.addPartSavebutton.UseVisualStyleBackColor = true;
@@ -255,10 +237,9 @@
             // addPartCancelButton
             // 
             this.addPartCancelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addPartCancelButton.Location = new System.Drawing.Point(652, 686);
-            this.addPartCancelButton.Margin = new System.Windows.Forms.Padding(4);
+            this.addPartCancelButton.Location = new System.Drawing.Point(489, 557);
             this.addPartCancelButton.Name = "addPartCancelButton";
-            this.addPartCancelButton.Size = new System.Drawing.Size(107, 37);
+            this.addPartCancelButton.Size = new System.Drawing.Size(80, 30);
             this.addPartCancelButton.TabIndex = 17;
             this.addPartCancelButton.Text = "Cancel";
             this.addPartCancelButton.UseVisualStyleBackColor = true;
@@ -271,9 +252,9 @@
             // 
             // AddPart
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(843, 742);
+            this.ClientSize = new System.Drawing.Size(634, 609);
             this.Controls.Add(this.addPartCancelButton);
             this.Controls.Add(this.addPriceTextBox);
             this.Controls.Add(this.addPartSavebutton);
@@ -293,9 +274,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.addInvTextBox);
             this.Controls.Add(this.IDNameTextBox);
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.MaximumSize = new System.Drawing.Size(861, 789);
-            this.MinimumSize = new System.Drawing.Size(861, 789);
+            this.MaximumSize = new System.Drawing.Size(650, 648);
+            this.MinimumSize = new System.Drawing.Size(650, 648);
             this.Name = "AddPart";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inventory Management System - Add Part";
