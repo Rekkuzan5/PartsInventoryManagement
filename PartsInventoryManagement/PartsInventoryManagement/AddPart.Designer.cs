@@ -123,6 +123,7 @@
             this.addPartNameTextBox.Name = "addPartNameTextBox";
             this.addPartNameTextBox.Size = new System.Drawing.Size(194, 26);
             this.addPartNameTextBox.TabIndex = 0;
+            this.addPartNameTextBox.TextChanged += new System.EventHandler(this.addInvTextBox_TextChanged);
             this.addPartNameTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.addPartNameTextBox_Validating);
             // 
             // addPartMaxTextBox
@@ -142,6 +143,7 @@
             this.addInvTextBox.Name = "addInvTextBox";
             this.addInvTextBox.Size = new System.Drawing.Size(194, 26);
             this.addInvTextBox.TabIndex = 7;
+            this.addInvTextBox.TextChanged += new System.EventHandler(this.addInvTextBox_TextChanged);
             this.addInvTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.AddInvTextBox_Validating);
             // 
             // IDNameTextBox

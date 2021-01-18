@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -101,7 +102,12 @@ namespace PartsInventoryManagement
             }
         }
 
+
+
         // Inventory validation //
+
+        Regex regex = new Regex("^\\d*(\\.\\d{1,2})?$");
+
         private void AddInvTextBox_Validating(object sender, CancelEventArgs e)
         {
             if (!ValidInventory(addInvTextBox.Text, out string errorMessage))
@@ -123,13 +129,30 @@ namespace PartsInventoryManagement
             }
             else if (addInvTextBox.TextLength > 0)
             {
-                errorMessage = "";
-                errorProvider1.Clear();
-                return true;
+            errorMessage = "";
+            errorProvider1.Clear();
+            return true;
             }
 
             errorMessage = "Name must be numbers!";
             return false;
+        }
+
+        // ---------- ********** need to fix the textboxes that aren't correct with regex ********** --------- //
+        private void addInvTextBox_TextChanged(object sender, EventArgs e)
+        {
+            //if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            //{
+            //    e.Handled = true;
+            //}
+            if (regex.IsMatch(addInvTextBox.Text))
+            {
+                addInvTextBox.ForeColor = Color.Green;
+            }
+            else
+            {
+                addInvTextBox.ForeColor = Color.Red;
+            }
         }
     }
 }
