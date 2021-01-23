@@ -60,6 +60,8 @@
             this.addPriceTextBox.Name = "addPriceTextBox";
             this.addPriceTextBox.Size = new System.Drawing.Size(194, 26);
             this.addPriceTextBox.TabIndex = 5;
+            this.addPriceTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AddPriceTextBox_KeyPress);
+            this.addPriceTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.AddPriceTextBox_Validating);
             // 
             // label1
             // 
@@ -79,7 +81,7 @@
             this.addPartInHouseRadio.Location = new System.Drawing.Point(206, 17);
             this.addPartInHouseRadio.Name = "addPartInHouseRadio";
             this.addPartInHouseRadio.Size = new System.Drawing.Size(93, 24);
-            this.addPartInHouseRadio.TabIndex = 1;
+            this.addPartInHouseRadio.TabIndex = 0;
             this.addPartInHouseRadio.TabStop = true;
             this.addPartInHouseRadio.Text = "In-House";
             this.addPartInHouseRadio.UseVisualStyleBackColor = true;
@@ -113,7 +115,7 @@
             this.addPartMinTextBox.Location = new System.Drawing.Point(469, 422);
             this.addPartMinTextBox.Name = "addPartMinTextBox";
             this.addPartMinTextBox.Size = new System.Drawing.Size(100, 26);
-            this.addPartMinTextBox.TabIndex = 3;
+            this.addPartMinTextBox.TabIndex = 7;
             // 
             // addPartNameTextBox
             // 
@@ -122,8 +124,7 @@
             this.addPartNameTextBox.Location = new System.Drawing.Point(272, 189);
             this.addPartNameTextBox.Name = "addPartNameTextBox";
             this.addPartNameTextBox.Size = new System.Drawing.Size(194, 26);
-            this.addPartNameTextBox.TabIndex = 0;
-            this.addPartNameTextBox.TextChanged += new System.EventHandler(this.addInvTextBox_TextChanged);
+            this.addPartNameTextBox.TabIndex = 3;
             this.addPartNameTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.addPartNameTextBox_Validating);
             // 
             // addPartMaxTextBox
@@ -142,8 +143,7 @@
             this.addInvTextBox.Location = new System.Drawing.Point(272, 269);
             this.addInvTextBox.Name = "addInvTextBox";
             this.addInvTextBox.Size = new System.Drawing.Size(194, 26);
-            this.addInvTextBox.TabIndex = 7;
-            this.addInvTextBox.TextChanged += new System.EventHandler(this.addInvTextBox_TextChanged);
+            this.addInvTextBox.TabIndex = 4;
             this.addInvTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.AddInvTextBox_Validating);
             // 
             // IDNameTextBox

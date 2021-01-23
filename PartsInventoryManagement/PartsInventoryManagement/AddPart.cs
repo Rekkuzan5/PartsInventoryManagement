@@ -55,7 +55,7 @@ namespace PartsInventoryManagement
             }
             this.Close();
         }
-      
+
         private void AddPartOutsourceRadio_CheckedChanged(object sender, EventArgs e)
         {
             if (addPartOutsourceRadio.Checked)
@@ -68,10 +68,10 @@ namespace PartsInventoryManagement
             }
         }
 
-         private void AddPartCancelButton_Click(object sender, EventArgs e)
-         {
+        private void AddPartCancelButton_Click(object sender, EventArgs e)
+        {
             this.Close();
-         }
+        }
 
         //-- Validation --//
 
@@ -87,7 +87,7 @@ namespace PartsInventoryManagement
             }
         }
 
-        public bool ValidName(string partName, out string errorMessage) 
+        public bool ValidName(string partName, out string errorMessage)
         {
             if (string.IsNullOrWhiteSpace(addPartNameTextBox.Text))
             {
@@ -129,9 +129,9 @@ namespace PartsInventoryManagement
             }
             else if (addInvTextBox.TextLength > 0)
             {
-            errorMessage = "";
-            errorProvider1.Clear();
-            return true;
+                errorMessage = "";
+                errorProvider1.Clear();
+                return true;
             }
 
             errorMessage = "Name must be numbers!";
@@ -139,19 +139,73 @@ namespace PartsInventoryManagement
         }
 
         // ---------- ********** need to fix the textboxes that aren't correct with regex ********** --------- //
-        private void addInvTextBox_TextChanged(object sender, EventArgs e)
+        private void AddInvTextBox_TextChanged(object sender, EventArgs e)
         {
             //if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             //{
             //    e.Handled = true;
             //}
-            if (regex.IsMatch(addInvTextBox.Text))
+            //if (regex.IsMatch(addInvTextBox.Text))
+            //{
+            //    addInvTextBox.ForeColor = Color.Green;
+            //    return true;
+            //}
+            //else
+            //{
+            //    addInvTextBox.ForeColor = Color.Red;
+            //}
+            //return false;
+        }
+
+
+
+        public bool PriceValidated(string price, out string errorMessage)
+        {
+            //if (regex.IsMatch(addPriceTextBox.Text))
+            //{
+            //    addPriceTextBox.ForeColor = Color.Green;
+            //    errorMessage = "";
+            //    return true;
+            //}
+            errorMessage = "Please enter a numeric price.  For example 24.99";
+            //if (addPriceTextBox.TextLength == 0 || !regex.IsMatch(addPriceTextBox.Text))
+            //{
+            //    return false;
+            //}
+            if (addPriceTextBox.TextLength > 0 && regex.IsMatch(addPriceTextBox.Text))
             {
-                addInvTextBox.ForeColor = Color.Green;
+                //addPriceTextBox.ForeColor = Color.Green;
+                errorProvider1.Clear();
+                errorMessage = "";
+                return true;
+            }
+
+            return false;
+        }
+
+
+
+        private void AddPriceTextBox_Validating(object sender, CancelEventArgs e)
+        {
+            if (!PriceValidated(addPriceTextBox.Text, out string errorMessage))
+            {
+                e.Cancel = true;
+                addPriceTextBox.Focus();
+                addPriceTextBox.Select(0, addPriceTextBox.TextLength);
+
+                this.errorProvider1.SetError(addPriceTextBox, errorMessage);
             }
             else
             {
-                addInvTextBox.ForeColor = Color.Red;
+                errorProvider1.Clear();
+            }
+        }
+
+        private void AddPriceTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
             }
         }
     }
