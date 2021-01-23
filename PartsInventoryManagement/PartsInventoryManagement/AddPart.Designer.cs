@@ -59,7 +59,7 @@
             this.addPriceTextBox.Location = new System.Drawing.Point(272, 346);
             this.addPriceTextBox.Name = "addPriceTextBox";
             this.addPriceTextBox.Size = new System.Drawing.Size(194, 26);
-            this.addPriceTextBox.TabIndex = 5;
+            this.addPriceTextBox.TabIndex = 2;
             this.addPriceTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AddPriceTextBox_KeyPress);
             this.addPriceTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.AddPriceTextBox_Validating);
             // 
@@ -81,7 +81,7 @@
             this.addPartInHouseRadio.Location = new System.Drawing.Point(206, 17);
             this.addPartInHouseRadio.Name = "addPartInHouseRadio";
             this.addPartInHouseRadio.Size = new System.Drawing.Size(93, 24);
-            this.addPartInHouseRadio.TabIndex = 0;
+            this.addPartInHouseRadio.TabIndex = 8;
             this.addPartInHouseRadio.TabStop = true;
             this.addPartInHouseRadio.Text = "In-House";
             this.addPartInHouseRadio.UseVisualStyleBackColor = true;
@@ -93,7 +93,7 @@
             this.addPartOutsourceRadio.Location = new System.Drawing.Point(356, 17);
             this.addPartOutsourceRadio.Name = "addPartOutsourceRadio";
             this.addPartOutsourceRadio.Size = new System.Drawing.Size(110, 24);
-            this.addPartOutsourceRadio.TabIndex = 1;
+            this.addPartOutsourceRadio.TabIndex = 9;
             this.addPartOutsourceRadio.Text = "Outsourced";
             this.addPartOutsourceRadio.UseVisualStyleBackColor = true;
             this.addPartOutsourceRadio.CheckedChanged += new System.EventHandler(this.AddPartOutsourceRadio_CheckedChanged);
@@ -115,7 +115,8 @@
             this.addPartMinTextBox.Location = new System.Drawing.Point(469, 422);
             this.addPartMinTextBox.Name = "addPartMinTextBox";
             this.addPartMinTextBox.Size = new System.Drawing.Size(100, 26);
-            this.addPartMinTextBox.TabIndex = 7;
+            this.addPartMinTextBox.TabIndex = 4;
+            this.addPartMinTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AddPartMinTextBox_KeyPress);
             // 
             // addPartNameTextBox
             // 
@@ -124,7 +125,7 @@
             this.addPartNameTextBox.Location = new System.Drawing.Point(272, 189);
             this.addPartNameTextBox.Name = "addPartNameTextBox";
             this.addPartNameTextBox.Size = new System.Drawing.Size(194, 26);
-            this.addPartNameTextBox.TabIndex = 3;
+            this.addPartNameTextBox.TabIndex = 0;
             this.addPartNameTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.addPartNameTextBox_Validating);
             // 
             // addPartMaxTextBox
@@ -134,7 +135,8 @@
             this.addPartMaxTextBox.Location = new System.Drawing.Point(272, 422);
             this.addPartMaxTextBox.Name = "addPartMaxTextBox";
             this.addPartMaxTextBox.Size = new System.Drawing.Size(93, 26);
-            this.addPartMaxTextBox.TabIndex = 6;
+            this.addPartMaxTextBox.TabIndex = 3;
+            this.addPartMaxTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AddPartMaxTextBox_KeyPress);
             // 
             // addInvTextBox
             // 
@@ -143,7 +145,8 @@
             this.addInvTextBox.Location = new System.Drawing.Point(272, 269);
             this.addInvTextBox.Name = "addInvTextBox";
             this.addInvTextBox.Size = new System.Drawing.Size(194, 26);
-            this.addInvTextBox.TabIndex = 4;
+            this.addInvTextBox.TabIndex = 1;
+            this.addInvTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AddInvTextBox_KeyPress);
             this.addInvTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.AddInvTextBox_Validating);
             // 
             // IDNameTextBox
@@ -153,7 +156,8 @@
             this.IDNameTextBox.Location = new System.Drawing.Point(272, 493);
             this.IDNameTextBox.Name = "IDNameTextBox";
             this.IDNameTextBox.Size = new System.Drawing.Size(194, 26);
-            this.IDNameTextBox.TabIndex = 8;
+            this.IDNameTextBox.TabIndex = 5;
+            this.IDNameTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.IDNameTextBox_KeyPress);
             // 
             // label2
             // 
@@ -231,7 +235,7 @@
             this.addPartSavebutton.Location = new System.Drawing.Point(358, 557);
             this.addPartSavebutton.Name = "addPartSavebutton";
             this.addPartSavebutton.Size = new System.Drawing.Size(80, 30);
-            this.addPartSavebutton.TabIndex = 16;
+            this.addPartSavebutton.TabIndex = 6;
             this.addPartSavebutton.Text = "Save";
             this.addPartSavebutton.UseVisualStyleBackColor = true;
             this.addPartSavebutton.Click += new System.EventHandler(this.AddPartSavebutton_Click);
@@ -242,7 +246,7 @@
             this.addPartCancelButton.Location = new System.Drawing.Point(489, 557);
             this.addPartCancelButton.Name = "addPartCancelButton";
             this.addPartCancelButton.Size = new System.Drawing.Size(80, 30);
-            this.addPartCancelButton.TabIndex = 17;
+            this.addPartCancelButton.TabIndex = 7;
             this.addPartCancelButton.Text = "Cancel";
             this.addPartCancelButton.UseVisualStyleBackColor = true;
             this.addPartCancelButton.Click += new System.EventHandler(this.AddPartCancelButton_Click);

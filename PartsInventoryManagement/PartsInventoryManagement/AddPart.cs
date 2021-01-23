@@ -16,6 +16,7 @@ namespace PartsInventoryManagement
         public AddPart()
         {
             InitializeComponent();
+            addPartNameTextBox.Focus();
         }
 
         private void AddPart_Load(object sender, EventArgs e)
@@ -106,8 +107,6 @@ namespace PartsInventoryManagement
 
         // Inventory validation //
 
-        Regex regex = new Regex("^\\d*(\\.\\d{1,2})?$");
-
         private void AddInvTextBox_Validating(object sender, CancelEventArgs e)
         {
             if (!ValidInventory(addInvTextBox.Text, out string errorMessage))
@@ -122,9 +121,10 @@ namespace PartsInventoryManagement
 
         public bool ValidInventory(string inventory, out string errorMessage)
         {
+            errorMessage = "Inventory amount is required!";
             if (addInvTextBox.TextLength == 0)
             {
-                errorMessage = "Inventory amount is required!";
+                //errorMessage = "Inventory amount is required!";
                 return false;
             }
             else if (addInvTextBox.TextLength > 0)
@@ -134,47 +134,31 @@ namespace PartsInventoryManagement
                 return true;
             }
 
-            errorMessage = "Name must be numbers!";
+            //errorMessage = "Must be numbers!";
             return false;
         }
 
-        // ---------- ********** need to fix the textboxes that aren't correct with regex ********** --------- //
-        private void AddInvTextBox_TextChanged(object sender, EventArgs e)
+        private void AddInvTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            //if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
-            //{
-            //    e.Handled = true;
-            //}
-            //if (regex.IsMatch(addInvTextBox.Text))
-            //{
-            //    addInvTextBox.ForeColor = Color.Green;
-            //    return true;
-            //}
-            //else
-            //{
-            //    addInvTextBox.ForeColor = Color.Red;
-            //}
-            //return false;
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
 
+        // ---------- ********** need to fix the textboxes that aren't correct with regex ********** --------- //
 
 
-        public bool PriceValidated(string price, out string errorMessage)
+        //**  Checks for valid price input using Regex to verify proper format  **//
+
+        Regex regex = new Regex("^\\d*(\\.\\d{1,2})?$");
+
+        public bool ValidatedPrice(string price, out string errorMessage)
         {
-            //if (regex.IsMatch(addPriceTextBox.Text))
-            //{
-            //    addPriceTextBox.ForeColor = Color.Green;
-            //    errorMessage = "";
-            //    return true;
-            //}
             errorMessage = "Please enter a numeric price.  For example 24.99";
-            //if (addPriceTextBox.TextLength == 0 || !regex.IsMatch(addPriceTextBox.Text))
-            //{
-            //    return false;
-            //}
             if (addPriceTextBox.TextLength > 0 && regex.IsMatch(addPriceTextBox.Text))
             {
-                //addPriceTextBox.ForeColor = Color.Green;
+                //addPriceTextBox.ForeColor = Color.Green;    //for testing valid inputs
                 errorProvider1.Clear();
                 errorMessage = "";
                 return true;
@@ -183,21 +167,15 @@ namespace PartsInventoryManagement
             return false;
         }
 
-
-
         private void AddPriceTextBox_Validating(object sender, CancelEventArgs e)
         {
-            if (!PriceValidated(addPriceTextBox.Text, out string errorMessage))
+            if (!ValidatedPrice(addPriceTextBox.Text, out string errorMessage))
             {
-                e.Cancel = true;
+                //e.Cancel = true;
                 addPriceTextBox.Focus();
                 addPriceTextBox.Select(0, addPriceTextBox.TextLength);
 
                 this.errorProvider1.SetError(addPriceTextBox, errorMessage);
-            }
-            else
-            {
-                errorProvider1.Clear();
             }
         }
 
@@ -208,6 +186,43 @@ namespace PartsInventoryManagement
                 e.Handled = true;
             }
         }
+
+        //**  End of price validation  **//
+
+        //**  Min/Max textbox modifications  **//
+
+        private void AddPartMaxTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void AddPartMinTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        //**  End of Min/Max Modifications  **//
+
+        //**  MachineID/Company textbox validation  **//
+
+        private void IDNameTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (addPartInHouseRadio.Checked)
+            {
+                if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+                {
+                    e.Handled = true;
+                }
+            }
+        }
+
+        //**  End of Machine/Company textbox validation  **//
     }
 }
   
