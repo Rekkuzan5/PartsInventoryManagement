@@ -16,28 +16,28 @@ namespace PartsInventoryManagement
         public AddPart()
         {
             InitializeComponent();
-            addPartNameTextBox.Focus();
+            //addPartNameTextBox.Focus();
         }
 
         private void AddPart_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         // Save button calls verify method
         private void AddPartSavebutton_Click(object sender, EventArgs e)
         {
-            VerifyPartSave();
-
+            CheckInput();
         }
 
         // verifies if entered information is correct and creates either inhouse or outsourced part
         private void VerifyPartSave()
         {
+
+
             if (int.Parse(addPartMinTextBox.Text) > int.Parse(addPartMaxTextBox.Text))
             {
                 MessageBox.Show("The minimum amount cannot exceed the maximum");
-                return;
             }
 
             if (addPartInHouseRadio.Checked)
@@ -76,12 +76,74 @@ namespace PartsInventoryManagement
 
         //-- Validation --//
 
+        // Verify all textboxes are filled before saving //
+
+        //private bool ValidateTextBoxes()
+        //{
+        //    //ValidateTextBoxes();
+
+        //CheckInput(addPartNameTextBox);
+        //CheckInput(addInvTextBox);
+        //CheckInput(addPriceTextBox);
+        //CheckInput(addPartMaxTextBox);
+        //CheckInput(addPartMinTextBox);
+        //CheckInput(IDNameTextBox);
+        //}
+
+        //public override bool ValidateChildren()
+        //{
+
+        //}
+
+        //private void CheckInput_Validating(object sender, CancelEventArgs e)
+        //{
+        //    if (CheckInput())
+        //    {
+        //        e.Cancel = true;
+        //        MessageBox.Show("All fields must be completed before saving.");
+        //    }
+        //    else
+        //    {
+        //        VerifyPartSave();
+        //    }
+        //}
+
+        private void CheckInput()
+        {
+            if (this.ValidateChildren())
+            {
+                VerifyPartSave();
+            }
+            else
+            {
+                MessageBox.Show("All fields must be completed before saving.");
+            }
+            //foreach (Control c in this.Controls)
+            //{
+            //    if (c is TextBox)
+            //    {
+            //        if (string.IsNullOrEmpty(c.Text))
+            //        {
+            //            MessageBox.Show("All fields must be completed before saving.");
+            //            //addPartSavebutton.Enabled = false;
+            //            break;
+            //        }
+            //        if (!string.IsNullOrEmpty(c.Text))
+            //        {
+            //            addPartSavebutton.Enabled = true;
+            //            VerifyPartSave();
+            //        }
+            //    }
+            //}
+
+        }
+
         // methods for part name validation
-        private void addPartNameTextBox_Validating(object sender, CancelEventArgs e)
+        private void AddPartNameTextBox_Validating(object sender, CancelEventArgs e)
         {
             if (!ValidName(addPartNameTextBox.Text, out string errorMessage))
             {
-                //e.Cancel = true;
+                e.Cancel = true;
                 addPartNameTextBox.Focus();
                 //addPartNameTextBox.Select(0, addPartNameTextBox.TextLength);
                 this.errorProvider1.SetError(addPartNameTextBox, errorMessage);
@@ -111,7 +173,7 @@ namespace PartsInventoryManagement
         {
             if (!ValidInventory(addInvTextBox.Text, out string errorMessage))
             {
-                //e.Cancel = true;
+                e.Cancel = true;
                 addInvTextBox.Focus();
                 addInvTextBox.Select(0, addInvTextBox.TextLength);
 
@@ -171,7 +233,7 @@ namespace PartsInventoryManagement
         {
             if (!ValidatedPrice(addPriceTextBox.Text, out string errorMessage))
             {
-                //e.Cancel = true;
+                e.Cancel = true;
                 addPriceTextBox.Focus();
                 addPriceTextBox.Select(0, addPriceTextBox.TextLength);
 
@@ -191,6 +253,30 @@ namespace PartsInventoryManagement
 
         //**  Min/Max textbox modifications  **//
 
+        private void addPartMaxTextBox_Validating(object sender, CancelEventArgs e)
+        {
+            if (!ValidPartMax(addPartMaxTextBox.Text, out string errorMessage))
+            {
+                e.Cancel = true;
+                addPartMaxTextBox.Focus();
+                addPartMaxTextBox.Select(0, addPartMaxTextBox.TextLength);
+
+                this.errorProvider1.SetError(addPartMaxTextBox, errorMessage);
+            }
+        }
+
+        public bool ValidPartMax(string max, out string errorMessage)
+        {
+            errorMessage = ("Enter the maximum number of parts.");
+             if (addPartMaxTextBox.TextLength > 0)
+            {
+                errorMessage = "";
+                errorProvider1.Clear();
+                return true;
+            }
+            return false;
+        }
+
         private void AddPartMaxTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
@@ -204,6 +290,15 @@ namespace PartsInventoryManagement
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
+            }
+        }
+
+        private void InvalidMinMax()
+        {
+            if (int.Parse(addPartMinTextBox.Text) > int.Parse(addPartMaxTextBox.Text))
+            {
+                MessageBox.Show("The minimum amount cannot exceed the maximum");
+
             }
         }
 
@@ -221,6 +316,8 @@ namespace PartsInventoryManagement
                 }
             }
         }
+
+        
 
         //**  End of Machine/Company textbox validation  **//
     }
