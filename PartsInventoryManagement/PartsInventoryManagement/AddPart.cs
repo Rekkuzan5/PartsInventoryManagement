@@ -16,25 +16,22 @@ namespace PartsInventoryManagement
         public AddPart()
         {
             InitializeComponent();
-            //addPartNameTextBox.Focus();
         }
 
         private void AddPart_Load(object sender, EventArgs e)
         {
-            
+
         }
 
-        // Save button calls verify method
+        //**  Save button calls verify method  **//
         private void AddPartSavebutton_Click(object sender, EventArgs e)
         {
             CheckInput();
         }
 
-        // verifies if entered information is correct and creates either inhouse or outsourced part
+        //**  Verifies if entered information is correct and creates either inhouse or outsourced part  **//
         private void VerifyPartSave()
         {
-
-
             if (int.Parse(addPartMinTextBox.Text) > int.Parse(addPartMaxTextBox.Text))
             {
                 MessageBox.Show("The minimum amount cannot exceed the maximum");
@@ -74,78 +71,36 @@ namespace PartsInventoryManagement
             this.Close();
         }
 
-        //-- Validation --//
-
-        // Verify all textboxes are filled before saving //
-
-        //private bool ValidateTextBoxes()
-        //{
-        //    //ValidateTextBoxes();
-
-        //CheckInput(addPartNameTextBox);
-        //CheckInput(addInvTextBox);
-        //CheckInput(addPriceTextBox);
-        //CheckInput(addPartMaxTextBox);
-        //CheckInput(addPartMinTextBox);
-        //CheckInput(IDNameTextBox);
-        //}
-
-        //public override bool ValidateChildren()
-        //{
-
-        //}
-
-        //private void CheckInput_Validating(object sender, CancelEventArgs e)
-        //{
-        //    if (CheckInput())
-        //    {
-        //        e.Cancel = true;
-        //        MessageBox.Show("All fields must be completed before saving.");
-        //    }
-        //    else
-        //    {
-        //        VerifyPartSave();
-        //    }
-        //}
+        //**  Final Validation  **//
 
         private void CheckInput()
         {
             if (this.ValidateChildren())
             {
-                VerifyPartSave();
+                if (int.Parse(addPartMinTextBox.Text) >= int.Parse(addPartMaxTextBox.Text))
+                {
+                    MessageBox.Show("The minimum amount cannot be equal to or exceed the maximum.");
+                }
+                else
+                {
+                    VerifyPartSave();
+                }
             }
             else
             {
                 MessageBox.Show("All fields must be completed before saving.");
             }
-            //foreach (Control c in this.Controls)
-            //{
-            //    if (c is TextBox)
-            //    {
-            //        if (string.IsNullOrEmpty(c.Text))
-            //        {
-            //            MessageBox.Show("All fields must be completed before saving.");
-            //            //addPartSavebutton.Enabled = false;
-            //            break;
-            //        }
-            //        if (!string.IsNullOrEmpty(c.Text))
-            //        {
-            //            addPartSavebutton.Enabled = true;
-            //            VerifyPartSave();
-            //        }
-            //    }
-            //}
-
         }
 
-        // methods for part name validation
+        //**  Methods for part name validation  **//
+
         private void AddPartNameTextBox_Validating(object sender, CancelEventArgs e)
         {
             if (!ValidName(addPartNameTextBox.Text, out string errorMessage))
             {
                 e.Cancel = true;
                 addPartNameTextBox.Focus();
-                //addPartNameTextBox.Select(0, addPartNameTextBox.TextLength);
+                addPartNameTextBox.Select(0, addPartNameTextBox.TextLength);
                 this.errorProvider1.SetError(addPartNameTextBox, errorMessage);
             }
         }
@@ -165,9 +120,7 @@ namespace PartsInventoryManagement
             }
         }
 
-
-
-        // Inventory validation //
+        //**  Inventory validation  **//
 
         private void AddInvTextBox_Validating(object sender, CancelEventArgs e)
         {
@@ -196,7 +149,6 @@ namespace PartsInventoryManagement
                 return true;
             }
 
-            //errorMessage = "Must be numbers!";
             return false;
         }
 
@@ -207,9 +159,6 @@ namespace PartsInventoryManagement
                 e.Handled = true;
             }
         }
-
-        // ---------- ********** need to fix the textboxes that aren't correct with regex ********** --------- //
-
 
         //**  Checks for valid price input using Regex to verify proper format  **//
 
@@ -249,11 +198,9 @@ namespace PartsInventoryManagement
             }
         }
 
-        //**  End of price validation  **//
-
         //**  Min/Max textbox modifications  **//
 
-        private void addPartMaxTextBox_Validating(object sender, CancelEventArgs e)
+        private void AddPartMaxTextBox_Validating(object sender, CancelEventArgs e)
         {
             if (!ValidPartMax(addPartMaxTextBox.Text, out string errorMessage))
             {
@@ -269,6 +216,30 @@ namespace PartsInventoryManagement
         {
             errorMessage = ("Enter the maximum number of parts.");
              if (addPartMaxTextBox.TextLength > 0)
+            {
+                errorMessage = "";
+                errorProvider1.Clear();
+                return true;
+            }
+            return false;
+        }
+
+        private void AddPartMinTextBox_Validating(object sender, CancelEventArgs e)
+        {
+            if (!ValidPartMin(addPartMinTextBox.Text, out string errorMessage))
+            {
+                e.Cancel = true;
+                addPartMinTextBox.Focus();
+                addPartMinTextBox.Select(0, addPartMinTextBox.TextLength);
+
+                this.errorProvider1.SetError(addPartMinTextBox, errorMessage);
+            }
+        }
+
+        public bool ValidPartMin(string min, out string errorMessage)
+        {
+            errorMessage = ("Enter the minimum number of parts.");
+            if (addPartMinTextBox.TextLength > 0)
             {
                 errorMessage = "";
                 errorProvider1.Clear();
@@ -293,17 +264,6 @@ namespace PartsInventoryManagement
             }
         }
 
-        private void InvalidMinMax()
-        {
-            if (int.Parse(addPartMinTextBox.Text) > int.Parse(addPartMaxTextBox.Text))
-            {
-                MessageBox.Show("The minimum amount cannot exceed the maximum");
-
-            }
-        }
-
-        //**  End of Min/Max Modifications  **//
-
         //**  MachineID/Company textbox validation  **//
 
         private void IDNameTextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -317,9 +277,30 @@ namespace PartsInventoryManagement
             }
         }
 
-        
+        private void IDNameTextBox_Validating(object sender, CancelEventArgs e)
+        {
+            if (!ValidIDName(IDNameTextBox.Text, out string errorMessage))
+            {
+                e.Cancel = true;
+                IDNameTextBox.Focus();
+                IDNameTextBox.Select(0, IDNameTextBox.TextLength);
 
-        //**  End of Machine/Company textbox validation  **//
+                this.errorProvider1.SetError(IDNameTextBox, errorMessage);
+            }
+        }
+
+        private bool ValidIDName(string id, out string errorMessage)
+        {
+            errorMessage = ("Enter the Machine ID or Vendor Name.");
+            if (IDNameTextBox.TextLength > 0)
+            {
+                errorMessage = "";
+                errorProvider1.Clear();
+                return true;
+            }
+            return false;
+        }
+
     }
 }
   

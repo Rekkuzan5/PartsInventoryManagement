@@ -117,6 +117,7 @@
             this.addPartMinTextBox.Size = new System.Drawing.Size(100, 26);
             this.addPartMinTextBox.TabIndex = 4;
             this.addPartMinTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AddPartMinTextBox_KeyPress);
+            this.addPartMinTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.AddPartMinTextBox_Validating);
             // 
             // addPartNameTextBox
             // 
@@ -137,7 +138,7 @@
             this.addPartMaxTextBox.Size = new System.Drawing.Size(93, 26);
             this.addPartMaxTextBox.TabIndex = 3;
             this.addPartMaxTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AddPartMaxTextBox_KeyPress);
-            this.addPartMaxTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.addPartMaxTextBox_Validating);
+            this.addPartMaxTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.AddPartMaxTextBox_Validating);
             // 
             // addInvTextBox
             // 
@@ -159,6 +160,7 @@
             this.IDNameTextBox.Size = new System.Drawing.Size(194, 26);
             this.IDNameTextBox.TabIndex = 5;
             this.IDNameTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.IDNameTextBox_KeyPress);
+            this.IDNameTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.IDNameTextBox_Validating);
             // 
             // label2
             // 
