@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.modifyPartCancelButton = new System.Windows.Forms.Button();
             this.partSaveButton = new System.Windows.Forms.Button();
             this.partMachineIDLabel = new System.Windows.Forms.Label();
@@ -47,6 +48,8 @@
             this.InHouseRadButton = new System.Windows.Forms.RadioButton();
             this.ModifyPartLabel = new System.Windows.Forms.Label();
             this.modPriceTextBox = new System.Windows.Forms.TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // modifyPartCancelButton
@@ -58,7 +61,7 @@
             this.modifyPartCancelButton.TabIndex = 17;
             this.modifyPartCancelButton.Text = "Cancel";
             this.modifyPartCancelButton.UseVisualStyleBackColor = true;
-            this.modifyPartCancelButton.Click += new System.EventHandler(this.modifyPartCancelButton_Click);
+            this.modifyPartCancelButton.Click += new System.EventHandler(this.ModifyPartCancelButton_Click);
             // 
             // partSaveButton
             // 
@@ -148,6 +151,8 @@
             this.modMachineIDTextBox.Name = "modMachineIDTextBox";
             this.modMachineIDTextBox.Size = new System.Drawing.Size(194, 26);
             this.modMachineIDTextBox.TabIndex = 8;
+            this.modMachineIDTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.IDNameTextBox_KeyPress);
+            this.modMachineIDTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.IDNameTextBox_Validating);
             // 
             // modInventoryTextBox
             // 
@@ -156,6 +161,8 @@
             this.modInventoryTextBox.Name = "modInventoryTextBox";
             this.modInventoryTextBox.Size = new System.Drawing.Size(194, 26);
             this.modInventoryTextBox.TabIndex = 7;
+            this.modInventoryTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ModInvTextBox_KeyPress);
+            this.modInventoryTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.ModInvTextBox_Validating);
             // 
             // modMaxTextBox
             // 
@@ -164,6 +171,8 @@
             this.modMaxTextBox.Name = "modMaxTextBox";
             this.modMaxTextBox.Size = new System.Drawing.Size(93, 26);
             this.modMaxTextBox.TabIndex = 6;
+            this.modMaxTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ModPartMaxTextBox_KeyPress);
+            this.modMaxTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.ModPartMaxTextBox_Validating);
             // 
             // modNameTextBox
             // 
@@ -172,6 +181,7 @@
             this.modNameTextBox.Name = "modNameTextBox";
             this.modNameTextBox.Size = new System.Drawing.Size(194, 26);
             this.modNameTextBox.TabIndex = 4;
+            this.modNameTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.ModPartNameTextBox_Validating);
             // 
             // modMinTextBox
             // 
@@ -180,6 +190,8 @@
             this.modMinTextBox.Name = "modMinTextBox";
             this.modMinTextBox.Size = new System.Drawing.Size(100, 26);
             this.modMinTextBox.TabIndex = 3;
+            this.modMinTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ModPartMinTextBox_KeyPress);
+            this.modMinTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.ModPartMinTextBox_Validating);
             // 
             // modPartIDTextBox
             // 
@@ -232,6 +244,13 @@
             this.modPriceTextBox.Name = "modPriceTextBox";
             this.modPriceTextBox.Size = new System.Drawing.Size(194, 26);
             this.modPriceTextBox.TabIndex = 5;
+            this.modPriceTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ModPriceTextBox_KeyPress);
+            this.modPriceTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.ModPriceTextBox_Validating);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider1.ContainerControl = this;
             // 
             // ModifyPart
             // 
@@ -263,6 +282,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modify Part";
             this.Load += new System.EventHandler(this.Form2_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -289,5 +309,6 @@
         private System.Windows.Forms.Label ModifyPartLabel;
         private System.Windows.Forms.TextBox modPriceTextBox;
         private System.Windows.Forms.RadioButton OutsourcedRadButton;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
