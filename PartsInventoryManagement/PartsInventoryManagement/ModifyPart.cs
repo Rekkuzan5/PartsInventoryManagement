@@ -128,6 +128,10 @@ namespace PartsInventoryManagement
                 {
                     MessageBox.Show("The minimum amount cannot be equal to or exceed the maximum.");
                 }
+                else if (int.Parse(modInventoryTextBox.Text) > int.Parse(modMaxTextBox.Text))
+                {
+                    MessageBox.Show("Inventory cannot be more than the maximum.");
+                }
                 else
                 {
                     VerifyPartSave();
