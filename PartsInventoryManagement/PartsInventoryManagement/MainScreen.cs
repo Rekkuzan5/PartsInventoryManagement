@@ -35,16 +35,16 @@ namespace PartsInventoryManagement
             partsDataGridView.Columns["Name"].HeaderText = "Part Name";
             partsDataGridView.Columns["InStock"].HeaderText = "Inventory";
             partsDataGridView.Columns["Price"].HeaderText = "Price";
-            partsDataGridView.Columns["Min"].Visible = false;
-            partsDataGridView.Columns["Max"].Visible = false;
+            partsDataGridView.Columns["Min"].HeaderText = "Min";
+            partsDataGridView.Columns["Max"].HeaderText = "Max";
 
             // Create column headers for parts datagridview
             ProductDataGridView.Columns["ProductID"].HeaderText = "Product ID";
             ProductDataGridView.Columns["Name"].HeaderText = "Name";
             ProductDataGridView.Columns["InStock"].HeaderText = "Inventory";
             ProductDataGridView.Columns["Price"].HeaderText = "Price";
-            ProductDataGridView.Columns["Min"].Visible = false;
-            ProductDataGridView.Columns["Max"].Visible = false;
+            ProductDataGridView.Columns["Min"].HeaderText = "Min";
+            ProductDataGridView.Columns["Max"].HeaderText = "Max";
 
             Inventory.PopulateList();
 
@@ -78,21 +78,24 @@ namespace PartsInventoryManagement
         // Delete part in grid on main page
         private void DeletePartButton_Click(object sender, EventArgs e)
         {
-            var result = MessageBox.Show("Are you sure you want to delete this part?", "Delete Part", MessageBoxButtons.YesNo);
-            if (result == DialogResult.Yes)
-            {
-                //for (int i = 0; i < Inventory.AllParts.Count; i++)
-                //{
-                //    if (Inventory.AllParts[i].PartID == partsDataGridView.SelectedRows.Contains)
-                //    { }
-                //}
-                //int delete_index = partsDataGridView.CurrentCell.RowIndex;
-                //foreach (DataGridViewRow row in partsDataGridView.SelectedRows)
-                //{
+            if (Inventory.AllParts.Count > 0)
+            { 
+                var result = MessageBox.Show("Are you sure you want to delete this part?", "Delete Part", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    //for (int i = 0; i < Inventory.AllParts.Count; i++)
+                    //{
+                    //    if (Inventory.AllParts[i].PartID == partsDataGridView.SelectedRows.Contains)
+                    //    { }
+                    //}
+                    //int delete_index = partsDataGridView.CurrentCell.RowIndex;
+                    //foreach (DataGridViewRow row in partsDataGridView.SelectedRows)
+                    //{
                     int partID = int.Parse(partsDataGridView.Rows[partsDataGridView.CurrentCell.RowIndex].Cells[0].Value.ToString());
-                //}
-                Inventory.DeletePart(partID);
-                this.Refresh();
+                    //}
+                    Inventory.DeletePart(partID);
+                    this.Refresh();
+                }
             }
         }
 
@@ -130,7 +133,8 @@ namespace PartsInventoryManagement
         //  Opens new form to add a new product
         private void AddProductButton_Click(object sender, EventArgs e)
         {
-
+            AddProduct addProduct = new AddProduct();
+            addProduct.ShowDialog();
         }
 
         // Opens new form to modify products
@@ -143,12 +147,15 @@ namespace PartsInventoryManagement
         // Delete product in grid on main page
         private void DeleteProductButton_Click(object sender, EventArgs e)
         {
-            var result = MessageBox.Show("Are you sure you want to delete this product?", "Delete Product", MessageBoxButtons.YesNo);
-            if (result == DialogResult.Yes)
+            if (Inventory.Products.Count > 0)
             {
-                foreach (DataGridViewRow row in ProductDataGridView.SelectedRows)
+                var result = MessageBox.Show("Are you sure you want to delete this product?", "Delete Product", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
                 {
-                    ProductDataGridView.Rows.RemoveAt(row.Index);
+                    foreach (DataGridViewRow row in ProductDataGridView.SelectedRows)
+                    {
+                        ProductDataGridView.Rows.RemoveAt(row.Index);
+                    }
                 }
             }
         }

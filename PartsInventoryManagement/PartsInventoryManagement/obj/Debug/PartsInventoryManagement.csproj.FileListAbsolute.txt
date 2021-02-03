@@ -24,3 +24,4 @@ C:\Users\Cameron\Desktop\WGU\Software1\PartsInventoryManagement\PartsInventoryMa
 C:\Users\Cameron\Desktop\WGU\Software1\PartsInventoryManagement\PartsInventoryManagement\obj\Debug\PartsInventoryManagement.csproj.CoreCompileInputs.cache
 C:\Users\Cameron\Desktop\WGU\Software1\PartsInventoryManagement\PartsInventoryManagement\obj\Debug\PartsInventoryManagement.exe
 C:\Users\Cameron\Desktop\WGU\Software1\PartsInventoryManagement\PartsInventoryManagement\obj\Debug\PartsInventoryManagement.pdb
+C:\Users\Cameron\Desktop\WGU Studies\C968 Software 1\PartsInventoryManagement\PartsInventoryManagement\obj\Debug\PartsInventoryManagement.AddProduct.resources

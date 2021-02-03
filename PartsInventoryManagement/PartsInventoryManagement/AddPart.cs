@@ -32,10 +32,10 @@ namespace PartsInventoryManagement
         //**  Verifies if entered information is correct and creates either inhouse or outsourced part  **//
         private void VerifyPartSave()
         {
-            if (int.Parse(addPartMinTextBox.Text) > int.Parse(addPartMaxTextBox.Text))
-            {
-                MessageBox.Show("The minimum amount cannot exceed the maximum");
-            }
+            //if (int.Parse(addPartMinTextBox.Text) > int.Parse(addPartMaxTextBox.Text))
+            //{
+            //    MessageBox.Show("The minimum amount cannot exceed the maximum");
+            //}
 
             if (addPartInHouseRadio.Checked)
             {
@@ -46,7 +46,7 @@ namespace PartsInventoryManagement
             }
             else
             {
-                int partID = (Inventory.AllParts[Inventory.AllParts.Count - 1].PartID + 1);
+                int partID = Inventory.AllParts[Inventory.AllParts.Count - 1].PartID + 1;
                 Outsourced outsourcedPart = new Outsourced(partID, addPartNameTextBox.Text, decimal.Parse(addPriceTextBox.Text),
                 int.Parse(addInvTextBox.Text), int.Parse(addPartMaxTextBox.Text), int.Parse(addPartMaxTextBox.Text), IDNameTextBox.Text);
                 Inventory.AddPart(outsourcedPart);
@@ -77,17 +77,14 @@ namespace PartsInventoryManagement
         {
             if (this.ValidateChildren())
             {
-                if (int.Parse(addPartMinTextBox.Text) >= int.Parse(addPartMaxTextBox.Text))
+                
+                if (int.Parse(addInvTextBox.Text) >= int.Parse(addPartMinTextBox.Text) && int.Parse(addInvTextBox.Text) <= int.Parse(addPartMaxTextBox.Text))
                 {
-                    MessageBox.Show("The minimum amount cannot be equal to or exceed the maximum.");
-                }
-                else if (int.Parse(addInvTextBox.Text) > int.Parse(addPartMaxTextBox.Text))
-                {
-                    MessageBox.Show("Inventory cannot be more than the maximum.");
+                     VerifyPartSave();
                 }
                 else
                 {
-                    VerifyPartSave();
+                    MessageBox.Show("The minimum amount cannot be equal to or exceed the maximum.  Inventory must be within the minimum and maximum.");
                 }
             }
             else
@@ -119,7 +116,7 @@ namespace PartsInventoryManagement
             else
             {
                 errorMessage = "";
-                errorProvider1.Clear();
+                //errorProvider1.Clear();
                 return true;
             }
         }
@@ -141,7 +138,7 @@ namespace PartsInventoryManagement
         public bool ValidInventory(string inventory, out string errorMessage)
         {
             errorMessage = "Inventory amount is required!";
-            if (addInvTextBox.TextLength == 0)
+            if (string.IsNullOrWhiteSpace(addInvTextBox.Text))
             {
                 //errorMessage = "Inventory amount is required!";
                 return false;
@@ -149,7 +146,7 @@ namespace PartsInventoryManagement
             else if (addInvTextBox.TextLength > 0)
             {
                 errorMessage = "";
-                errorProvider1.Clear();
+                //errorProvider1.Clear();
                 return true;
             }
 
@@ -174,7 +171,7 @@ namespace PartsInventoryManagement
             if (addPriceTextBox.TextLength > 0 && regex.IsMatch(addPriceTextBox.Text))
             {
                 //addPriceTextBox.ForeColor = Color.Green;    //for testing valid inputs
-                errorProvider1.Clear();
+                //errorProvider1.Clear();
                 errorMessage = "";
                 return true;
             }
@@ -219,10 +216,10 @@ namespace PartsInventoryManagement
         public bool ValidPartMax(string max, out string errorMessage)
         {
             errorMessage = ("Enter the maximum number of parts.");
-             if (addPartMaxTextBox.TextLength > 0)
+             if (!string.IsNullOrEmpty(addPartMaxTextBox.Text))
             {
                 errorMessage = "";
-                errorProvider1.Clear();
+                //errorProvider1.Clear();
                 return true;
             }
             return false;
@@ -243,10 +240,10 @@ namespace PartsInventoryManagement
         public bool ValidPartMin(string min, out string errorMessage)
         {
             errorMessage = ("Enter the minimum number of parts.");
-            if (addPartMinTextBox.TextLength > 0)
+            if (!string.IsNullOrEmpty(addPartMinTextBox.Text))
             {
                 errorMessage = "";
-                errorProvider1.Clear();
+                //errorProvider1.Clear();
                 return true;
             }
             return false;
@@ -296,7 +293,7 @@ namespace PartsInventoryManagement
         private bool ValidIDName(string id, out string errorMessage)
         {
             errorMessage = ("Enter the Machine ID or Vendor Name.");
-            if (IDNameTextBox.TextLength > 0)
+            if (!string.IsNullOrEmpty(IDNameTextBox.Text))
             {
                 errorMessage = "";
                 errorProvider1.Clear();

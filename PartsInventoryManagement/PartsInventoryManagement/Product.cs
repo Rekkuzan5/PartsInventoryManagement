@@ -54,6 +54,7 @@ namespace PartsInventoryManagement
                 {
                     AssociatedParts.Remove(part);
                     checkSuccess = true;
+                    break;
                 }
             }
             return checkSuccess;

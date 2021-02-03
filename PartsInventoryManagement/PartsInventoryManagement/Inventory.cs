@@ -51,10 +51,10 @@ namespace PartsInventoryManagement
 
         // ** Products Methods ** //
 
-        //public static void addProduct(Product)
-        //{
-
-        //}
+        public static void addProduct(Product prod)
+        {
+            Products.Add(prod);
+        }
 
         //public static bool removeProduct(int productID)
         //{
