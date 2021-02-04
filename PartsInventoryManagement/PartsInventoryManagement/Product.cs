@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PartsInventoryManagement
 {
-    class Product
+    public class Product
     {
         // fields for Product class
         public static BindingList<Part> AssociatedParts = new BindingList<Part>();

@@ -12,14 +12,21 @@ namespace PartsInventoryManagement
 {
     public partial class ModifyProduct : Form
     {
-        public ModifyProduct()
+        public ModifyProduct(Product product)
         {
             InitializeComponent();
-            ModifyProductScreenLoad();
+            ModifyProductScreenLoad(product);
         }
 
-        public void ModifyProductScreenLoad()
+        public void ModifyProductScreenLoad(Product moddedProduct)
         {
+            modProductIDTextBox.Text = moddedProduct.ProductID.ToString();
+            modProductNameTextBox.Text = moddedProduct.Name.ToString();
+            modProductInvTextBox.Text = moddedProduct.InStock.ToString();
+            modProductPriceTextBox.Text = moddedProduct.Price.ToString();
+            modProductMaxTextBox.Text = moddedProduct.Max.ToString();
+            modProductMinTextBox.Text = moddedProduct.Min.ToString();
+
             var modProduct = new BindingSource();
             modProduct.DataSource = Inventory.AllParts;
             partToProductDataGrid.DataSource = modProduct;
@@ -38,7 +45,7 @@ namespace PartsInventoryManagement
             this.Close();
         }
 
-        private void ModifyProductSearchButton(object sender, EventArgs e)
+        private void ModifyProductSearchButton_Click(object sender, EventArgs e)
         {
             if (modSearchTextBox.Text != "")
             {

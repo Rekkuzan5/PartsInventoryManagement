@@ -39,15 +39,17 @@ namespace PartsInventoryManagement
 
             if (addPartInHouseRadio.Checked)
             {
+                int partID = Inventory.AssignPartID();
                 //int counter = Inventory.Products.Count;
                 InHouse inHouse = new InHouse(partID, addPartNameTextBox.Text, decimal.Parse(addPriceTextBox.Text),
                 int.Parse(addInvTextBox.Text), int.Parse(addPartMaxTextBox.Text), int.Parse(addPartMaxTextBox.Text), int.Parse(IDNameTextBox.Text));
                 Inventory.AddPart(inHouse);
+
             }
             else
             {
-                int partID = Inventory.AllParts[Inventory.AllParts.Count - 1].PartID + 1;
-                Outsourced outsourcedPart = new Outsourced(partID, addPartNameTextBox.Text, decimal.Parse(addPriceTextBox.Text),
+                //int partID = Inventory.AllParts[Inventory.AllParts.Count - 1].PartID + 1;
+                Outsourced outsourcedPart = new Outsourced(Inventory.AssignPartID(), addPartNameTextBox.Text, decimal.Parse(addPriceTextBox.Text),
                 int.Parse(addInvTextBox.Text), int.Parse(addPartMaxTextBox.Text), int.Parse(addPartMaxTextBox.Text), IDNameTextBox.Text);
                 Inventory.AddPart(outsourcedPart);
             }

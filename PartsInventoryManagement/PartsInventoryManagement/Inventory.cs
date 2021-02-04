@@ -51,7 +51,7 @@ namespace PartsInventoryManagement
 
         // ** Products Methods ** //
 
-        public static void addProduct(Product prod)
+        public static void AddProduct(Product prod)
         {
             Products.Add(prod);
         }
@@ -82,6 +82,20 @@ namespace PartsInventoryManagement
                 }
             }
             return null;
+        }
+
+        public static int AssignProductID()
+        {
+            int productID = 0;
+
+            foreach (Product product in Products)
+            {
+                if (product.ProductID > productID)
+                {
+                    productID = product.ProductID;
+                }
+            }
+            return productID + 1;
         }
 
         //public static void updateProduct(int, Product)
@@ -179,9 +193,18 @@ namespace PartsInventoryManagement
             }
         }
 
-        public int AssignPartID()
+        public static int AssignPartID()
         {
+            int partID = 0;
 
+            foreach (Part part in AllParts)
+            {
+                if (part.PartID > partID)
+                {
+                    partID = part.PartID;
+                }
+            }
+            return partID + 1;
         }
         //  ** End of Parts Methods ** //
     }

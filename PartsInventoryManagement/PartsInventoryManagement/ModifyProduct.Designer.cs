@@ -31,8 +31,9 @@ namespace PartsInventoryManagement
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.modProductIDTextBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -40,10 +41,10 @@ namespace PartsInventoryManagement
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.modProductMinTextBox = new System.Windows.Forms.TextBox();
+            this.modProductMaxTextBox = new System.Windows.Forms.TextBox();
+            this.modProductInvTextBox = new System.Windows.Forms.TextBox();
+            this.modProductNameTextBox = new System.Windows.Forms.TextBox();
             this.modSearchTextBox = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -52,7 +53,8 @@ namespace PartsInventoryManagement
             this.associtatedPartsDGV = new System.Windows.Forms.DataGridView();
             this.partToProductDataGrid = new System.Windows.Forms.DataGridView();
             this.ModProductLabel = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.modProductPriceTextBox = new System.Windows.Forms.TextBox();
+            this.modProductSearchButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.associtatedPartsDGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.partToProductDataGrid)).BeginInit();
             this.SuspendLayout();
@@ -67,14 +69,14 @@ namespace PartsInventoryManagement
             this.label8.TabIndex = 22;
             this.label8.Text = "ID";
             // 
-            // textBox7
+            // modProductIDTextBox
             // 
-            this.textBox7.Enabled = false;
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(129, 227);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(275, 26);
-            this.textBox7.TabIndex = 21;
+            this.modProductIDTextBox.Enabled = false;
+            this.modProductIDTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.modProductIDTextBox.Location = new System.Drawing.Point(129, 227);
+            this.modProductIDTextBox.Name = "modProductIDTextBox";
+            this.modProductIDTextBox.Size = new System.Drawing.Size(275, 26);
+            this.modProductIDTextBox.TabIndex = 21;
             // 
             // label7
             // 
@@ -146,37 +148,37 @@ namespace PartsInventoryManagement
             this.label1.TabIndex = 14;
             this.label1.Text = "Parts Associated with this Product";
             // 
-            // textBox6
+            // modProductMinTextBox
             // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(314, 486);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(90, 26);
-            this.textBox6.TabIndex = 13;
+            this.modProductMinTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.modProductMinTextBox.Location = new System.Drawing.Point(314, 486);
+            this.modProductMinTextBox.Name = "modProductMinTextBox";
+            this.modProductMinTextBox.Size = new System.Drawing.Size(90, 26);
+            this.modProductMinTextBox.TabIndex = 13;
             // 
-            // textBox5
+            // modProductMaxTextBox
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(130, 486);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(90, 26);
-            this.textBox5.TabIndex = 12;
+            this.modProductMaxTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.modProductMaxTextBox.Location = new System.Drawing.Point(130, 486);
+            this.modProductMaxTextBox.Name = "modProductMaxTextBox";
+            this.modProductMaxTextBox.Size = new System.Drawing.Size(90, 26);
+            this.modProductMaxTextBox.TabIndex = 12;
             // 
-            // textBox3
+            // modProductInvTextBox
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(130, 358);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(274, 26);
-            this.textBox3.TabIndex = 10;
+            this.modProductInvTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.modProductInvTextBox.Location = new System.Drawing.Point(130, 358);
+            this.modProductInvTextBox.Name = "modProductInvTextBox";
+            this.modProductInvTextBox.Size = new System.Drawing.Size(274, 26);
+            this.modProductInvTextBox.TabIndex = 10;
             // 
-            // textBox2
+            // modProductNameTextBox
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(129, 293);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(275, 26);
-            this.textBox2.TabIndex = 9;
+            this.modProductNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.modProductNameTextBox.Location = new System.Drawing.Point(129, 293);
+            this.modProductNameTextBox.Name = "modProductNameTextBox";
+            this.modProductNameTextBox.Size = new System.Drawing.Size(275, 26);
+            this.modProductNameTextBox.TabIndex = 9;
             // 
             // modSearchTextBox
             // 
@@ -257,13 +259,25 @@ namespace PartsInventoryManagement
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.partToProductDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.partToProductDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.partToProductDataGrid.ColumnHeadersHeight = 30;
+            this.partToProductDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.partToProductDataGrid.DefaultCellStyle = dataGridViewCellStyle3;
             this.partToProductDataGrid.EnableHeadersVisualStyles = false;
             this.partToProductDataGrid.Location = new System.Drawing.Point(466, 91);
+            this.partToProductDataGrid.MultiSelect = false;
             this.partToProductDataGrid.Name = "partToProductDataGrid";
+            this.partToProductDataGrid.ReadOnly = true;
             this.partToProductDataGrid.RowHeadersVisible = false;
             this.partToProductDataGrid.RowTemplate.Height = 30;
             this.partToProductDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.partToProductDataGrid.ShowEditingIcon = false;
             this.partToProductDataGrid.Size = new System.Drawing.Size(606, 227);
             this.partToProductDataGrid.TabIndex = 1;
             // 
@@ -277,13 +291,24 @@ namespace PartsInventoryManagement
             this.ModProductLabel.TabIndex = 0;
             this.ModProductLabel.Text = "Modify Product";
             // 
-            // textBox4
+            // modProductPriceTextBox
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(130, 427);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(274, 26);
-            this.textBox4.TabIndex = 11;
+            this.modProductPriceTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.modProductPriceTextBox.Location = new System.Drawing.Point(130, 427);
+            this.modProductPriceTextBox.Name = "modProductPriceTextBox";
+            this.modProductPriceTextBox.Size = new System.Drawing.Size(274, 26);
+            this.modProductPriceTextBox.TabIndex = 11;
+            // 
+            // modProductSearchButton
+            // 
+            this.modProductSearchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.modProductSearchButton.Location = new System.Drawing.Point(626, 24);
+            this.modProductSearchButton.Name = "modProductSearchButton";
+            this.modProductSearchButton.Size = new System.Drawing.Size(80, 30);
+            this.modProductSearchButton.TabIndex = 6;
+            this.modProductSearchButton.Text = "Search";
+            this.modProductSearchButton.UseVisualStyleBackColor = true;
+            this.modProductSearchButton.Click += new System.EventHandler(this.ModifyProductSearchButton_Click);
             // 
             // ModifyProduct
             // 
@@ -291,7 +316,7 @@ namespace PartsInventoryManagement
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1084, 761);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.modProductIDTextBox);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -299,11 +324,12 @@ namespace PartsInventoryManagement
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.modProductMinTextBox);
+            this.Controls.Add(this.modProductMaxTextBox);
+            this.Controls.Add(this.modProductPriceTextBox);
+            this.Controls.Add(this.modProductInvTextBox);
+            this.Controls.Add(this.modProductSearchButton);
+            this.Controls.Add(this.modProductNameTextBox);
             this.Controls.Add(this.modSearchTextBox);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -325,7 +351,7 @@ namespace PartsInventoryManagement
         #endregion
 
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox modProductIDTextBox;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
@@ -333,10 +359,10 @@ namespace PartsInventoryManagement
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox modProductMinTextBox;
+        private System.Windows.Forms.TextBox modProductMaxTextBox;
+        private System.Windows.Forms.TextBox modProductInvTextBox;
+        private System.Windows.Forms.TextBox modProductNameTextBox;
         private System.Windows.Forms.TextBox modSearchTextBox;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
@@ -345,6 +371,7 @@ namespace PartsInventoryManagement
         private System.Windows.Forms.DataGridView associtatedPartsDGV;
         private System.Windows.Forms.DataGridView partToProductDataGrid;
         private System.Windows.Forms.Label ModProductLabel;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox modProductPriceTextBox;
+        private System.Windows.Forms.Button modProductSearchButton;
     }
 }

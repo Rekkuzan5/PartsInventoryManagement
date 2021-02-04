@@ -53,10 +53,11 @@ namespace PartsInventoryManagement
 
         private void VerifyProductSave()
         {
-            int productID = Inventory.Products[Inventory.Products.Count + 1].ProductID + 1;
+
+            int productID = Inventory.AssignProductID();
             Product newProduct = new Product(productID, AddProdNameTextBox.Text, decimal.Parse(AddProdPriceTextBox.Text), int.Parse(AddProdInvTextBox.Text), 
             int.Parse(AddProdMinTextBox.Text), int.Parse(AddProdMaxTextBox.Text));
-            Inventory.addProduct(newProduct);
+            Inventory.AddProduct(newProduct);
             this.Close();
         }
 
@@ -80,6 +81,34 @@ namespace PartsInventoryManagement
             {
                 int partID = int.Parse(AssociatedPartsDGV.Rows[AssociatedPartsDGV.CurrentCell.RowIndex].Cells[0].Value.ToString());
                 Product.RemoveAssociatedPart(partID);
+            }
+        }
+
+        private void ModProductSearchButton_Click(object sender, EventArgs e)
+        {
+            if (AddSearchTextBox.Text != "")
+            {
+                for (int i = 0; i < Inventory.AllParts.Count; i++)
+                {
+                    if (Inventory.AllParts[i].Name.ToUpper().Contains(AddSearchTextBox.Text.ToUpper()))
+                    {
+                        int searchPart = Inventory.AllParts[i].PartID;
+                        Part partFound = Inventory.LookupPart(searchPart);
+
+                        foreach (DataGridViewRow row in AllPartsDataGrid.Rows)
+                        {
+                            Part part = (Part)row.DataBoundItem;
+                            if (part.PartID == partFound.PartID)
+                            {
+                                row.Selected = true;
+                            }
+                            else
+                            {
+                                row.Selected = false;
+                            }
+                        }
+                    }
+                }
             }
         }
 

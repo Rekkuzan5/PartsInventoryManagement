@@ -145,8 +145,14 @@ namespace PartsInventoryManagement
         {
             if (Inventory.Products.Count > 0)
             { 
-                ModifyProduct modProduct = new ModifyProduct();
-                modProduct.ShowDialog();
+                //ModifyProduct modProduct = new ModifyProduct();
+                //modProduct.ShowDialog();
+
+                if (ProductDataGridView.CurrentRow.DataBoundItem.GetType() == typeof(Product))
+                {
+                    Product moddedProduct = (Product)ProductDataGridView.CurrentRow.DataBoundItem;
+                    new ModifyProduct(moddedProduct).ShowDialog();
+                }
             }
         }
 
