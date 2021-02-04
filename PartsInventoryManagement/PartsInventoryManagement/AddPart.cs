@@ -39,7 +39,7 @@ namespace PartsInventoryManagement
 
             if (addPartInHouseRadio.Checked)
             {
-                int partID = Inventory.AllParts[Inventory.AllParts.Count - 1].PartID + 1;
+                //int counter = Inventory.Products.Count;
                 InHouse inHouse = new InHouse(partID, addPartNameTextBox.Text, decimal.Parse(addPriceTextBox.Text),
                 int.Parse(addInvTextBox.Text), int.Parse(addPartMaxTextBox.Text), int.Parse(addPartMaxTextBox.Text), int.Parse(IDNameTextBox.Text));
                 Inventory.AddPart(inHouse);

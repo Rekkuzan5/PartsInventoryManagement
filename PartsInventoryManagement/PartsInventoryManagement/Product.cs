@@ -40,7 +40,7 @@ namespace PartsInventoryManagement
       
 
         // methods for Products class
-        public static void AddAssociatepart(Part part)
+        public static void AddAssociatedPart(Part part)
         {
             AssociatedParts.Add(part);
         }

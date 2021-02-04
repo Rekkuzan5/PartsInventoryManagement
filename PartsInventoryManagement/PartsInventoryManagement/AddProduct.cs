@@ -53,7 +53,7 @@ namespace PartsInventoryManagement
 
         private void VerifyProductSave()
         {
-            int productID = Inventory.Products[Inventory.Products.Count - 1].ProductID + 1;
+            int productID = Inventory.Products[Inventory.Products.Count + 1].ProductID + 1;
             Product newProduct = new Product(productID, AddProdNameTextBox.Text, decimal.Parse(AddProdPriceTextBox.Text), int.Parse(AddProdInvTextBox.Text), 
             int.Parse(AddProdMinTextBox.Text), int.Parse(AddProdMaxTextBox.Text));
             Inventory.addProduct(newProduct);

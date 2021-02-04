@@ -56,10 +56,20 @@ namespace PartsInventoryManagement
             Products.Add(prod);
         }
 
-        //public static bool removeProduct(int productID)
-        //{
-
-        //}
+        public static bool RemoveProduct(int productID)
+        {
+            bool found = false;
+            foreach (Product prod in Products)
+            {
+                if (prod.ProductID == productID)
+                {
+                    Products.Remove(prod);
+                    found = true;
+                    return found;
+                }
+            }
+            return found;
+        }
 
         // Look for product within Product Binding List
         public static Product LookupProduct(int productID)
@@ -169,6 +179,10 @@ namespace PartsInventoryManagement
             }
         }
 
+        public int AssignPartID()
+        {
+
+        }
         //  ** End of Parts Methods ** //
     }
 }

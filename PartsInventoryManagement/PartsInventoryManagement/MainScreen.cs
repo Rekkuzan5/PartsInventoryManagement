@@ -62,15 +62,18 @@ namespace PartsInventoryManagement
         // Opens a new form to modify an existing part based on the type of object and update main screen.
         private void ModifyPartButton_Click(object sender, EventArgs e)
         {
-            if (partsDataGridView.CurrentRow.DataBoundItem.GetType() == typeof(InHouse))
+            if (Inventory.AllParts.Count > 0)
             {
-                InHouse housePart = (InHouse)partsDataGridView.CurrentRow.DataBoundItem;
-                new ModifyPart(housePart).ShowDialog();
-            }
-            else if (partsDataGridView.CurrentRow.DataBoundItem.GetType() == typeof(Outsourced))
-            {
-                Outsourced outsidePart = (Outsourced)partsDataGridView.CurrentRow.DataBoundItem;
-                new ModifyPart(outsidePart).ShowDialog();
+                if (partsDataGridView.CurrentRow.DataBoundItem.GetType() == typeof(InHouse))
+                {
+                    InHouse housePart = (InHouse)partsDataGridView.CurrentRow.DataBoundItem;
+                    new ModifyPart(housePart).ShowDialog();
+                }
+                else if (partsDataGridView.CurrentRow.DataBoundItem.GetType() == typeof(Outsourced))
+                {
+                    Outsourced outsidePart = (Outsourced)partsDataGridView.CurrentRow.DataBoundItem;
+                    new ModifyPart(outsidePart).ShowDialog();
+                }
             }
             this.Refresh();
         }
@@ -140,8 +143,11 @@ namespace PartsInventoryManagement
         // Opens new form to modify products
         private void ModifyProductButton_Click(object sender, EventArgs e)
         {
-            ModifyProduct modProduct = new ModifyProduct();
-            modProduct.ShowDialog();
+            if (Inventory.Products.Count > 0)
+            { 
+                ModifyProduct modProduct = new ModifyProduct();
+                modProduct.ShowDialog();
+            }
         }
 
         // Delete product in grid on main page
@@ -154,9 +160,12 @@ namespace PartsInventoryManagement
                 {
                     foreach (DataGridViewRow row in ProductDataGridView.SelectedRows)
                     {
-                        ProductDataGridView.Rows.RemoveAt(row.Index);
+                        int productID = int.Parse(ProductDataGridView.Rows[ProductDataGridView.CurrentCell.RowIndex].Cells[0].Value.ToString());
+                    Inventory.RemoveProduct(productID);
+                    //ProductDataGridView.Rows.RemoveAt(row.Index);
                     }
                 }
+                
             }
         }
 
