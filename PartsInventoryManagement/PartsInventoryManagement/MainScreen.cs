@@ -15,7 +15,7 @@ namespace PartsInventoryManagement
         public MainScreen()
         {
             InitializeComponent();
-            MainScreenLoad();
+            MainScreenLoad();            
         }
 
         public void MainScreenLoad()
@@ -47,9 +47,8 @@ namespace PartsInventoryManagement
             ProductDataGridView.Columns["Max"].HeaderText = "Max";
 
             Inventory.PopulateList();
-
         }
-
+    
         // Parts functions for main page
 
         // Opens new form to add a new part
@@ -86,16 +85,7 @@ namespace PartsInventoryManagement
                 var result = MessageBox.Show("Are you sure you want to delete this part?", "Delete Part", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
-                    //for (int i = 0; i < Inventory.AllParts.Count; i++)
-                    //{
-                    //    if (Inventory.AllParts[i].PartID == partsDataGridView.SelectedRows.Contains)
-                    //    { }
-                    //}
-                    //int delete_index = partsDataGridView.CurrentCell.RowIndex;
-                    //foreach (DataGridViewRow row in partsDataGridView.SelectedRows)
-                    //{
                     int partID = int.Parse(partsDataGridView.Rows[partsDataGridView.CurrentCell.RowIndex].Cells[0].Value.ToString());
-                    //}
                     Inventory.DeletePart(partID);
                     this.Refresh();
                 }
@@ -120,6 +110,7 @@ namespace PartsInventoryManagement
                             if (part.PartID == partFound.PartID)
                             {
                                 row.Selected = true;
+                                break;
                             }
                             else
                             {
@@ -145,9 +136,6 @@ namespace PartsInventoryManagement
         {
             if (Inventory.Products.Count > 0)
             { 
-                //ModifyProduct modProduct = new ModifyProduct();
-                //modProduct.ShowDialog();
-
                 if (ProductDataGridView.CurrentRow.DataBoundItem.GetType() == typeof(Product))
                 {
                     Product moddedProduct = (Product)ProductDataGridView.CurrentRow.DataBoundItem;
@@ -168,7 +156,6 @@ namespace PartsInventoryManagement
                     {
                         int productID = int.Parse(ProductDataGridView.Rows[ProductDataGridView.CurrentCell.RowIndex].Cells[0].Value.ToString());
                     Inventory.RemoveProduct(productID);
-                    //ProductDataGridView.Rows.RemoveAt(row.Index);
                     }
                 }
                 
@@ -193,6 +180,7 @@ namespace PartsInventoryManagement
                             if (prod.ProductID == productFound.ProductID)
                             {
                                 row.Selected = true;
+                                break;
                             }
                             else
                             {

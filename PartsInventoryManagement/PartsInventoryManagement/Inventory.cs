@@ -124,20 +124,11 @@ namespace PartsInventoryManagement
                     return found;
                 }   
             }
-                return found;
+            return found;
         }
 
         public static Part LookupPart(int partID)
         {
-            //for (int i = 0; i < AllParts.Count; i++)
-            //{
-            //    if (AllParts[i].PartID.Equals(i))
-            //    {
-            //        return AllParts[i];
-            //    }
-            //}
-            //return null;
-
             foreach (Part part in AllParts)
             {
                 if (part.PartID == partID)
@@ -146,18 +137,6 @@ namespace PartsInventoryManagement
                 }
             }
             return null;
-
-            // Like this better
-
-            //foreach (Part part in AllParts)
-            //{
-            //    if (part.PartID == partID)
-            //    {
-            //        return part;
-            //    }
-            //}
-            //Part noPart = null;
-            //return noPart;
         }
 
         public static void UpdatePart(int partID, Part part)
@@ -206,6 +185,6 @@ namespace PartsInventoryManagement
             }
             return partID + 1;
         }
-        //  ** End of Parts Methods ** //
+          //** End of Parts Methods ** //
     }
 }

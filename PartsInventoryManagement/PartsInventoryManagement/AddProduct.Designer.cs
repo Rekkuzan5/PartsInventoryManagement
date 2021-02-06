@@ -153,7 +153,7 @@ namespace PartsInventoryManagement
             this.AssociatedPartsDGV.RowTemplate.Height = 30;
             this.AssociatedPartsDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.AssociatedPartsDGV.ShowEditingIcon = false;
-            this.AssociatedPartsDGV.Size = new System.Drawing.Size(606, 227);
+            this.AssociatedPartsDGV.Size = new System.Drawing.Size(606, 246);
             this.AssociatedPartsDGV.TabIndex = 2;
             this.AssociatedPartsDGV.TabStop = false;
             // 

@@ -37,10 +37,9 @@ namespace PartsInventoryManagement
             //    MessageBox.Show("The minimum amount cannot exceed the maximum");
             //}
 
+            int partID = Inventory.AssignPartID();
             if (addPartInHouseRadio.Checked)
             {
-                int partID = Inventory.AssignPartID();
-                //int counter = Inventory.Products.Count;
                 InHouse inHouse = new InHouse(partID, addPartNameTextBox.Text, decimal.Parse(addPriceTextBox.Text),
                 int.Parse(addInvTextBox.Text), int.Parse(addPartMaxTextBox.Text), int.Parse(addPartMaxTextBox.Text), int.Parse(IDNameTextBox.Text));
                 Inventory.AddPart(inHouse);
@@ -48,8 +47,7 @@ namespace PartsInventoryManagement
             }
             else
             {
-                //int partID = Inventory.AllParts[Inventory.AllParts.Count - 1].PartID + 1;
-                Outsourced outsourcedPart = new Outsourced(Inventory.AssignPartID(), addPartNameTextBox.Text, decimal.Parse(addPriceTextBox.Text),
+                Outsourced outsourcedPart = new Outsourced(partID, addPartNameTextBox.Text, decimal.Parse(addPriceTextBox.Text),
                 int.Parse(addInvTextBox.Text), int.Parse(addPartMaxTextBox.Text), int.Parse(addPartMaxTextBox.Text), IDNameTextBox.Text);
                 Inventory.AddPart(outsourcedPart);
             }
@@ -97,31 +95,34 @@ namespace PartsInventoryManagement
 
         //**  Methods for part name validation  **//
 
-        private void AddPartNameTextBox_Validating(object sender, CancelEventArgs e)
-        {
-            if (!ValidName(addPartNameTextBox.Text, out string errorMessage))
-            {
-                e.Cancel = true;
-                addPartNameTextBox.Focus();
-                addPartNameTextBox.Select(0, addPartNameTextBox.TextLength);
-                this.errorProvider1.SetError(addPartNameTextBox, errorMessage);
-            }
-        }
+        //private void AddPartNameTextBox_Validating(object sender, CancelEventArgs e)
+        //{
+        //    if (!ValidName(addPartNameTextBox.Text, out string errorMessage))
+        //    {
+        //        e.Cancel = true;
+        //        addPartNameTextBox.Focus();
+        //        addPartNameTextBox.Select(0, addPartNameTextBox.TextLength);
+        //        this.errorProvider1.SetError(addPartNameTextBox, errorMessage);
+        //    }
+        //}
 
-        public bool ValidName(string partName, out string errorMessage)
-        {
-            if (string.IsNullOrWhiteSpace(addPartNameTextBox.Text))
-            {
-                errorMessage = "A name is required!";
-                return false;
-            }
-            else
-            {
-                errorMessage = "";
-                //errorProvider1.Clear();
-                return true;
-            }
-        }
+        //public bool ValidName(string partName, out string errorMessage)
+        //{
+        //    if (string.IsNullOrWhiteSpace(addPartNameTextBox.Text))
+        //    {
+        //        errorMessage = "A name is required!";
+        //        return false;
+        //    }
+        //    else
+        //    {
+        //        errorProvider1.SetError(addPartNameTextBox, "");
+        //        //errorMessage = "";
+        //        //errorProvider1.Clear();
+        //        return true;
+        //    }
+        //}
+
+
 
         //**  Inventory validation  **//
 
@@ -304,6 +305,19 @@ namespace PartsInventoryManagement
             return false;
         }
 
+        // might change all these validations to this type
+        private void addPartNameTextBox_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(addPartNameTextBox.Text))
+            {
+                this.errorProvider1.SetError(addPartNameTextBox, "A name is required!");
+            }
+            else
+            {
+                errorProvider1.SetError(addPartNameTextBox, "");
+
+            }
+        }
     }
 }
   
