@@ -38,6 +38,16 @@ namespace PartsInventoryManagement
             partToProductDataGrid.Columns["Min"].HeaderText = "Minimun";
             partToProductDataGrid.Columns["Max"].HeaderText = "Max";
 
+            var modProductParts = new BindingSource();
+            modProductParts.DataSource = Product.AssociatedParts;
+            associatedPartsDGV.DataSource = modProductParts;
+
+            associatedPartsDGV.Columns["PartID"].HeaderText = "Part ID";
+            associatedPartsDGV.Columns["Name"].HeaderText = "Part Name";
+            associatedPartsDGV.Columns["InStock"].HeaderText = "Inventory";
+            associatedPartsDGV.Columns["Price"].HeaderText = "Price";
+            associatedPartsDGV.Columns["Min"].HeaderText = "Minimun";
+            associatedPartsDGV.Columns["Max"].HeaderText = "Max";
         }
 
         private void button1_Click(object sender, EventArgs e)
