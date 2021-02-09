@@ -83,5 +83,20 @@ namespace PartsInventoryManagement
             }
 
         }
+
+        private void AddPartToProduct_Click(object sender, EventArgs e)
+        {
+            Part addedPart = (Part)partToProductDataGrid.CurrentRow.DataBoundItem;
+            Product.AssociatedParts.Add(addedPart);
+        }
+
+        private void DeletePartFromProduct_Click(object sender, EventArgs e)
+        {
+            if (Product.AssociatedParts.Count > 0)
+            {
+                int partID = int.Parse(associatedPartsDGV.Rows[associatedPartsDGV.CurrentCell.RowIndex].Cells[0].Value.ToString());
+                Product.RemoveAssociatedPart(partID);
+            }
+        }
     }
 }

@@ -17,14 +17,14 @@ namespace PartsInventoryManagement
         public static void PopulateList()
         {
             // add mach ids and comp names
-            Part dummyPart1A = new InHouse(1, "Part 1.Abigail", 15.00m, 15, 30, 10, 9001);
-            Part dummyPart1B = new InHouse(2, "Part 1.Bobby", 10.00m, 12, 25, 10, 9001);
-            Part dummyPart2A = new InHouse(3, "Part 2.Anastasia", 12, 10, 25, 10, 9002);
-            Part dummyPart2B = new InHouse(4, "Part 2.Brosnan", 15m, 5, 25, 10, 9002);
-            Part dummyPart3A = new Outsourced(5, "Part 3.A", 15m, 15, 30, 10, "ShopCorp");
-            Part dummyPart3B = new Outsourced(6, "Part 3.B", 10m, 12, 25, 10, "ShopCorp");
-            Part dummyPart4A = new Outsourced(7, "Part 4.A", 12m, 10, 25, 10, "PPI, LLC");
-            Part dummyPart4B = new Outsourced(8, "Part 4.B", 15m, 5, 25, 10, "PPI, LLC");
+            Part dummyPart1A = new InHouse(1, "Part 1.Abigail", 15.00m, 15, 10, 30, 9001);
+            Part dummyPart1B = new InHouse(2, "Part 1.Bobby", 10.00m, 12, 10, 30, 9001);
+            Part dummyPart2A = new InHouse(3, "Part 2.Anastasia", 12, 10, 10, 30, 9002);
+            Part dummyPart2B = new InHouse(4, "Part 2.Brosnan", 15m, 5, 10, 30, 9002);
+            Part dummyPart3A = new Outsourced(5, "Part 3.A", 15m, 15, 10, 30, "ShopCorp");
+            Part dummyPart3B = new Outsourced(6, "Part 3.B", 10m, 12, 10, 30, "ShopCorp");
+            Part dummyPart4A = new Outsourced(7, "Part 4.A", 12m, 10, 10, 30, "PPI, LLC");
+            Part dummyPart4B = new Outsourced(8, "Part 4.B", 15m, 5, 10, 30, "PPI, LLC");
 
             AllParts.Add(dummyPart1A);
             AllParts.Add(dummyPart1B);
@@ -37,10 +37,10 @@ namespace PartsInventoryManagement
 
             //
 
-            Product dummyProd1 = new Product(1, "Product 1", 10m, 12, 20, 5);
-            Product dummyProd2 = new Product(2, "Product 2", 10m, 8, 25, 5);
-            Product dummyProd3 = new Product(3, "Product 3", 10m, 5, 25, 5);
-            Product dummyProd4 = new Product(4, "Product 4", 10m, 3, 25, 5);
+            Product dummyProd1 = new Product(1, "Product 1", 10m, 12, 5, 30);
+            Product dummyProd2 = new Product(2, "Product 2", 10m, 8, 5, 30);
+            Product dummyProd3 = new Product(3, "Product 3", 10m, 5, 5, 30);
+            Product dummyProd4 = new Product(4, "Product 4", 10m, 3, 5, 30);
 
             Products.Add(dummyProd1);
             Products.Add(dummyProd2);
