@@ -25,6 +25,8 @@ namespace PartsInventoryManagement
 
         private void AddProductLoadScreen()
         {
+            //Product p = new Product();
+
             var showAllParts = new BindingSource();
             showAllParts.DataSource = Inventory.AllParts;
             AllPartsDataGrid.DataSource = showAllParts;
@@ -72,6 +74,7 @@ namespace PartsInventoryManagement
         private void AddPartButton_Click(object sender, EventArgs e)
         {
             Part addedPart = (Part)AllPartsDataGrid.CurrentRow.DataBoundItem;
+            
             Product.AssociatedParts.Add(addedPart);
         }
 
@@ -111,10 +114,5 @@ namespace PartsInventoryManagement
                 }
             }
         }
-
-
-        //
-
-
     }
 }

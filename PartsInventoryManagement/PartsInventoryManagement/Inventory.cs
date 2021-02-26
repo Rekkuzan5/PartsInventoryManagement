@@ -98,10 +98,22 @@ namespace PartsInventoryManagement
             return productID + 1;
         }
 
-        //public static void updateProduct(int, Product)
-        //{
+        public static void updateProduct(int productID, Product moddedProduct)
+        {
+            foreach (Product prod in Products)
+            {
+                if (productID == prod.ProductID)
+                {
+                    prod.Name = moddedProduct.Name;
+                    prod.Price = moddedProduct.Price;
+                    prod.InStock = moddedProduct.InStock;
+                    prod.Min = moddedProduct.Min;
+                    prod.Max = moddedProduct.Max;
+                    return;
+                }
+            }
 
-        //}
+        }
 
         // ** End of Products Methods ** //
 

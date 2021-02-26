@@ -12,6 +12,8 @@ namespace PartsInventoryManagement
 {
     public partial class ModifyProduct : Form
     {
+        BindingList<Part> addedProductParts = new BindingList<Part>();
+
         public ModifyProduct(Product product)
         {
             InitializeComponent();
@@ -97,6 +99,24 @@ namespace PartsInventoryManagement
                 int partID = int.Parse(associatedPartsDGV.Rows[associatedPartsDGV.CurrentCell.RowIndex].Cells[0].Value.ToString());
                 Product.RemoveAssociatedPart(partID);
             }
+        }
+
+        private void SaveModifiedPart_Click(object sender, EventArgs e)
+        {
+            Product modifiedProduct = new Product(int.Parse(modProductIDTextBox.Text), modProductNameTextBox.Text, decimal.Parse(modProductInvTextBox.Text), int.Parse(modProductPriceTextBox.Text), int.Parse(modProductMaxTextBox.Text), int.Parse(modProductMinTextBox.Text));
+            Inventory.AddProduct(modifiedProduct);
+            foreach (Part addedPart in Product.AssociatedParts)
+            {
+                Product.AssociatedParts.Add(addedPart);
+            }
+
+            foreach (DataGridViewRow row in associatedPartsDGV.Rows)
+            {
+                Part associatedPart = (Part)row.DataBoundItem;
+                Product.AssociatedParts.Add(associatedPart);
+            }
+            Inventory.updateProduct(int.Parse(modProductIDTextBox.Text), modifiedProduct);
+            this.Close();
         }
     }
 }

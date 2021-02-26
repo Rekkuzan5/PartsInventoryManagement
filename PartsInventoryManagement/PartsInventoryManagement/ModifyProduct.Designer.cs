@@ -48,7 +48,7 @@ namespace PartsInventoryManagement
             this.modProductNameTextBox = new System.Windows.Forms.TextBox();
             this.modSearchTextBox = new System.Windows.Forms.TextBox();
             this.addPartToProduct = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.SaveModifiedPart = new System.Windows.Forms.Button();
             this.DeletePartFromProduct = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.associatedPartsDGV = new System.Windows.Forms.DataGridView();
@@ -200,15 +200,16 @@ namespace PartsInventoryManagement
             this.addPartToProduct.UseVisualStyleBackColor = true;
             this.addPartToProduct.Click += new System.EventHandler(this.AddPartToProduct_Click);
             // 
-            // button3
+            // SaveModifiedPart
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(906, 719);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(80, 30);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Save";
-            this.button3.UseVisualStyleBackColor = true;
+            this.SaveModifiedPart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SaveModifiedPart.Location = new System.Drawing.Point(906, 719);
+            this.SaveModifiedPart.Name = "SaveModifiedPart";
+            this.SaveModifiedPart.Size = new System.Drawing.Size(80, 30);
+            this.SaveModifiedPart.TabIndex = 5;
+            this.SaveModifiedPart.Text = "Save";
+            this.SaveModifiedPart.UseVisualStyleBackColor = true;
+            this.SaveModifiedPart.Click += new System.EventHandler(this.SaveModifiedPart_Click);
             // 
             // DeletePartFromProduct
             // 
@@ -360,7 +361,7 @@ namespace PartsInventoryManagement
             this.Controls.Add(this.modProductNameTextBox);
             this.Controls.Add(this.modSearchTextBox);
             this.Controls.Add(this.addPartToProduct);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.SaveModifiedPart);
             this.Controls.Add(this.DeletePartFromProduct);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.associatedPartsDGV);
@@ -393,7 +394,7 @@ namespace PartsInventoryManagement
         private System.Windows.Forms.TextBox modProductNameTextBox;
         private System.Windows.Forms.TextBox modSearchTextBox;
         private System.Windows.Forms.Button addPartToProduct;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button SaveModifiedPart;
         private System.Windows.Forms.Button DeletePartFromProduct;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView associatedPartsDGV;

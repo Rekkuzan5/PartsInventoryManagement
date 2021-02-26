@@ -27,7 +27,9 @@ namespace PartsInventoryManagement
         public int Min { get; set; }
         public int Max { get; set; }
 
-        // constructor for product object
+        // constructors for product object
+        public Product() { }
+
         public Product(int productID, string name, decimal price, int inStock, int min, int max)
         {
             ProductID = productID;
@@ -40,7 +42,7 @@ namespace PartsInventoryManagement
       
 
         // methods for Products class
-        public static void AddAssociatedPart(Part part)
+        public void AddAssociatedPart(Part part)
         {
             AssociatedParts.Add(part);
         }
@@ -60,7 +62,7 @@ namespace PartsInventoryManagement
             return checkSuccess;
         }
 
-        public static Part LookupAssociatedPart(int partID)
+        public Part LookupAssociatedPart(int partID)
         {
             foreach (Part part in AssociatedParts)
             {
