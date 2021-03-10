@@ -10,7 +10,7 @@ namespace PartsInventoryManagement
     public class Product
     {
         // fields for Product class
-        public static BindingList<Part> AssociatedParts = new BindingList<Part>();
+        public BindingList<Part> AssociatedParts = new BindingList<Part>();
 
         //public int productID;
         //public string name;
@@ -47,7 +47,7 @@ namespace PartsInventoryManagement
             AssociatedParts.Add(part);
         }
 
-        public static bool RemoveAssociatedPart(int partID)
+        public bool RemoveAssociatedPart(int partID)
         {
             bool checkSuccess = false;
             foreach (Part part in AssociatedParts)

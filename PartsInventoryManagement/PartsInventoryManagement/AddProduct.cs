@@ -12,6 +12,10 @@ namespace PartsInventoryManagement
 {
     public partial class AddProduct : Form
     {
+        //BindingList<Part> addedProductParts = new BindingList<Part>();
+
+        Product product = new Product();
+
         public AddProduct()
         {
             InitializeComponent();
@@ -25,11 +29,9 @@ namespace PartsInventoryManagement
 
         private void AddProductLoadScreen()
         {
-            //Product p = new Product();
-
-            var showAllParts = new BindingSource();
-            showAllParts.DataSource = Inventory.AllParts;
-            AllPartsDataGrid.DataSource = showAllParts;
+            //var showAllParts = new BindingSource();
+            //showAllParts.DataSource = Inventory.AllParts;
+            AllPartsDataGrid.DataSource = Inventory.AllParts;
 
             AllPartsDataGrid.Columns["PartID"].HeaderText = "Part ID";
             AllPartsDataGrid.Columns["Name"].HeaderText = "Part Name";
@@ -38,9 +40,9 @@ namespace PartsInventoryManagement
             AllPartsDataGrid.Columns["Min"].HeaderText = "Min";
             AllPartsDataGrid.Columns["Max"].HeaderText = "Max";
 
-            var addParts = new BindingSource();
-            addParts.DataSource = Product.AssociatedParts;
-            AssociatedPartsDGV.DataSource = addParts;
+            //var addParts = new BindingSource();
+            //addParts.DataSource = addedProductParts;
+            AssociatedPartsDGV.DataSource = product.AssociatedParts;
 
             AssociatedPartsDGV.Columns["PartID"].HeaderText = "Part ID";
             AssociatedPartsDGV.Columns["Name"].HeaderText = "Part Name";
@@ -60,6 +62,13 @@ namespace PartsInventoryManagement
             Product newProduct = new Product(productID, AddProdNameTextBox.Text, decimal.Parse(AddProdPriceTextBox.Text), int.Parse(AddProdInvTextBox.Text), 
             int.Parse(AddProdMinTextBox.Text), int.Parse(AddProdMaxTextBox.Text));
             Inventory.AddProduct(newProduct);
+
+            foreach (DataGridViewRow row in AssociatedPartsDGV.Rows)
+            {
+                Part addedPart = (Part)row.DataBoundItem;
+                newProduct.AssociatedParts.Add(addedPart);
+            }
+
             this.Close();
         }
 
@@ -75,16 +84,18 @@ namespace PartsInventoryManagement
         {
             Part addedPart = (Part)AllPartsDataGrid.CurrentRow.DataBoundItem;
             
-            Product.AssociatedParts.Add(addedPart);
+            product.AddAssociatedPart(addedPart);
         }
 
         private void DeletePartButton_Click(object sender, EventArgs e)
         {
-            if (Product.AssociatedParts.Count > 0)
-            {
-                int partID = int.Parse(AssociatedPartsDGV.Rows[AssociatedPartsDGV.CurrentCell.RowIndex].Cells[0].Value.ToString());
-                Product.RemoveAssociatedPart(partID);
-            }
+            //if (addedProductParts.Count > 0)
+            //{
+                foreach (DataGridViewRow row in AssociatedPartsDGV.SelectedRows)
+                {
+                    AssociatedPartsDGV.Rows.RemoveAt(row.Index);
+                }
+            //}
         }
 
         private void ModProductSearchButton_Click(object sender, EventArgs e)

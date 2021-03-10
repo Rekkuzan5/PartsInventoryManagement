@@ -98,11 +98,11 @@ namespace PartsInventoryManagement
             return productID + 1;
         }
 
-        public static void updateProduct(int productID, Product moddedProduct)
+        public static void UpdateProduct(int productID, Product moddedProduct)
         {
             foreach (Product prod in Products)
             {
-                if (productID == prod.ProductID)
+                if (prod.ProductID == productID)
                 {
                     prod.Name = moddedProduct.Name;
                     prod.Price = moddedProduct.Price;

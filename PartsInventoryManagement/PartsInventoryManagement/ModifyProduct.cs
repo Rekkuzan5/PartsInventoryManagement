@@ -12,7 +12,7 @@ namespace PartsInventoryManagement
 {
     public partial class ModifyProduct : Form
     {
-        BindingList<Part> addedProductParts = new BindingList<Part>();
+        //BindingList<Part> ModPartsToAdd = new BindingList<Part>();
 
         public ModifyProduct(Product product)
         {
@@ -29,9 +29,9 @@ namespace PartsInventoryManagement
             modProductMaxTextBox.Text = moddedProduct.Max.ToString();
             modProductMinTextBox.Text = moddedProduct.Min.ToString();
 
-            var modProduct = new BindingSource();
-            modProduct.DataSource = Inventory.AllParts;
-            partToProductDataGrid.DataSource = modProduct;
+            //var modProduct = new BindingSource();
+            //modProduct.DataSource = Inventory.AllParts;
+            partToProductDataGrid.DataSource = Inventory.AllParts;
 
             partToProductDataGrid.Columns["PartID"].HeaderText = "Part ID";
             partToProductDataGrid.Columns["Name"].HeaderText = "Part Name";
@@ -39,10 +39,15 @@ namespace PartsInventoryManagement
             partToProductDataGrid.Columns["Price"].HeaderText = "Price";
             partToProductDataGrid.Columns["Min"].HeaderText = "Minimun";
             partToProductDataGrid.Columns["Max"].HeaderText = "Max";
+         
+            //foreach (Part existingPart in moddedProduct.AssociatedParts)
+            //{
+            //    ModPartsToAdd.Add(existingPart);
+            //}
 
-            var modProductParts = new BindingSource();
-            modProductParts.DataSource = Product.AssociatedParts;
-            associatedPartsDGV.DataSource = modProductParts;
+            //var modProductParts = new BindingSource();
+            //modProductParts.DataSource = moddedProduct.AssociatedParts;
+            associatedPartsDGV.DataSource = moddedProduct.AssociatedParts;
 
             associatedPartsDGV.Columns["PartID"].HeaderText = "Part ID";
             associatedPartsDGV.Columns["Name"].HeaderText = "Part Name";
@@ -88,34 +93,67 @@ namespace PartsInventoryManagement
 
         private void AddPartToProduct_Click(object sender, EventArgs e)
         {
-            Part addedPart = (Part)partToProductDataGrid.CurrentRow.DataBoundItem;
-            Product.AssociatedParts.Add(addedPart);
+            //Part addedPart = (Part)partToProductDataGrid.CurrentRow.DataBoundItem;
+            //.Add(addedPart);
+
+            int productID = int.Parse(modProductIDTextBox.Text);
+            int partID = Convert.ToInt32(partToProductDataGrid.Rows[partToProductDataGrid.CurrentCell.RowIndex].Cells[0].Value);
+
+            Product product = Inventory.LookupProduct(productID);
+            Part part = Inventory.LookupPart(partID);
+            Inventory.UpdateProduct(productID, product);
+            product.AddAssociatedPart(part);
+            associatedPartsDGV.DataSource = product.AssociatedParts;
         }
 
         private void DeletePartFromProduct_Click(object sender, EventArgs e)
         {
-            if (Product.AssociatedParts.Count > 0)
-            {
-                int partID = int.Parse(associatedPartsDGV.Rows[associatedPartsDGV.CurrentCell.RowIndex].Cells[0].Value.ToString());
-                Product.RemoveAssociatedPart(partID);
-            }
+           // if (P.Count > 0)
+            //{
+                //int partID = int.Parse(associatedPartsDGV.Rows[associatedPartsDGV.CurrentCell.RowIndex].Cells[0].Value.ToString());
+                //Product.RemoveAssociatedPart(partID);
+
+                //foreach (DataGridViewRow row in associatedPartsDGV.SelectedRows)
+                //{
+                //    associatedPartsDGV.Rows.RemoveAt(row.Index);
+                //}
+
+                //Part currentPart = (Part)associatedPartsDGV.CurrentRow.DataBoundItem;
+
+                //int lookupID = int.Parse(modProductIDTextBox.Text);
+                //Product currentProd = Inventory.LookupProduct(lookupID);
+                //currentProd.RemoveAssociatedPart(currentPart.PartID);
+
+                foreach (DataGridViewRow row in associatedPartsDGV.SelectedRows)
+                {
+                    associatedPartsDGV.Rows.RemoveAt(row.Index);
+                }
+            //}
         }
 
         private void SaveModifiedPart_Click(object sender, EventArgs e)
         {
             Product modifiedProduct = new Product(int.Parse(modProductIDTextBox.Text), modProductNameTextBox.Text, decimal.Parse(modProductInvTextBox.Text), int.Parse(modProductPriceTextBox.Text), int.Parse(modProductMaxTextBox.Text), int.Parse(modProductMinTextBox.Text));
-            Inventory.AddProduct(modifiedProduct);
-            foreach (Part addedPart in Product.AssociatedParts)
-            {
-                Product.AssociatedParts.Add(addedPart);
-            }
+            
+            //foreach (Part addedPart in ModPartsToAdd)
+            //{
+            //    modifiedProduct.AddAssociatedPart(addedPart);
+            //}
 
             foreach (DataGridViewRow row in associatedPartsDGV.Rows)
             {
                 Part associatedPart = (Part)row.DataBoundItem;
-                Product.AssociatedParts.Add(associatedPart);
+                modifiedProduct.AssociatedParts.Add(associatedPart);
             }
-            Inventory.updateProduct(int.Parse(modProductIDTextBox.Text), modifiedProduct);
+
+            Inventory.UpdateProduct(int.Parse(modProductIDTextBox.Text), modifiedProduct);
+
+            //foreach (DataGridViewRow row in associatedPartsDGV.Rows)
+            //{
+            //    Part associatedPart = (Part)row.DataBoundItem;
+            //    Product.AssociatedParts.Add(associatedPart);
+            //}
+            //Inventory.updateProduct(int.Parse(modProductIDTextBox.Text), modifiedProduct);
             this.Close();
         }
     }
