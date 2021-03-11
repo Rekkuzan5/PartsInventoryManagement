@@ -77,23 +77,23 @@ namespace PartsInventoryManagement
         }
 
         private void VerifyPartSave()
-        { 
-            if (int.Parse(modMinTextBox.Text) > int.Parse(modMaxTextBox.Text))
-            {
-                MessageBox.Show("The minimum amount cannot exceed the maximum");
-            }
+        {
+            //if (int.Parse(modMinTextBox.Text) > int.Parse(modMaxTextBox.Text))
+            //{
+            //    MessageBox.Show("The minimum amount cannot exceed the maximum");
+            //}
 
             if (InHouseRadButton.Checked)
             {
                 InHouse inHousePart = new InHouse(int.Parse(modPartIDTextBox.Text), modNameTextBox.Text, decimal.Parse(modPriceTextBox.Text),
-                int.Parse(modInventoryTextBox.Text), int.Parse(modMaxTextBox.Text), int.Parse(modMinTextBox.Text), int.Parse(modMachineIDTextBox.Text));
+                int.Parse(modInventoryTextBox.Text), int.Parse(modMinTextBox.Text), int.Parse(modMaxTextBox.Text), int.Parse(modMachineIDTextBox.Text));
                 Inventory.UpdatePart(int.Parse(modPartIDTextBox.Text), inHousePart);
                 InHouseRadButton.Checked = true;
             }
             else if (OutsourcedRadButton.Checked)
             {
                 Outsourced outsourcedPart = new Outsourced(int.Parse(modPartIDTextBox.Text), modNameTextBox.Text, decimal.Parse(modPriceTextBox.Text),
-                int.Parse(modInventoryTextBox.Text), int.Parse(modMaxTextBox.Text), int.Parse(modMinTextBox.Text), modMachineIDTextBox.Text);
+                int.Parse(modInventoryTextBox.Text), int.Parse(modMinTextBox.Text), int.Parse(modMaxTextBox.Text), modMachineIDTextBox.Text);
                 Inventory.UpdatePart(int.Parse(modPartIDTextBox.Text), outsourcedPart);
                 OutsourcedRadButton.Checked = true;
             }
@@ -119,29 +119,22 @@ namespace PartsInventoryManagement
         }
 
         //**  Final Validation  **//
-
+        
         private void CheckInput()
         {
             if (this.ValidateChildren())
             {
-                if (int.Parse(modMinTextBox.Text) >= int.Parse(modMaxTextBox.Text))
+                if (int.Parse(modInventoryTextBox.Text) >= int.Parse(modMinTextBox.Text) && int.Parse(modInventoryTextBox.Text) <= int.Parse(modMaxTextBox.Text))
                 {
-                    MessageBox.Show("The minimum amount cannot be equal to or exceed the maximum.");
-                }
-                else if (int.Parse(modInventoryTextBox.Text) > int.Parse(modMaxTextBox.Text))
-                {
-                    MessageBox.Show("Inventory cannot be more than the maximum.");
+                        VerifyPartSave();
                 }
                 else
                 {
-                    VerifyPartSave();
+                    MessageBox.Show("The minimum amount cannot be equal to or exceed the maximum.  Inventory must be within the minimum and maximum.");
                 }
             }
-            else
-            {
-                MessageBox.Show("All fields must be completed before saving.");
-            }
         }
+       
 
         //**  Methods for part name validation  **//
 
@@ -150,7 +143,7 @@ namespace PartsInventoryManagement
             if (!ValidName(modNameTextBox.Text, out string errorMessage))
             {
                 e.Cancel = true;
-                modNameTextBox.Focus();
+                //modNameTextBox.Focus();
                 modNameTextBox.Select(0, modNameTextBox.TextLength);
                 this.errorProvider1.SetError(modNameTextBox, errorMessage);
             }
@@ -178,7 +171,7 @@ namespace PartsInventoryManagement
             if (!ValidInventory(modInventoryTextBox.Text, out string errorMessage))
             {
                 e.Cancel = true;
-                modInventoryTextBox.Focus();
+                //modInventoryTextBox.Focus();
                 modInventoryTextBox.Select(0, modInventoryTextBox.TextLength);
 
                 this.errorProvider1.SetError(modInventoryTextBox, errorMessage);
@@ -188,12 +181,7 @@ namespace PartsInventoryManagement
         public bool ValidInventory(string inventory, out string errorMessage)
         {
             errorMessage = "Inventory amount is required!";
-            if (modInventoryTextBox.TextLength == 0)
-            {
-                //errorMessage = "Inventory amount is required!";
-                return false;
-            }
-            else if (modInventoryTextBox.TextLength > 0)
+            if (modInventoryTextBox.TextLength > 0)
             {
                 errorMessage = "";
                 errorProvider1.Clear();
@@ -215,14 +203,14 @@ namespace PartsInventoryManagement
 
         Regex regex = new Regex("^\\d*(\\.\\d{1,2})?$");
 
-        public bool ValidatedPrice(string price, out string errorMessage)
+        public bool ValidatedPrice(string price)
         {
-            errorMessage = "Please enter a numeric price.  For example 24.99";
+            //errorMessage = "Please enter a numeric price.  For example 24.99";
             if (modPriceTextBox.TextLength > 0 && regex.IsMatch(modPriceTextBox.Text))
             {
                 //modPriceTextBox.ForeColor = Color.Green;    //for testing valid inputs
-                errorProvider1.Clear();
-                errorMessage = "";
+                //errorProvider1.Clear();
+                //errorMessage = "";
                 return true;
             }
 
@@ -231,13 +219,16 @@ namespace PartsInventoryManagement
 
         private void ModPriceTextBox_Validating(object sender, CancelEventArgs e)
         {
-            if (!ValidatedPrice(modPriceTextBox.Text, out string errorMessage))
+            errorProvider1.SetError(modPriceTextBox, "Please enter a numeric price.  For example 24.99");
+            if (!ValidatedPrice(modPriceTextBox.Text))
             {
                 e.Cancel = true;
-                modPriceTextBox.Focus();
-                modPriceTextBox.Select(0, modPriceTextBox.TextLength);
-
-                this.errorProvider1.SetError(modPriceTextBox, errorMessage);
+                //modPriceTextBox.Focus();
+                //modPriceTextBox.Select(0, modPriceTextBox.TextLength);
+            }
+            else
+            { 
+                this.errorProvider1.SetError(modPriceTextBox, "");
             }
         }
 
@@ -256,7 +247,7 @@ namespace PartsInventoryManagement
             if (!ValidPartMax(modMaxTextBox.Text, out string errorMessage))
             {
                 e.Cancel = true;
-                modMaxTextBox.Focus();
+               // modMaxTextBox.Focus();
                 modMaxTextBox.Select(0, modMaxTextBox.TextLength);
 
                 this.errorProvider1.SetError(modMaxTextBox, errorMessage);
@@ -333,7 +324,7 @@ namespace PartsInventoryManagement
             if (!ValidIDName(modMachineIDTextBox.Text, out string errorMessage))
             {
                 e.Cancel = true;
-                modMachineIDTextBox.Focus();
+                //modMachineIDTextBox.Focus();
                 modMachineIDTextBox.Select(0, modMachineIDTextBox.TextLength);
 
                 this.errorProvider1.SetError(modMachineIDTextBox, errorMessage);
