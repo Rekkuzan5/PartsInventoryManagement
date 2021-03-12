@@ -133,6 +133,10 @@ namespace PartsInventoryManagement
                     MessageBox.Show("The minimum amount cannot be equal to or exceed the maximum.  Inventory must be within the minimum and maximum.");
                 }
             }
+            else
+            {
+                MessageBox.Show("All fields must be completed before saving.");
+            }
         }
        
 
@@ -159,7 +163,8 @@ namespace PartsInventoryManagement
             else
             {
                 errorMessage = "";
-                errorProvider1.Clear();
+                errorProvider1.SetError(modNameTextBox, errorMessage);
+                //errorProvider1.Clear();
                 return true;
             }
         }
@@ -184,7 +189,8 @@ namespace PartsInventoryManagement
             if (modInventoryTextBox.TextLength > 0)
             {
                 errorMessage = "";
-                errorProvider1.Clear();
+                errorProvider1.SetError(modInventoryTextBox, errorMessage);
+                //errorProvider1.Clear();
                 return true;
             }
 
@@ -203,32 +209,28 @@ namespace PartsInventoryManagement
 
         Regex regex = new Regex("^\\d*(\\.\\d{1,2})?$");
 
-        public bool ValidatedPrice(string price)
+        public bool ValidatedPrice(string price, out string errorMessage)
         {
-            //errorMessage = "Please enter a numeric price.  For example 24.99";
+            errorMessage = "Please enter a numeric price.  For example 24.99";
             if (modPriceTextBox.TextLength > 0 && regex.IsMatch(modPriceTextBox.Text))
             {
                 //modPriceTextBox.ForeColor = Color.Green;    //for testing valid inputs
                 //errorProvider1.Clear();
-                //errorMessage = "";
+                errorMessage = "";
+                errorProvider1.SetError(modPriceTextBox, errorMessage);
                 return true;
             }
-
             return false;
         }
 
         private void ModPriceTextBox_Validating(object sender, CancelEventArgs e)
         {
-            errorProvider1.SetError(modPriceTextBox, "Please enter a numeric price.  For example 24.99");
-            if (!ValidatedPrice(modPriceTextBox.Text))
+            if (!ValidatedPrice(modPriceTextBox.Text, out string errorMessage))
             {
                 e.Cancel = true;
                 //modPriceTextBox.Focus();
                 //modPriceTextBox.Select(0, modPriceTextBox.TextLength);
-            }
-            else
-            { 
-                this.errorProvider1.SetError(modPriceTextBox, "");
+                errorProvider1.SetError(modPriceTextBox, errorMessage);
             }
         }
 
@@ -260,7 +262,8 @@ namespace PartsInventoryManagement
             if (modMaxTextBox.TextLength > 0)
             {
                 errorMessage = "";
-                errorProvider1.Clear();
+                this.errorProvider1.SetError(modMaxTextBox, errorMessage);
+                //errorProvider1.Clear();
                 return true;
             }
             return false;
@@ -271,7 +274,7 @@ namespace PartsInventoryManagement
             if (!ValidPartMin(modMinTextBox.Text, out string errorMessage))
             {
                 e.Cancel = true;
-                modMinTextBox.Focus();
+                //modMinTextBox.Focus();
                 modMinTextBox.Select(0, modMinTextBox.TextLength);
 
                 this.errorProvider1.SetError(modMinTextBox, errorMessage);
@@ -284,7 +287,8 @@ namespace PartsInventoryManagement
             if (modMinTextBox.TextLength > 0)
             {
                 errorMessage = "";
-                errorProvider1.Clear();
+                this.errorProvider1.SetError(modMinTextBox, errorMessage);
+                //errorProvider1.Clear();
                 return true;
             }
             return false;
@@ -337,7 +341,8 @@ namespace PartsInventoryManagement
             if (modMachineIDTextBox.TextLength > 0)
             {
                 errorMessage = "";
-                errorProvider1.Clear();
+                this.errorProvider1.SetError(modMachineIDTextBox, errorMessage);
+                //errorProvider1.Clear();
                 return true;
             }
             return false;

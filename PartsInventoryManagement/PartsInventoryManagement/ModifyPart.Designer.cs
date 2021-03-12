@@ -55,9 +55,10 @@
             // modifyPartCancelButton
             // 
             this.modifyPartCancelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.modifyPartCancelButton.Location = new System.Drawing.Point(489, 557);
+            this.modifyPartCancelButton.Location = new System.Drawing.Point(734, 857);
+            this.modifyPartCancelButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.modifyPartCancelButton.Name = "modifyPartCancelButton";
-            this.modifyPartCancelButton.Size = new System.Drawing.Size(80, 30);
+            this.modifyPartCancelButton.Size = new System.Drawing.Size(120, 46);
             this.modifyPartCancelButton.TabIndex = 17;
             this.modifyPartCancelButton.Text = "Cancel";
             this.modifyPartCancelButton.UseVisualStyleBackColor = true;
@@ -66,9 +67,10 @@
             // partSaveButton
             // 
             this.partSaveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.partSaveButton.Location = new System.Drawing.Point(358, 557);
+            this.partSaveButton.Location = new System.Drawing.Point(537, 857);
+            this.partSaveButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.partSaveButton.Name = "partSaveButton";
-            this.partSaveButton.Size = new System.Drawing.Size(80, 30);
+            this.partSaveButton.Size = new System.Drawing.Size(120, 46);
             this.partSaveButton.TabIndex = 16;
             this.partSaveButton.Text = "Save";
             this.partSaveButton.UseVisualStyleBackColor = true;
@@ -78,9 +80,10 @@
             // 
             this.partMachineIDLabel.AutoSize = true;
             this.partMachineIDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.partMachineIDLabel.Location = new System.Drawing.Point(138, 493);
+            this.partMachineIDLabel.Location = new System.Drawing.Point(207, 758);
+            this.partMachineIDLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.partMachineIDLabel.Name = "partMachineIDLabel";
-            this.partMachineIDLabel.Size = new System.Drawing.Size(90, 20);
+            this.partMachineIDLabel.Size = new System.Drawing.Size(133, 29);
             this.partMachineIDLabel.TabIndex = 15;
             this.partMachineIDLabel.Text = "Machine ID";
             // 
@@ -88,9 +91,10 @@
             // 
             this.partMinLabel.AutoSize = true;
             this.partMinLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.partMinLabel.Location = new System.Drawing.Point(404, 422);
+            this.partMinLabel.Location = new System.Drawing.Point(606, 649);
+            this.partMinLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.partMinLabel.Name = "partMinLabel";
-            this.partMinLabel.Size = new System.Drawing.Size(34, 20);
+            this.partMinLabel.Size = new System.Drawing.Size(52, 29);
             this.partMinLabel.TabIndex = 14;
             this.partMinLabel.Text = "Min";
             // 
@@ -98,9 +102,10 @@
             // 
             this.partMaxLabel.AutoSize = true;
             this.partMaxLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.partMaxLabel.Location = new System.Drawing.Point(190, 422);
+            this.partMaxLabel.Location = new System.Drawing.Point(285, 649);
+            this.partMaxLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.partMaxLabel.Name = "partMaxLabel";
-            this.partMaxLabel.Size = new System.Drawing.Size(38, 20);
+            this.partMaxLabel.Size = new System.Drawing.Size(57, 29);
             this.partMaxLabel.TabIndex = 13;
             this.partMaxLabel.Text = "Max";
             // 
@@ -108,9 +113,10 @@
             // 
             this.partPriceLabel.AutoSize = true;
             this.partPriceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.partPriceLabel.Location = new System.Drawing.Point(139, 346);
+            this.partPriceLabel.Location = new System.Drawing.Point(208, 532);
+            this.partPriceLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.partPriceLabel.Name = "partPriceLabel";
-            this.partPriceLabel.Size = new System.Drawing.Size(89, 20);
+            this.partPriceLabel.Size = new System.Drawing.Size(137, 29);
             this.partPriceLabel.TabIndex = 12;
             this.partPriceLabel.Text = "Price / Cost";
             // 
@@ -118,9 +124,10 @@
             // 
             this.partInventoryLabel.AutoSize = true;
             this.partInventoryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.partInventoryLabel.Location = new System.Drawing.Point(154, 269);
+            this.partInventoryLabel.Location = new System.Drawing.Point(231, 414);
+            this.partInventoryLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.partInventoryLabel.Name = "partInventoryLabel";
-            this.partInventoryLabel.Size = new System.Drawing.Size(74, 20);
+            this.partInventoryLabel.Size = new System.Drawing.Size(109, 29);
             this.partInventoryLabel.TabIndex = 11;
             this.partInventoryLabel.Text = "Inventory";
             // 
@@ -128,9 +135,10 @@
             // 
             this.partNameLabel.AutoSize = true;
             this.partNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.partNameLabel.Location = new System.Drawing.Point(177, 189);
+            this.partNameLabel.Location = new System.Drawing.Point(266, 291);
+            this.partNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.partNameLabel.Name = "partNameLabel";
-            this.partNameLabel.Size = new System.Drawing.Size(51, 20);
+            this.partNameLabel.Size = new System.Drawing.Size(78, 29);
             this.partNameLabel.TabIndex = 10;
             this.partNameLabel.Text = "Name";
             // 
@@ -138,18 +146,20 @@
             // 
             this.partIDLabel.AutoSize = true;
             this.partIDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.partIDLabel.Location = new System.Drawing.Point(202, 109);
+            this.partIDLabel.Location = new System.Drawing.Point(303, 168);
+            this.partIDLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.partIDLabel.Name = "partIDLabel";
-            this.partIDLabel.Size = new System.Drawing.Size(26, 20);
+            this.partIDLabel.Size = new System.Drawing.Size(36, 29);
             this.partIDLabel.TabIndex = 9;
             this.partIDLabel.Text = "ID";
             // 
             // modMachineIDTextBox
             // 
             this.modMachineIDTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.modMachineIDTextBox.Location = new System.Drawing.Point(272, 493);
+            this.modMachineIDTextBox.Location = new System.Drawing.Point(408, 758);
+            this.modMachineIDTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.modMachineIDTextBox.Name = "modMachineIDTextBox";
-            this.modMachineIDTextBox.Size = new System.Drawing.Size(194, 26);
+            this.modMachineIDTextBox.Size = new System.Drawing.Size(289, 35);
             this.modMachineIDTextBox.TabIndex = 8;
             this.modMachineIDTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.IDNameTextBox_KeyPress);
             this.modMachineIDTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.IDNameTextBox_Validating);
@@ -157,9 +167,10 @@
             // modInventoryTextBox
             // 
             this.modInventoryTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.modInventoryTextBox.Location = new System.Drawing.Point(272, 269);
+            this.modInventoryTextBox.Location = new System.Drawing.Point(408, 414);
+            this.modInventoryTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.modInventoryTextBox.Name = "modInventoryTextBox";
-            this.modInventoryTextBox.Size = new System.Drawing.Size(194, 26);
+            this.modInventoryTextBox.Size = new System.Drawing.Size(289, 35);
             this.modInventoryTextBox.TabIndex = 7;
             this.modInventoryTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ModInvTextBox_KeyPress);
             this.modInventoryTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.ModInvTextBox_Validating);
@@ -167,9 +178,10 @@
             // modMaxTextBox
             // 
             this.modMaxTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.modMaxTextBox.Location = new System.Drawing.Point(272, 422);
+            this.modMaxTextBox.Location = new System.Drawing.Point(408, 649);
+            this.modMaxTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.modMaxTextBox.Name = "modMaxTextBox";
-            this.modMaxTextBox.Size = new System.Drawing.Size(93, 26);
+            this.modMaxTextBox.Size = new System.Drawing.Size(138, 35);
             this.modMaxTextBox.TabIndex = 6;
             this.modMaxTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ModPartMaxTextBox_KeyPress);
             this.modMaxTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.ModPartMaxTextBox_Validating);
@@ -177,18 +189,20 @@
             // modNameTextBox
             // 
             this.modNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.modNameTextBox.Location = new System.Drawing.Point(272, 189);
+            this.modNameTextBox.Location = new System.Drawing.Point(408, 291);
+            this.modNameTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.modNameTextBox.Name = "modNameTextBox";
-            this.modNameTextBox.Size = new System.Drawing.Size(194, 26);
+            this.modNameTextBox.Size = new System.Drawing.Size(289, 35);
             this.modNameTextBox.TabIndex = 4;
             this.modNameTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.ModPartNameTextBox_Validating);
             // 
             // modMinTextBox
             // 
             this.modMinTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.modMinTextBox.Location = new System.Drawing.Point(469, 422);
+            this.modMinTextBox.Location = new System.Drawing.Point(704, 649);
+            this.modMinTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.modMinTextBox.Name = "modMinTextBox";
-            this.modMinTextBox.Size = new System.Drawing.Size(100, 26);
+            this.modMinTextBox.Size = new System.Drawing.Size(148, 35);
             this.modMinTextBox.TabIndex = 3;
             this.modMinTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ModPartMinTextBox_KeyPress);
             this.modMinTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.ModPartMinTextBox_Validating);
@@ -197,18 +211,20 @@
             // 
             this.modPartIDTextBox.Enabled = false;
             this.modPartIDTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.modPartIDTextBox.Location = new System.Drawing.Point(272, 103);
+            this.modPartIDTextBox.Location = new System.Drawing.Point(408, 158);
+            this.modPartIDTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.modPartIDTextBox.Name = "modPartIDTextBox";
-            this.modPartIDTextBox.Size = new System.Drawing.Size(194, 26);
+            this.modPartIDTextBox.Size = new System.Drawing.Size(289, 35);
             this.modPartIDTextBox.TabIndex = 2;
             // 
             // OutsourcedRadButton
             // 
             this.OutsourcedRadButton.AutoSize = true;
             this.OutsourcedRadButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OutsourcedRadButton.Location = new System.Drawing.Point(356, 17);
+            this.OutsourcedRadButton.Location = new System.Drawing.Point(534, 26);
+            this.OutsourcedRadButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.OutsourcedRadButton.Name = "OutsourcedRadButton";
-            this.OutsourcedRadButton.Size = new System.Drawing.Size(110, 24);
+            this.OutsourcedRadButton.Size = new System.Drawing.Size(163, 33);
             this.OutsourcedRadButton.TabIndex = 1;
             this.OutsourcedRadButton.TabStop = true;
             this.OutsourcedRadButton.Text = "Outsourced";
@@ -219,9 +235,10 @@
             // 
             this.InHouseRadButton.AutoSize = true;
             this.InHouseRadButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InHouseRadButton.Location = new System.Drawing.Point(206, 17);
+            this.InHouseRadButton.Location = new System.Drawing.Point(309, 26);
+            this.InHouseRadButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.InHouseRadButton.Name = "InHouseRadButton";
-            this.InHouseRadButton.Size = new System.Drawing.Size(93, 24);
+            this.InHouseRadButton.Size = new System.Drawing.Size(135, 33);
             this.InHouseRadButton.TabIndex = 1;
             this.InHouseRadButton.TabStop = true;
             this.InHouseRadButton.Text = "In-House";
@@ -231,18 +248,20 @@
             // 
             this.ModifyPartLabel.AutoSize = true;
             this.ModifyPartLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ModifyPartLabel.Location = new System.Drawing.Point(12, 9);
+            this.ModifyPartLabel.Location = new System.Drawing.Point(18, 14);
+            this.ModifyPartLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ModifyPartLabel.Name = "ModifyPartLabel";
-            this.ModifyPartLabel.Size = new System.Drawing.Size(151, 31);
+            this.ModifyPartLabel.Size = new System.Drawing.Size(228, 47);
             this.ModifyPartLabel.TabIndex = 0;
             this.ModifyPartLabel.Text = "Modify Part";
             // 
             // modPriceTextBox
             // 
             this.modPriceTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.modPriceTextBox.Location = new System.Drawing.Point(272, 346);
+            this.modPriceTextBox.Location = new System.Drawing.Point(408, 532);
+            this.modPriceTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.modPriceTextBox.Name = "modPriceTextBox";
-            this.modPriceTextBox.Size = new System.Drawing.Size(194, 26);
+            this.modPriceTextBox.Size = new System.Drawing.Size(289, 35);
             this.modPriceTextBox.TabIndex = 5;
             this.modPriceTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ModPriceTextBox_KeyPress);
             this.modPriceTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.ModPriceTextBox_Validating);
@@ -254,9 +273,10 @@
             // 
             // ModifyPart
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(634, 611);
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
+            this.ClientSize = new System.Drawing.Size(942, 914);
             this.Controls.Add(this.modifyPartCancelButton);
             this.Controls.Add(this.partSaveButton);
             this.Controls.Add(this.partMachineIDLabel);
@@ -276,8 +296,9 @@
             this.Controls.Add(this.OutsourcedRadButton);
             this.Controls.Add(this.InHouseRadButton);
             this.Controls.Add(this.ModifyPartLabel);
-            this.MaximumSize = new System.Drawing.Size(650, 650);
-            this.MinimumSize = new System.Drawing.Size(650, 650);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MaximumSize = new System.Drawing.Size(964, 970);
+            this.MinimumSize = new System.Drawing.Size(964, 970);
             this.Name = "ModifyPart";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modify Part";
