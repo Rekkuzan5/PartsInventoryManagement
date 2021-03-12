@@ -24,19 +24,16 @@ namespace PartsInventoryManagement
         }
 
         //**  Save button calls verify method  **//
+
         private void AddPartSavebutton_Click(object sender, EventArgs e)
         {
             CheckInput();
         }
 
         //**  Verifies if entered information is correct and creates either inhouse or outsourced part  **//
+
         private void VerifyPartSave()
         {
-            //if (int.Parse(addPartMinTextBox.Text) > int.Parse(addPartMaxTextBox.Text))
-            //{
-            //    MessageBox.Show("The minimum amount cannot exceed the maximum");
-            //}
-
             int partID = Inventory.AssignPartID();
             if (addPartInHouseRadio.Checked)
             {
@@ -95,68 +92,7 @@ namespace PartsInventoryManagement
         }
 
         //**  Methods for part name validation  **//
-
-        //private void AddPartNameTextBox_Validating(object sender, CancelEventArgs e)
-        //{
-        //    if (!ValidName(addPartNameTextBox.Text, out string errorMessage))
-        //    {
-        //        e.Cancel = true;
-        //        addPartNameTextBox.Focus();
-        //        addPartNameTextBox.Select(0, addPartNameTextBox.TextLength);
-        //        this.errorProvider1.SetError(addPartNameTextBox, errorMessage);
-        //    }
-        //}
-
-        //public bool ValidName(string partName, out string errorMessage)
-        //{
-        //    if (string.IsNullOrWhiteSpace(addPartNameTextBox.Text))
-        //    {
-        //        errorMessage = "A name is required!";
-        //        return false;
-        //    }
-        //    else
-        //    {
-        //        errorProvider1.SetError(addPartNameTextBox, "");
-        //        //errorMessage = "";
-        //        //errorProvider1.Clear();
-        //        return true;
-        //    }
-        //}
-
-
-
-        //**  Inventory validation  **//
-
-        //private void AddInvTextBox_Validating(object sender, CancelEventArgs e)
-        //{
-        //    if (!ValidInventory(addInvTextBox.Text, out string errorMessage))
-        //    {
-        //        e.Cancel = true;
-        //        //addInvTextBox.Focus();
-        //        addInvTextBox.Select(0, addInvTextBox.TextLength);
-
-        //        this.errorProvider1.SetError(addInvTextBox, errorMessage);
-        //    }
-        //}
-
-        //public bool ValidInventory(string inventory, out string errorMessage)
-        //{
-        //    errorMessage = "Inventory amount is required!";
-        //    if (string.IsNullOrWhiteSpace(addInvTextBox.Text))
-        //    {
-        //        //errorMessage = "Inventory amount is required!";
-        //        return false;
-        //    }
-        //    else if (addInvTextBox.TextLength > 0)
-        //    {
-        //        errorMessage = "";
-        //        //errorProvider1.Clear();
-        //        return true;
-        //    }
-
-        //    return false;
-        //}
-
+        
         private void AddPartNameTextBox_Validating(object sender, CancelEventArgs e)
         {
             if (!ValidName(addPartNameTextBox.Text, out string errorMessage))
@@ -177,12 +113,16 @@ namespace PartsInventoryManagement
                 return false;
             }
             else
-            {
+            { 
                 errorMessage = "";
+
+                errorProvider1.SetError(addPartNameTextBox, errorMessage);
                 //errorProvider1.Clear();
                 return true;
             }
         }
+
+        //**  Inventory validation  **//
 
         private void AddInvTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -211,6 +151,7 @@ namespace PartsInventoryManagement
             if (addInvTextBox.TextLength > 0)
             {
                 errorMessage = "";
+                errorProvider1.SetError(addInvTextBox, errorMessage);
                 //errorProvider1.Clear();
                 return true;
             }
@@ -221,20 +162,6 @@ namespace PartsInventoryManagement
         //**  Checks for valid price input using Regex to verify proper format  **//
 
         Regex regex = new Regex("^\\d*(\\.\\d{1,2})?$");
-
-        
-
-        //private void AddPriceTextBox_Validating(object sender, CancelEventArgs e)
-        //{
-        //    if (!ValidatedPrice(addPriceTextBox.Text, out string errorMessage))
-        //    {
-        //        e.Cancel = true;
-        //        //addPriceTextBox.Focus();
-        //        //addPriceTextBox.Select(0, addPriceTextBox.TextLength);
-
-        //        this.errorProvider1.SetError(addPriceTextBox, errorMessage);
-        //    }
-        //}
 
         private void AddPriceTextBox_Validating(object sender, CancelEventArgs e)
         {
@@ -256,6 +183,7 @@ namespace PartsInventoryManagement
                 //addPriceTextBox.ForeColor = Color.Green;    //for testing valid inputs
                 //errorProvider1.Clear();
                 errorMessage = "";
+                errorProvider1.SetError(addPriceTextBox, errorMessage);
                 //errorProvider1.Clear();
                 return true;
             }
@@ -271,40 +199,6 @@ namespace PartsInventoryManagement
         }
 
         //**  Min/Max textbox modifications  **//
-
-        //private void AddPartMaxTextBox_Validating(object sender, CancelEventArgs e)
-        //{
-        //    if (!ValidPartMax(addPartMaxTextBox.Text, out string errorMessage))
-        //    {
-        //        e.Cancel = true;
-        //        //addPartMaxTextBox.Focus();
-        //        addPartMaxTextBox.Select(0, addPartMaxTextBox.TextLength);
-
-        //        this.errorProvider1.SetError(addPartMaxTextBox, errorMessage);
-        //    }
-        //}
-
-        //private void AddPartMaxTextBox_Validating(object sender, CancelEventArgs e)
-        //{
-        //    if (!ValidPartMax(addPartMaxTextBox.Text, out string errorMessage))
-        //    {
-        //        e.Cancel = true;
-        //        //addPartMaxTextBox.Focus();
-        //        addPartMaxTextBox.Select(0, addPartMaxTextBox.TextLength);
-
-        //        this.errorProvider1.SetError(addPartMaxTextBox, errorMessage);
-        //    }
-        //    errorProvider1.SetError(addPartMaxTextBox, "Enter the maximum number of parts.");
-        //    if (!string.IsNullOrEmpty(addPartMaxTextBox.Text))
-        //    {
-        //        errorProvider1.SetError(addPartMaxTextBox, "");
-        //        errorProvider1.Clear();
-        //    }
-        //    else
-        //    {
-        //        e.Cancel = true;
-        //    }
-        //}
 
         private void AddPartMaxTextBox_Validating(object sender, CancelEventArgs e)
         {
@@ -324,35 +218,12 @@ namespace PartsInventoryManagement
             if (addPartMaxTextBox.TextLength > 0)
             {
                 errorMessage = "";
+                errorProvider1.SetError(addPartMaxTextBox, errorMessage);
                 //errorProvider1.Clear();
                 return true;
             }
             return false;
         }
-
-        //public bool ValidPartMax(string max, out string errorMessage)
-        //{
-        //    errorMessage = ("Enter the maximum number of parts.");
-        //     if (!string.IsNullOrEmpty(addPartMaxTextBox.Text))
-        //    {
-        //        errorMessage = "";
-        //        //errorProvider1.Clear();
-        //        return true;
-        //    }
-        //    return false;
-        //}
-
-        //private void AddPartMinTextBox_Validating(object sender, CancelEventArgs e)
-        //{
-        //    if (!ValidPartMin(addPartMinTextBox.Text, out string errorMessage))
-        //    {
-        //        e.Cancel = true;
-        //        //addPartMinTextBox.Focus();
-        //        addPartMinTextBox.Select(0, addPartMinTextBox.TextLength);
-
-        //        this.errorProvider1.SetError(addPartMinTextBox, errorMessage);
-        //    }
-        //}
 
         private void AddPartMinTextBox_Validating(object sender, CancelEventArgs e)
         {
@@ -372,6 +243,7 @@ namespace PartsInventoryManagement
             if (addPartMinTextBox.TextLength > 0)
             {
                 errorMessage = "";
+                errorProvider1.SetError(addPartMinTextBox, errorMessage);
                 //errorProvider1.Clear();
                 return true;
             }
@@ -425,38 +297,12 @@ namespace PartsInventoryManagement
             if (IDNameTextBox.TextLength > 0)
             {
                 errorMessage = "";
+                errorProvider1.SetError(IDNameTextBox, errorMessage);
                 //errorProvider1.Clear();
                 return true;
             }
             return false;
         }
-
-        //private bool ValidIDName(string id, out string errorMessage)
-        //{
-        //    errorMessage = ("Enter the Machine ID or Vendor Name.");
-        //    if (!string.IsNullOrEmpty(IDNameTextBox.Text))
-        //    {
-        //        errorMessage = "";
-        //        errorProvider1.Clear();
-        //        return true;
-        //    }
-        //    return false;
-        //}
-
-        // might change all these validations to this type
-        //private void addPartNameTextBox_Validating(object sender, CancelEventArgs e)
-        //{
-        //    if (string.IsNullOrWhiteSpace(addPartNameTextBox.Text))
-        //    {
-        //        this.errorProvider1.SetError(addPartNameTextBox, "A name is required!");
-        //    }
-        //    else
-        //    {
-        //        errorProvider1.SetError(addPartNameTextBox, "");
-
-        //    }
-        //}
-
 
     }
 }
