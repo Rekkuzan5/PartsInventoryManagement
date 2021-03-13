@@ -134,6 +134,7 @@ namespace PartsInventoryManagement
                             if (part.PartID == partFound.PartID)
                             {
                                 row.Selected = true;
+                                break;
                             }
                             else
                             {
