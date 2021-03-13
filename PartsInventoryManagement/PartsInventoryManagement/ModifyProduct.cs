@@ -99,10 +99,21 @@ namespace PartsInventoryManagement
         //** Deletes a part from a product **//
         private void DeletePartFromProduct_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow row in associatedPartsDGV.SelectedRows)
+            DialogResult warning = MessageBox.Show("This action will permanantly delete this part from this product.", "Delete Part", MessageBoxButtons.OKCancel);
+            if (warning == DialogResult.OK)
             {
-                associatedPartsDGV.Rows.RemoveAt(row.Index);
+                foreach (DataGridViewRow row in associatedPartsDGV.SelectedRows)
+                {
+                    associatedPartsDGV.Rows.RemoveAt(row.Index);
+                }
             }
+            else return;
+        }
+
+        private void CancelProductButton_Click(object sender, EventArgs e)
+        {
+            errorProvider1.Clear();
+            this.Close();
         }
 
         //** Validate min/max/inv values and returns boolean **//
@@ -146,15 +157,14 @@ namespace PartsInventoryManagement
         //** Creates/updates existing product and adds/removes parts to existing list **//
         private void VerifyProductSave()
         {
-            Product modifiedProduct = new Product(int.Parse(modProductIDTextBox.Text), modProductNameTextBox.Text, decimal.Parse(modProductInvTextBox.Text), 
-            int.Parse(modProductPriceTextBox.Text), int.Parse(modProductMinTextBox.Text), int.Parse(modProductMaxTextBox.Text));
+            Product modifiedProduct = new Product(int.Parse(modProductIDTextBox.Text), modProductNameTextBox.Text, decimal.Parse(modProductPriceTextBox.Text), 
+            int.Parse(modProductInvTextBox.Text), int.Parse(modProductMinTextBox.Text), int.Parse(modProductMaxTextBox.Text));
 
             foreach (DataGridViewRow row in associatedPartsDGV.Rows)
             {
                 Part associatedPart = (Part)row.DataBoundItem;
                 modifiedProduct.AssociatedParts.Add(associatedPart);
             }
-
             Inventory.UpdateProduct(int.Parse(modProductIDTextBox.Text), modifiedProduct);
             this.Close();
         }
@@ -166,7 +176,6 @@ namespace PartsInventoryManagement
             {
                 e.Cancel = true;
                 modProductNameTextBox.Select(0, modProductNameTextBox.TextLength);
-
                 this.errorProvider1.SetError(modProductNameTextBox, errorMessage);
             }
         }
@@ -176,13 +185,11 @@ namespace PartsInventoryManagement
             if (string.IsNullOrWhiteSpace(modProductNameTextBox.Text))
             {
                 errorMessage = "A name is required!";
-                //addPartNameTextBox.Focus();
                 return false;
             }
             else
             {
                 errorMessage = "";
-
                 errorProvider1.SetError(modProductNameTextBox, errorMessage);
                 return true;
             }
@@ -195,7 +202,6 @@ namespace PartsInventoryManagement
             {
                 e.Cancel = true;
                 modProductInvTextBox.Select(0, modProductInvTextBox.TextLength);
-
                 this.errorProvider1.SetError(modProductInvTextBox, errorMessage);
             }
         }
@@ -209,7 +215,6 @@ namespace PartsInventoryManagement
                 errorProvider1.SetError(modProductInvTextBox, errorMessage);
                 return true;
             }
-
             return false;
         }
 
@@ -261,7 +266,6 @@ namespace PartsInventoryManagement
             {
                 e.Cancel = true;
                 modProductMaxTextBox.Select(0, modProductMaxTextBox.TextLength);
-
                 this.errorProvider1.SetError(modProductMaxTextBox, errorMessage);
             }
         }
@@ -284,7 +288,6 @@ namespace PartsInventoryManagement
             {
                 e.Cancel = true;
                 modProductMinTextBox.Select(0, modProductMinTextBox.TextLength);
-
                 this.errorProvider1.SetError(modProductMinTextBox, errorMessage);
             }
         }

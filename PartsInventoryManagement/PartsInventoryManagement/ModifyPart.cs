@@ -72,18 +72,8 @@ namespace PartsInventoryManagement
             }
         }
 
-        private void Partsavebutton_click(object sender, EventArgs e)
-        {
-            CheckInput();
-        }
-
         private void VerifyPartSave()
         {
-            //if (int.Parse(modMinTextBox.Text) > int.Parse(modMaxTextBox.Text))
-            //{
-            //    MessageBox.Show("The minimum amount cannot exceed the maximum");
-            //}
-
             if (InHouseRadButton.Checked)
             {
                 InHouse inHousePart = new InHouse(int.Parse(modPartIDTextBox.Text), modNameTextBox.Text, decimal.Parse(modPriceTextBox.Text),
@@ -98,8 +88,7 @@ namespace PartsInventoryManagement
                 Inventory.UpdatePart(int.Parse(modPartIDTextBox.Text), outsourcedPart);
                 OutsourcedRadButton.Checked = true;
             }
-
-            Close();
+            this.Close();
         }
 
         private void ModPartOutsourceRadio_CheckedChanged(object sender, EventArgs e)
@@ -119,13 +108,29 @@ namespace PartsInventoryManagement
             this.Close();
         }
 
-        //**  Final Validation  **//
-        
-        private void CheckInput()
+        //** Validate min/max/inv values and returns boolean **//
+        private bool IsBetween()
         {
-            if (this.ValidateChildren())
+            var inv = int.Parse(modInventoryTextBox.Text);
+            var min = int.Parse(modMinTextBox.Text);
+            var max = int.Parse(modMaxTextBox.Text);
+
+            if ((min >= max) || (inv < min) || (inv > max))
             {
-                if (int.Parse(modInventoryTextBox.Text) >= int.Parse(modMinTextBox.Text) && int.Parse(modInventoryTextBox.Text) <= int.Parse(modMaxTextBox.Text))
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        //** If all child textboxes of form validate, evaluate the inventory and min/max logic and call save function.  If false, then display messagebox. **//
+        private void Partsavebutton_click(object sender, EventArgs e)
+        {
+            if (ValidateChildren())
+            {
+                if (IsBetween())
                 {
                     errorProvider1.Clear();
                     VerifyPartSave();
@@ -140,7 +145,6 @@ namespace PartsInventoryManagement
                 MessageBox.Show("All fields must be completed before saving.");
             }
         }
-       
 
         //**  Methods for part name validation  **//
 
@@ -149,7 +153,6 @@ namespace PartsInventoryManagement
             if (!ValidName(modNameTextBox.Text, out string errorMessage))
             {
                 e.Cancel = true;
-                //modNameTextBox.Focus();
                 modNameTextBox.Select(0, modNameTextBox.TextLength);
                 this.errorProvider1.SetError(modNameTextBox, errorMessage);
             }
@@ -166,21 +169,17 @@ namespace PartsInventoryManagement
             {
                 errorMessage = "";
                 errorProvider1.SetError(modNameTextBox, errorMessage);
-                //errorProvider1.Clear();
                 return true;
             }
         }
 
         //**  Inventory validation  **//
-
         private void ModInvTextBox_Validating(object sender, CancelEventArgs e)
         {
             if (!ValidInventory(modInventoryTextBox.Text, out string errorMessage))
             {
                 e.Cancel = true;
-                //modInventoryTextBox.Focus();
                 modInventoryTextBox.Select(0, modInventoryTextBox.TextLength);
-
                 this.errorProvider1.SetError(modInventoryTextBox, errorMessage);
             }
         }
@@ -192,10 +191,8 @@ namespace PartsInventoryManagement
             {
                 errorMessage = "";
                 errorProvider1.SetError(modInventoryTextBox, errorMessage);
-                //errorProvider1.Clear();
                 return true;
             }
-
             return false;
         }
 
@@ -217,7 +214,6 @@ namespace PartsInventoryManagement
             if (modPriceTextBox.TextLength > 0 && regex.IsMatch(modPriceTextBox.Text))
             {
                 //modPriceTextBox.ForeColor = Color.Green;    //for testing valid inputs
-                //errorProvider1.Clear();
                 errorMessage = "";
                 errorProvider1.SetError(modPriceTextBox, errorMessage);
                 return true;
@@ -230,8 +226,6 @@ namespace PartsInventoryManagement
             if (!ValidatedPrice(modPriceTextBox.Text, out string errorMessage))
             {
                 e.Cancel = true;
-                //modPriceTextBox.Focus();
-                //modPriceTextBox.Select(0, modPriceTextBox.TextLength);
                 errorProvider1.SetError(modPriceTextBox, errorMessage);
             }
         }
@@ -251,9 +245,7 @@ namespace PartsInventoryManagement
             if (!ValidPartMax(modMaxTextBox.Text, out string errorMessage))
             {
                 e.Cancel = true;
-               // modMaxTextBox.Focus();
                 modMaxTextBox.Select(0, modMaxTextBox.TextLength);
-
                 this.errorProvider1.SetError(modMaxTextBox, errorMessage);
             }
         }
@@ -265,7 +257,6 @@ namespace PartsInventoryManagement
             {
                 errorMessage = "";
                 this.errorProvider1.SetError(modMaxTextBox, errorMessage);
-                //errorProvider1.Clear();
                 return true;
             }
             return false;
@@ -276,9 +267,7 @@ namespace PartsInventoryManagement
             if (!ValidPartMin(modMinTextBox.Text, out string errorMessage))
             {
                 e.Cancel = true;
-                //modMinTextBox.Focus();
                 modMinTextBox.Select(0, modMinTextBox.TextLength);
-
                 this.errorProvider1.SetError(modMinTextBox, errorMessage);
             }
         }
@@ -290,7 +279,6 @@ namespace PartsInventoryManagement
             {
                 errorMessage = "";
                 this.errorProvider1.SetError(modMinTextBox, errorMessage);
-                //errorProvider1.Clear();
                 return true;
             }
             return false;
@@ -313,7 +301,6 @@ namespace PartsInventoryManagement
         }
 
         //**  MachineID/Company textbox validation  **//
-
         private void IDNameTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (InHouseRadButton.Checked)
@@ -330,9 +317,7 @@ namespace PartsInventoryManagement
             if (!ValidIDName(modMachineIDTextBox.Text, out string errorMessage))
             {
                 e.Cancel = true;
-                //modMachineIDTextBox.Focus();
                 modMachineIDTextBox.Select(0, modMachineIDTextBox.TextLength);
-
                 this.errorProvider1.SetError(modMachineIDTextBox, errorMessage);
             }
         }
@@ -344,7 +329,6 @@ namespace PartsInventoryManagement
             {
                 errorMessage = "";
                 this.errorProvider1.SetError(modMachineIDTextBox, errorMessage);
-                //errorProvider1.Clear();
                 return true;
             }
             return false;

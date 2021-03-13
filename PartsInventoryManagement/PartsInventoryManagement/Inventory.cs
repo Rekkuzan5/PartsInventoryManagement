@@ -13,43 +13,57 @@ namespace PartsInventoryManagement
         public static BindingList<Product> Products = new BindingList<Product>();
         public static BindingList<Part> AllParts = new BindingList<Part>();
 
-
         public static void PopulateList()
         {
             // add mach ids and comp names
-            Part dummyPart1A = new InHouse(1, "Part 1.Abigail", 15.00m, 15, 10, 30, 9001);
-            Part dummyPart1B = new InHouse(2, "Part 1.Bobby", 10.00m, 12, 10, 30, 9001);
-            Part dummyPart2A = new InHouse(3, "Part 2.Anastasia", 12, 10, 10, 30, 9002);
-            Part dummyPart2B = new InHouse(4, "Part 2.Brosnan", 15m, 5, 10, 30, 9002);
-            Part dummyPart3A = new Outsourced(5, "Part 3.A", 15m, 15, 10, 30, "ShopCorp");
-            Part dummyPart3B = new Outsourced(6, "Part 3.B", 10m, 12, 10, 30, "ShopCorp");
-            Part dummyPart4A = new Outsourced(7, "Part 4.A", 12m, 10, 10, 30, "PPI, LLC");
-            Part dummyPart4B = new Outsourced(8, "Part 4.B", 15m, 5, 10, 30, "PPI, LLC");
+            Part examplePart1 = new InHouse(1, "Spark Plug", 4.99m, 76, 16, 100, 9001);
+            Part examplePart2 = new InHouse(2, "Air Filter", 18.99m, 12, 10, 30, 9002);
+            Part examplePart3 = new InHouse(3, "Oil Filter", 6.99m, 39, 10, 50, 9003);
+            Part examplePart4 = new InHouse(4, "Plug Wire", 3.99m, 41, 16, 50, 9004);
+            Part examplePart5 = new Outsourced(7, "Intake Manifold", 249.99m, 11, 3, 20, "Edelbrock");
+            Part examplePart6 = new Outsourced(8, "Carburetor", 399.99m, 5, 3, 20, "Holley");
 
-            AllParts.Add(dummyPart1A);
-            AllParts.Add(dummyPart1B);
-            AllParts.Add(dummyPart2A);
-            AllParts.Add(dummyPart2B);
-            AllParts.Add(dummyPart3A);
-            AllParts.Add(dummyPart3B);
-            AllParts.Add(dummyPart4A);
-            AllParts.Add(dummyPart4B);
+            AllParts.Add(examplePart1);
+            AllParts.Add(examplePart2);
+            AllParts.Add(examplePart3);
+            AllParts.Add(examplePart4);
+            AllParts.Add(examplePart5);
+            AllParts.Add(examplePart6);
 
-            //
+            Product ExampleProduct1 = new Product(1, "8 Spark Plug Wire Kit", 30.99m, 12, 5, 30);
+            Product ExampleProduct2 = new Product(2, "6 Spark Plug Wire Kit", 23.99m, 8, 5, 30);
+            Product ExampleProduct3 = new Product(3, "4 Spark Plug Wire Kit", 15.99m, 5, 5, 30);
+            Product ExampleProduct4 = new Product(4, "4 Cylinder Tune Up Kit", 35.99m, 15, 5, 30);
 
-            Product dummyProd1 = new Product(1, "Product 1", 10m, 12, 5, 30);
-            Product dummyProd2 = new Product(2, "Product 2", 10m, 8, 5, 30);
-            Product dummyProd3 = new Product(3, "Product 3", 10m, 5, 5, 30);
-            Product dummyProd4 = new Product(4, "Product 4", 10m, 3, 5, 30);
+            // Add parts to products
+            for (int i = 0; i < 8; i++)
+            {
+                ExampleProduct1.AddAssociatedPart(examplePart1);
+            }
+            for (int i = 0; i < 6; i++)
+            {
+                ExampleProduct2.AddAssociatedPart(examplePart1);
+            }
+            for (int i = 0; i < 4; i++)
+            {
+                ExampleProduct3.AddAssociatedPart(examplePart1);
+            }
 
-            Products.Add(dummyProd1);
-            Products.Add(dummyProd2);
-            Products.Add(dummyProd3);
-            Products.Add(dummyProd4);
+            ExampleProduct4.AddAssociatedPart(examplePart1);
+            ExampleProduct4.AddAssociatedPart(examplePart1);
+            ExampleProduct4.AddAssociatedPart(examplePart1);
+            ExampleProduct4.AddAssociatedPart(examplePart1);
+            ExampleProduct4.AddAssociatedPart(examplePart2);
+            ExampleProduct4.AddAssociatedPart(examplePart3);
+
+            Products.Add(ExampleProduct1);
+            Products.Add(ExampleProduct2);
+            Products.Add(ExampleProduct3);
+            Products.Add(ExampleProduct4);
 
         }
 
-        // ** Products Methods ** //
+        // Products Methods //
 
         public static void AddProduct(Product prod)
         {

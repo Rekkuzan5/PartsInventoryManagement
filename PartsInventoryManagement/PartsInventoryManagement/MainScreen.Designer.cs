@@ -145,7 +145,6 @@
             // 
             this.partsDataGridView.AllowUserToAddRows = false;
             this.partsDataGridView.AllowUserToDeleteRows = false;
-            this.partsDataGridView.AllowUserToResizeColumns = false;
             this.partsDataGridView.AllowUserToResizeRows = false;
             this.partsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -184,7 +183,6 @@
             // 
             this.ProductDataGridView.AllowUserToAddRows = false;
             this.ProductDataGridView.AllowUserToDeleteRows = false;
-            this.ProductDataGridView.AllowUserToResizeColumns = false;
             this.ProductDataGridView.AllowUserToResizeRows = false;
             this.ProductDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -225,7 +223,7 @@
             this.searchPartTextBox1.Location = new System.Drawing.Point(415, 108);
             this.searchPartTextBox1.MinimumSize = new System.Drawing.Size(170, 30);
             this.searchPartTextBox1.Name = "searchPartTextBox1";
-            this.searchPartTextBox1.Size = new System.Drawing.Size(252, 30);
+            this.searchPartTextBox1.Size = new System.Drawing.Size(252, 29);
             this.searchPartTextBox1.TabIndex = 4;
             // 
             // searchProductTextBox

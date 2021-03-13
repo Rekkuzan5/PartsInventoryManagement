@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+//** Cameron Stapp C968 Software 1 PA - BFM1 TASK 1 **//
+
 namespace PartsInventoryManagement
 {
     public partial class MainScreen : Form
@@ -49,16 +51,16 @@ namespace PartsInventoryManagement
             Inventory.PopulateList();
         }
     
-        // Parts functions for main page
+        //** Parts functions for main page **//
 
-        // Opens new form to add a new part
+        //** Opens new form to add a new part **//
         private void AddPartButton_Click(object sender, EventArgs e)
         {
             AddPart addNewPart = new AddPart();
             addNewPart.ShowDialog();
         }
 
-        // Opens a new form to modify an existing part based on the type of object and update main screen.
+        //** Opens a new form to modify an existing part based on the type of object and update main screen **//
         private void ModifyPartButton_Click(object sender, EventArgs e)
         {
             if (Inventory.AllParts.Count > 0)
@@ -77,12 +79,12 @@ namespace PartsInventoryManagement
             this.Refresh();
         }
 
-        // Delete part in grid on main page
+        //** Delete part in grid on main page **//
         private void DeletePartButton_Click(object sender, EventArgs e)
         {
             if (Inventory.AllParts.Count > 0)
             { 
-                var result = MessageBox.Show("Are you sure you want to delete this part?", "Delete Part", MessageBoxButtons.YesNo);
+                DialogResult result = MessageBox.Show("Are you sure you want to delete this part?", "Delete Part", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
                     int partID = int.Parse(partsDataGridView.Rows[partsDataGridView.CurrentCell.RowIndex].Cells[0].Value.ToString());
@@ -92,7 +94,7 @@ namespace PartsInventoryManagement
             }
         }
 
-        // search for a part based on part name.
+        //** search for a part based on part name **//
         private void PartSearchButton_Click(object sender, EventArgs e)
         {
             if (searchPartTextBox1.Text != "")
@@ -122,16 +124,16 @@ namespace PartsInventoryManagement
             }
         }
 
-        // Products functions for main page
+        //** Products functions for main page **//
 
-        //  Opens new form to add a new product
+        //**  Opens new form to add a new product **//
         private void AddProductButton_Click(object sender, EventArgs e)
         {
             AddProduct addProduct = new AddProduct();
             addProduct.ShowDialog();
         }
 
-        // Opens new form to modify products
+        //** Opens new form to modify products **//
         private void ModifyProductButton_Click(object sender, EventArgs e)
         {
             if (Inventory.Products.Count > 0)
@@ -145,25 +147,33 @@ namespace PartsInventoryManagement
             this.Refresh();
         }
 
-        // Delete product in grid on main page
+        //** Delete product in grid on main page if the product does not contain any associated parts **//
         private void DeleteProductButton_Click(object sender, EventArgs e)
         {
             if (Inventory.Products.Count > 0)
             {
-                var result = MessageBox.Show("Are you sure you want to delete this product?", "Delete Product", MessageBoxButtons.YesNo);
-                if (result == DialogResult.Yes)
+                foreach (DataGridViewRow row in ProductDataGridView.SelectedRows)
                 {
-                    foreach (DataGridViewRow row in ProductDataGridView.SelectedRows)
+                    int productID = int.Parse(ProductDataGridView.Rows[ProductDataGridView.CurrentCell.RowIndex].Cells[0].Value.ToString());
+                    Product foundProduct = Inventory.LookupProduct(productID);
+                    if (foundProduct.AssociatedParts.Count > 0)
                     {
-                        int productID = int.Parse(ProductDataGridView.Rows[ProductDataGridView.CurrentCell.RowIndex].Cells[0].Value.ToString());
-                    Inventory.RemoveProduct(productID);
+                        DialogResult message = MessageBox.Show("This product contains one or more parts.  Please delete the associated parts before deleting.", "Delete Product", MessageBoxButtons.OK);
+                    }
+                    else
+                    {
+                        DialogResult result = MessageBox.Show("Are you sure you want to delete this product?", "Delete Product", MessageBoxButtons.YesNo);
+                        if (result == DialogResult.Yes)
+                        {
+                            Inventory.RemoveProduct(productID);
+                        }
                     }
                 }
             }
             this.Refresh();
-        }
-
-        // search for a product based on product name.
+        }   
+                
+        //** search for a product based on product name **//
         private void ProductSearchButton_Click(object sender, EventArgs e)
         {
             if (searchProductTextBox.Text != "")
