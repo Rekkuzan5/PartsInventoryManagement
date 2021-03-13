@@ -222,10 +222,10 @@
             // searchPartTextBox1
             // 
             this.searchPartTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchPartTextBox1.Location = new System.Drawing.Point(403, 109);
+            this.searchPartTextBox1.Location = new System.Drawing.Point(415, 108);
             this.searchPartTextBox1.MinimumSize = new System.Drawing.Size(170, 30);
             this.searchPartTextBox1.Name = "searchPartTextBox1";
-            this.searchPartTextBox1.Size = new System.Drawing.Size(252, 29);
+            this.searchPartTextBox1.Size = new System.Drawing.Size(252, 30);
             this.searchPartTextBox1.TabIndex = 4;
             // 
             // searchProductTextBox
@@ -240,7 +240,7 @@
             // PartSearchButton
             // 
             this.PartSearchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PartSearchButton.Location = new System.Drawing.Point(317, 108);
+            this.PartSearchButton.Location = new System.Drawing.Point(329, 108);
             this.PartSearchButton.Name = "PartSearchButton";
             this.PartSearchButton.Size = new System.Drawing.Size(80, 30);
             this.PartSearchButton.TabIndex = 5;
@@ -263,7 +263,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(79, 108);
+            this.label2.Location = new System.Drawing.Point(91, 106);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 31);
             this.label2.TabIndex = 6;

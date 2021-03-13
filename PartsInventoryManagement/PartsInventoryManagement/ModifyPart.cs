@@ -56,6 +56,7 @@ namespace PartsInventoryManagement
 
         private void ModifyPartCancelButton_Click(object sender, EventArgs e)
         {
+            errorProvider1.Clear();
             this.Close();
         }
 
@@ -126,7 +127,8 @@ namespace PartsInventoryManagement
             {
                 if (int.Parse(modInventoryTextBox.Text) >= int.Parse(modMinTextBox.Text) && int.Parse(modInventoryTextBox.Text) <= int.Parse(modMaxTextBox.Text))
                 {
-                        VerifyPartSave();
+                    errorProvider1.Clear();
+                    VerifyPartSave();
                 }
                 else
                 {

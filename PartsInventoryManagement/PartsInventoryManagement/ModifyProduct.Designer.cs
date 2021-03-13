@@ -29,10 +29,11 @@ namespace PartsInventoryManagement
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label8 = new System.Windows.Forms.Label();
             this.modProductIDTextBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -48,16 +49,18 @@ namespace PartsInventoryManagement
             this.modProductNameTextBox = new System.Windows.Forms.TextBox();
             this.modSearchTextBox = new System.Windows.Forms.TextBox();
             this.addPartToProduct = new System.Windows.Forms.Button();
-            this.SaveModifiedPart = new System.Windows.Forms.Button();
+            this.SaveProductButton = new System.Windows.Forms.Button();
             this.DeletePartFromProduct = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.modCancelButton = new System.Windows.Forms.Button();
             this.associatedPartsDGV = new System.Windows.Forms.DataGridView();
             this.partToProductDataGrid = new System.Windows.Forms.DataGridView();
             this.ModProductLabel = new System.Windows.Forms.Label();
             this.modProductPriceTextBox = new System.Windows.Forms.TextBox();
             this.modProductSearchButton = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.associatedPartsDGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.partToProductDataGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label8
@@ -156,6 +159,8 @@ namespace PartsInventoryManagement
             this.modProductMinTextBox.Name = "modProductMinTextBox";
             this.modProductMinTextBox.Size = new System.Drawing.Size(90, 26);
             this.modProductMinTextBox.TabIndex = 13;
+            this.modProductMinTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AddMinTextBox_KeyPress);
+            this.modProductMinTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.AddMinTextBox_Validating);
             // 
             // modProductMaxTextBox
             // 
@@ -164,6 +169,8 @@ namespace PartsInventoryManagement
             this.modProductMaxTextBox.Name = "modProductMaxTextBox";
             this.modProductMaxTextBox.Size = new System.Drawing.Size(90, 26);
             this.modProductMaxTextBox.TabIndex = 12;
+            this.modProductMaxTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AddMaxTextBox_KeyPress);
+            this.modProductMaxTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.AddMaxTextBox_Validating);
             // 
             // modProductInvTextBox
             // 
@@ -172,6 +179,8 @@ namespace PartsInventoryManagement
             this.modProductInvTextBox.Name = "modProductInvTextBox";
             this.modProductInvTextBox.Size = new System.Drawing.Size(274, 26);
             this.modProductInvTextBox.TabIndex = 10;
+            this.modProductInvTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AddInvTextBox_KeyPress);
+            this.modProductInvTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.addInvTextBox_Validating);
             // 
             // modProductNameTextBox
             // 
@@ -180,6 +189,7 @@ namespace PartsInventoryManagement
             this.modProductNameTextBox.Name = "modProductNameTextBox";
             this.modProductNameTextBox.Size = new System.Drawing.Size(275, 26);
             this.modProductNameTextBox.TabIndex = 9;
+            this.modProductNameTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.AddProdNameTextBox_Validating);
             // 
             // modSearchTextBox
             // 
@@ -200,16 +210,16 @@ namespace PartsInventoryManagement
             this.addPartToProduct.UseVisualStyleBackColor = true;
             this.addPartToProduct.Click += new System.EventHandler(this.AddPartToProduct_Click);
             // 
-            // SaveModifiedPart
+            // SaveProductButton
             // 
-            this.SaveModifiedPart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SaveModifiedPart.Location = new System.Drawing.Point(906, 719);
-            this.SaveModifiedPart.Name = "SaveModifiedPart";
-            this.SaveModifiedPart.Size = new System.Drawing.Size(80, 30);
-            this.SaveModifiedPart.TabIndex = 5;
-            this.SaveModifiedPart.Text = "Save";
-            this.SaveModifiedPart.UseVisualStyleBackColor = true;
-            this.SaveModifiedPart.Click += new System.EventHandler(this.SaveModifiedPart_Click);
+            this.SaveProductButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SaveProductButton.Location = new System.Drawing.Point(906, 719);
+            this.SaveProductButton.Name = "SaveProductButton";
+            this.SaveProductButton.Size = new System.Drawing.Size(80, 30);
+            this.SaveProductButton.TabIndex = 5;
+            this.SaveProductButton.Text = "Save";
+            this.SaveProductButton.UseVisualStyleBackColor = true;
+            this.SaveProductButton.Click += new System.EventHandler(this.SaveProductButton_Click);
             // 
             // DeletePartFromProduct
             // 
@@ -222,16 +232,16 @@ namespace PartsInventoryManagement
             this.DeletePartFromProduct.UseVisualStyleBackColor = true;
             this.DeletePartFromProduct.Click += new System.EventHandler(this.DeletePartFromProduct_Click);
             // 
-            // button1
+            // modCancelButton
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(992, 719);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(80, 30);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Cancel";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.modCancelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.modCancelButton.Location = new System.Drawing.Point(992, 719);
+            this.modCancelButton.Name = "modCancelButton";
+            this.modCancelButton.Size = new System.Drawing.Size(80, 30);
+            this.modCancelButton.TabIndex = 3;
+            this.modCancelButton.Text = "Cancel";
+            this.modCancelButton.UseVisualStyleBackColor = true;
+            this.modCancelButton.Click += new System.EventHandler(this.modSaveButton_Click);
             // 
             // associatedPartsDGV
             // 
@@ -240,24 +250,24 @@ namespace PartsInventoryManagement
             this.associatedPartsDGV.AllowUserToResizeColumns = false;
             this.associatedPartsDGV.AllowUserToResizeRows = false;
             this.associatedPartsDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.associatedPartsDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.associatedPartsDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.associatedPartsDGV.ColumnHeadersHeight = 30;
             this.associatedPartsDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.associatedPartsDGV.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.associatedPartsDGV.DefaultCellStyle = dataGridViewCellStyle6;
             this.associatedPartsDGV.EnableHeadersVisualStyles = false;
             this.associatedPartsDGV.Location = new System.Drawing.Point(466, 397);
             this.associatedPartsDGV.MultiSelect = false;
@@ -279,24 +289,24 @@ namespace PartsInventoryManagement
             this.partToProductDataGrid.AllowUserToResizeColumns = false;
             this.partToProductDataGrid.AllowUserToResizeRows = false;
             this.partToProductDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.partToProductDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.partToProductDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.partToProductDataGrid.ColumnHeadersHeight = 30;
             this.partToProductDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.partToProductDataGrid.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.partToProductDataGrid.DefaultCellStyle = dataGridViewCellStyle8;
             this.partToProductDataGrid.EnableHeadersVisualStyles = false;
             this.partToProductDataGrid.Location = new System.Drawing.Point(466, 91);
             this.partToProductDataGrid.MultiSelect = false;
@@ -327,6 +337,8 @@ namespace PartsInventoryManagement
             this.modProductPriceTextBox.Name = "modProductPriceTextBox";
             this.modProductPriceTextBox.Size = new System.Drawing.Size(274, 26);
             this.modProductPriceTextBox.TabIndex = 11;
+            this.modProductPriceTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AddPriceTextBox_KeyPress);
+            this.modProductPriceTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.AddPriceTextBox_Validating);
             // 
             // modProductSearchButton
             // 
@@ -339,10 +351,16 @@ namespace PartsInventoryManagement
             this.modProductSearchButton.UseVisualStyleBackColor = true;
             this.modProductSearchButton.Click += new System.EventHandler(this.ModifyProductSearchButton_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider1.ContainerControl = this;
+            // 
             // ModifyProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.ClientSize = new System.Drawing.Size(1084, 761);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.modProductIDTextBox);
@@ -361,9 +379,9 @@ namespace PartsInventoryManagement
             this.Controls.Add(this.modProductNameTextBox);
             this.Controls.Add(this.modSearchTextBox);
             this.Controls.Add(this.addPartToProduct);
-            this.Controls.Add(this.SaveModifiedPart);
+            this.Controls.Add(this.SaveProductButton);
             this.Controls.Add(this.DeletePartFromProduct);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.modCancelButton);
             this.Controls.Add(this.associatedPartsDGV);
             this.Controls.Add(this.partToProductDataGrid);
             this.Controls.Add(this.ModProductLabel);
@@ -372,6 +390,7 @@ namespace PartsInventoryManagement
             this.Text = "Inventory Management System - Modify Product";
             ((System.ComponentModel.ISupportInitialize)(this.associatedPartsDGV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.partToProductDataGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -394,13 +413,14 @@ namespace PartsInventoryManagement
         private System.Windows.Forms.TextBox modProductNameTextBox;
         private System.Windows.Forms.TextBox modSearchTextBox;
         private System.Windows.Forms.Button addPartToProduct;
-        private System.Windows.Forms.Button SaveModifiedPart;
+        private System.Windows.Forms.Button SaveProductButton;
         private System.Windows.Forms.Button DeletePartFromProduct;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button modCancelButton;
         private System.Windows.Forms.DataGridView associatedPartsDGV;
         private System.Windows.Forms.DataGridView partToProductDataGrid;
         private System.Windows.Forms.Label ModProductLabel;
         private System.Windows.Forms.TextBox modProductPriceTextBox;
         private System.Windows.Forms.Button modProductSearchButton;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

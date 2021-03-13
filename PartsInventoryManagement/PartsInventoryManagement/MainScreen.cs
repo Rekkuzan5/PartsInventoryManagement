@@ -142,6 +142,7 @@ namespace PartsInventoryManagement
                     new ModifyProduct(moddedProduct).ShowDialog();
                 }
             }
+            this.Refresh();
         }
 
         // Delete product in grid on main page
@@ -158,8 +159,8 @@ namespace PartsInventoryManagement
                     Inventory.RemoveProduct(productID);
                     }
                 }
-                
             }
+            this.Refresh();
         }
 
         // search for a product based on product name.
